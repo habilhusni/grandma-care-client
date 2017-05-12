@@ -8,20 +8,21 @@ import { logout } from '../actions'
 
 class LogoutButton extends React.Component {
 
-  _logout = async () => {
-    try {
-      await AsyncStorage.removeItem('token')
-      ToastAndroid.showWithGravity(
-        'Logging out',
-        ToastAndroid.LONG,
-        ToastAndroid.CENTER
-      )
-    } catch (err) {
-      Alert.alert(
-        'Logout Error',
-        'Press Logout Button again'
-      )
-    }
+  _logout = () => {
+    AsyncStorage.multiRemove(['token','id'], (err)=> {
+      if(err) {
+        Alert.alert(
+          'Logout Error',
+          'Press Logout Button again'
+        )
+      } else {
+        ToastAndroid.showWithGravity(
+          'Logging out',
+          ToastAndroid.LONG,
+          ToastAndroid.CENTER
+        )
+      }
+    })
   }
 
   render() {
