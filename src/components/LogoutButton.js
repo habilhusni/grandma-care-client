@@ -9,6 +9,7 @@ import { logout } from '../actions'
 class LogoutButton extends React.Component {
 
   _logout = () => {
+    const { goBack, state } = this.props.navigation
     AsyncStorage.multiRemove(['token','id'], (err)=> {
       if(err) {
         Alert.alert(
@@ -21,6 +22,9 @@ class LogoutButton extends React.Component {
           ToastAndroid.LONG,
           ToastAndroid.CENTER
         )
+        setTimeout(()=> {
+          goBack(state.params.stateKey)
+        }, 750)
       }
     })
   }
@@ -31,9 +35,6 @@ class LogoutButton extends React.Component {
       <Button light transparent
         onPress={()=> {
           this._logout()
-          setTimeout(()=> {
-            navigation.goBack()
-          }, 750)
         }}>
         <Text>Logout</Text>
       </Button>

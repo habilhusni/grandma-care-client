@@ -24,16 +24,13 @@ class SplashScreen extends React.Component {
         )
       }, 750)
     } else {
-      console.log('AsyncStorage')
       AsyncStorage.setItem('token', props.token.token, (err) =>{
         if(props.token.id) AsyncStorage.setItem('id', props.token.id)
         if(err) {
-          console.log(err)
           Alert.alert('Error','Oops.. something wrong happened')
         } else {
-          console.log('success')
           setTimeout(()=> {
-            navigation.navigate('Main')
+            navigation.navigate('Main', {stateKey:navigation.state.key})
           }, 500)
         }
       })

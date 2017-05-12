@@ -16,11 +16,11 @@ class Main extends React.Component {
   }
 
   componentWillMount() {
-    let self = this
+    const { goBack, state } = this.props.navigation
 
     AsyncStorage.getItem('token', (err,result)=> {
       if(result == null){
-        self.props.navigation.goBack()
+        goBack(state.params.stateKey)
         Alert.alert(
           'Please Login',
           'Please Login before you can use this App'
@@ -35,9 +35,10 @@ class Main extends React.Component {
   }
 
   _backHandler = async () => {
+    const { goBack, state } = this.props.navigation
     let result = await AsyncStorage.getItem('token')
     if(result === null) {
-      this.props.navigation.goBack('SplashScreen')
+      goBack(state.params.stateKey)
       return true
     }
     return false
