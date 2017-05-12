@@ -30,17 +30,6 @@ class Login extends React.Component {
     })
   }
 
-  componentDidUpdate(props, state) {
-    console.log(props)
-    if(props.registerState.hasOwnProperty('register')){
-      if(props.registerState.register){
-        Alert.alert('Register Success')
-      } else {
-        Alert.alert('Register Failed')
-      }
-    }
-  }
-
   handleUsernameInput = text => {
     this.setState({
       username: text

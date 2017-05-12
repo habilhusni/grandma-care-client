@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Alert } from 'react-native'
 import { Container, Content, Form, Item, Button, Label, Input } from 'native-base'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { register } from '../actions'
+import { register, registerDone } from '../actions'
 import { styles } from '../styles'
 
 class Register extends React.Component {
@@ -29,6 +29,17 @@ class Register extends React.Component {
     this.setState({
       phone: text
     })
+  }
+
+  componentWillUnmount() {
+    if(this.props.registerState.hasOwnProperty('register')){
+      if(this.props.registerState.register){
+        Alert.alert('Register Success')
+        this.props.registerDone()
+      } else {
+        Alert.alert('Register Failed')
+      }
+    }
   }
 
   render() {
@@ -72,10 +83,11 @@ class Register extends React.Component {
               </Item>
               <Item>
                 <Button full style={{width:'100%', marginTop:15}}
-                  onPress={(e)=> {
-                    e.preventDefault()
+                  onPress={()=> {
                     register({username,password,phone})
-                    _setModalVisible(false)
+                    setTimeout(()=> {
+                      _setModalVisible(false)
+                    }, 500)
                   }}>
                   <Text>Register</Text>
                 </Button>
@@ -91,6 +103,7 @@ class Register extends React.Component {
 
 Register.propTypes = {
   register: PropTypes.func.isRequired,
+  registerDone: PropTypes.func.isRequired,
   _setModalVisible: PropTypes.func.isRequired,
   registerState: PropTypes.object.isRequired
 }
@@ -100,7 +113,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  register: user => dispatch(register(user))
+  register: user => dispatch(register(user)),
+  registerDone: () => dispatch(registerDone())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register)

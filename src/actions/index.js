@@ -4,6 +4,10 @@ export const registerSuccess = () => ({
   type: types.REGISTER_SUCCESS
 })
 
+export const registerDone = () => ({
+  type: types.REGISTER_DONE
+})
+
 export const registerFail = error => ({
   type: types.REGISTER_FAIL,
   error
