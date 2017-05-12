@@ -24,7 +24,7 @@ class Login extends React.Component {
     let self = this
 
     AsyncStorage.getItem('token', (err,result) => {
-      if(result){
+      if(result !== null){
         self.props.navigation.navigate('Main')
       }
     })
@@ -45,6 +45,10 @@ class Login extends React.Component {
     this.setState({
       modalVisible: val
     })
+  }
+
+  _handleLogin= (input) => {
+    this.props.login(input)
   }
 
   render() {
@@ -81,8 +85,11 @@ class Login extends React.Component {
                 <Button block
                   onPress={(e) => {
                     e.preventDefault()
-                    login({username,password})
-                    navigation.navigate('Main')
+                    this._handleLogin({username,password})
+
+                    setTimeout(()=> {
+                      navigation.navigate('Main')
+                    }, 1500)
                   }}>
                   <Text>Login</Text>
                 </Button>

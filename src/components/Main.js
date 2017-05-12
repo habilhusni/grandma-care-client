@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, AsyncStorage, Alert } from 'react-native'
+import { View, AsyncStorage, Alert, BackHandler } from 'react-native'
 import { Container, Content, Header, Footer } from 'native-base'
 
 import Maps from './Maps'
+import LogoutButton from './LogoutButton'
 
 class Main extends React.Component {
 
@@ -26,6 +27,20 @@ class Main extends React.Component {
         )
       }
     })
+    BackHandler.addEventListener('hardwareBackPress', this._backHandler)
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this._backHandler)
+  }
+
+  _backHandler = async () => {
+    let result = AsyncStorage.getItem('token')
+    if(result === null) {
+      this.props.navigation.goBack()
+      return true
+    }
+    return false
   }
 
   render() {
@@ -40,7 +55,7 @@ class Main extends React.Component {
           </View>
         </Content>
         <Footer>
-
+          <LogoutButton navigation={this.props.navigation}/>
         </Footer>
       </Container>
     )
