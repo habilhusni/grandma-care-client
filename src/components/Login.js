@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Modal, Text } from 'react-native'
+import { View, Modal, Text, AsyncStorage, Alert } from 'react-native'
 import { Container, Content, Form, Item, Button, Input, Label} from 'native-base'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import { login } from '../actions'
 import { styles } from '../styles'
 import Register from './Register'
-import Maps from './Maps'
 
 class Login extends React.Component {
 
@@ -19,6 +18,16 @@ class Login extends React.Component {
     username: '',
     password: '',
     modalVisible: false
+  }
+
+  componentWillMount() {
+    let self = this
+
+    AsyncStorage.getItem('token', (err,result) => {
+      if(result !== null){
+        self.props.navigation.goBack('Main')
+      }
+    })
   }
 
   handleUsernameInput = text => {
@@ -36,6 +45,15 @@ class Login extends React.Component {
     this.setState({
       modalVisible: val
     })
+  }
+
+  _handleLogin= (input) => {
+    const { login, navigation } = this.props
+
+    login(input)
+    setTimeout(()=> {
+      navigation.navigate('SplashScreen')
+    }, 500)
   }
 
   render() {
@@ -68,11 +86,11 @@ class Login extends React.Component {
                   onChange={e => this.handlePasswordInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item last style={{marginTop:20}}>
+              <Item last style={{marginTop:20, borderColor:'transparent'}}>
                 <Button block
-                  onPress={() => {
-                    login({username,password})
-                    navigation.navigate('Main')
+                  onPress={(e) => {
+                    e.preventDefault()
+                    this._handleLogin({username,password})
                   }}>
                   <Text>Login</Text>
                 </Button>

@@ -33,7 +33,7 @@ class Register extends React.Component {
 
   render() {
     const { username, password, phone } = this.state
-    const { register } = this.props
+    const { register, _setModalVisible } = this.props
     return (
       <Container>
         <Content>
@@ -72,7 +72,11 @@ class Register extends React.Component {
               </Item>
               <Item>
                 <Button full style={{width:'100%', marginTop:15}}
-                  onPress={()=> register({username,password,phone})}>
+                  onPress={(e)=> {
+                    e.preventDefault()
+                    register({username,password,phone})
+                    _setModalVisible(false)
+                  }}>
                   <Text>Register</Text>
                 </Button>
               </Item>
@@ -86,7 +90,8 @@ class Register extends React.Component {
 }
 
 Register.propTypes = {
-  register: PropTypes.func.isRequired
+  register: PropTypes.func.isRequired,
+  _setModalVisible: PropTypes.func.isRequired
 }
 
 const mapDispatchToProps = dispatch => ({
