@@ -7,6 +7,7 @@ import Main from './components/Main'
 const App = StackNavigator(
   {
   Login: { screen: Login },
+  Main: { screen: Main }
   },
   {
     headerMode: 'none'
