@@ -73,7 +73,6 @@ class Register extends React.Component {
               <Item>
                 <Button full style={{width:'100%', marginTop:15}}
                   onPress={(e)=> {
-
                     e.preventDefault()
                     register({username,password,phone})
                     _setModalVisible(false)

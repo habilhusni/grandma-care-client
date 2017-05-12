@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Modal, Text, AsyncStorage } from 'react-native'
+import { View, Modal, Text, AsyncStorage, Alert } from 'react-native'
 import { Container, Content, Form, Item, Button, Input, Label} from 'native-base'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -25,7 +25,7 @@ class Login extends React.Component {
 
     AsyncStorage.getItem('token', (err,result) => {
       if(result !== null){
-        self.props.navigation.navigate('Main')
+        self.props.navigation.goBack('Main')
       }
     })
   }
@@ -48,7 +48,10 @@ class Login extends React.Component {
   }
 
   _handleLogin= (input) => {
-    this.props.login(input)
+    const { login, navigation } = this.props
+
+    login(input)
+    navigation.navigate('SplashScreen')
   }
 
   render() {
@@ -86,10 +89,6 @@ class Login extends React.Component {
                   onPress={(e) => {
                     e.preventDefault()
                     this._handleLogin({username,password})
-
-                    setTimeout(()=> {
-                      navigation.navigate('Main')
-                    }, 1500)
                   }}>
                   <Text>Login</Text>
                 </Button>

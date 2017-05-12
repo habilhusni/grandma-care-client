@@ -4,6 +4,11 @@ export const registerSuccess = () => ({
   type: types.REGISTER_SUCCESS
 })
 
+export const registerFail = error => ({
+  type: types.REGISTER_FAIL,
+  error
+})
+
 export const loginSuccess = payload => ({
   type: types.LOGIN_SUCCESS,
   payload
@@ -43,5 +48,6 @@ export const register = user => (
         'Content-Type': 'application/json'
       }
     }).then(() => dispatch(registerSuccess()))
+      .catch(err => dispatch(registerFail(err)))
   )
 )

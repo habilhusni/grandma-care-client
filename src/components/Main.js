@@ -35,9 +35,9 @@ class Main extends React.Component {
   }
 
   _backHandler = async () => {
-    let result = AsyncStorage.getItem('token')
+    let result = await AsyncStorage.getItem('token')
     if(result === null) {
-      this.props.navigation.goBack()
+      this.props.navigation.goBack('Login')
       return true
     }
     return false

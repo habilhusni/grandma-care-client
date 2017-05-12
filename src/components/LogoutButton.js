@@ -12,7 +12,7 @@ class LogoutButton extends React.Component {
     try {
       await AsyncStorage.removeItem('token')
       ToastAndroid.showWithGravity(
-        'You are logged out',
+        'Logging out',
         ToastAndroid.LONG,
         ToastAndroid.CENTER
       )
