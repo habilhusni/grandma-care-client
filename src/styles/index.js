@@ -5,6 +5,14 @@ export const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
   splash: {
-    backgroundColor: 'rgba(0,0,0,0.5)'
+    flex: 1,
+    marginTop: '15%',
+    backgroundColor: 'transparent',
+    alignItems: 'center'
+  },
+  splashText: {
+    fontSize: 25,
+    marginTop: 15,
+    color: 'rgba(152,152,152,0.7)'
   }
 })

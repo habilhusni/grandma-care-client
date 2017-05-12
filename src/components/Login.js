@@ -51,7 +51,9 @@ class Login extends React.Component {
     const { login, navigation } = this.props
 
     login(input)
-    navigation.navigate('SplashScreen')
+    setTimeout(()=> {
+      navigation.navigate('SplashScreen')
+    }, 500)
   }
 
   render() {
