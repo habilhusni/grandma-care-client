@@ -25,7 +25,7 @@ class Login extends React.Component {
 
     AsyncStorage.getItem('token', (err,result) => {
       if(result !== null){
-        self.props.navigation.goBack('Main')
+        self.props.navigation.navigate('Main')
       }
     })
   }
@@ -53,7 +53,7 @@ class Login extends React.Component {
     login(input)
     setTimeout(()=> {
       navigation.navigate('SplashScreen')
-    }, 500)
+    }, 250)
   }
 
   render() {
