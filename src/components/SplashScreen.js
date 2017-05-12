@@ -9,11 +9,12 @@ import { styles } from '../styles'
 
 class SplashScreen extends React.Component {
 
-  componentDidUpdate(props, state) {
+  componentWillUpdate(props, state) {
     const { navigation } = this.props
     console.log(props)
 
     if(props.token === null || props.token.hasOwnProperty('error')){
+      console.log('null')
       setTimeout(()=> {
         navigation.goBack()
         Alert.alert(
@@ -22,13 +23,14 @@ class SplashScreen extends React.Component {
         )
       }, 750)
     } else {
-      AsyncStorage.multiSet([
-        ['token', props.token.token],
-        ['id', props.token.id]
-      ], (err)=> {
+      console.log('AsyncStorage')
+      AsyncStorage.setItem('token', props.token.token, (err) =>{
+        if(props.token.id) AsyncStorage.setItem('id', props.token.id)
         if(err) {
+          console.log(err)
           Alert.alert('Error','Oops.. something wrong happened')
         } else {
+          console.log('success')
           setTimeout(()=> {
             navigation.navigate('Main')
           }, 500)
