@@ -9,14 +9,11 @@ import { styles } from '../styles'
 
 class SplashScreen extends React.Component {
 
-  state = {
+  componentDidUpdate(props, state) {
+    const { navigation } = this.props
+    console.log(props)
 
-  }
-
-  componentDidUpdate() {
-    const { token, navigation } = this.props
-
-    if(token === null || token.hasOwnProperty('error')){
+    if(props.token === null || props.token.hasOwnProperty('error')){
       setTimeout(()=> {
         navigation.goBack()
         Alert.alert(
@@ -26,8 +23,8 @@ class SplashScreen extends React.Component {
       }, 750)
     } else {
       AsyncStorage.multiSet([
-        ['token', token.token],
-        ['id', token.id]
+        ['token', props.token.token],
+        ['id', props.token.id]
       ], (err)=> {
         if(err) {
           Alert.alert('Error','Oops.. something wrong happened')

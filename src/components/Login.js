@@ -30,6 +30,17 @@ class Login extends React.Component {
     })
   }
 
+  componentDidUpdate(props, state) {
+    console.log(props)
+    if(props.registerState.hasOwnProperty('register')){
+      if(props.registerState.register){
+        Alert.alert('Register Success')
+      } else {
+        Alert.alert('Register Failed')
+      }
+    }
+  }
+
   handleUsernameInput = text => {
     this.setState({
       username: text
@@ -51,9 +62,7 @@ class Login extends React.Component {
     const { login, navigation } = this.props
 
     login(input)
-    setTimeout(()=> {
-      navigation.navigate('SplashScreen')
-    }, 250)
+    navigation.navigate('SplashScreen')
   }
 
   render() {
@@ -116,11 +125,16 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  login: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  registerState: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => ({
+  registerState: state.registerState
+})
 
 const mapDispatchToProps = dispatch => ({
   login: user => dispatch(login(user))
 })
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

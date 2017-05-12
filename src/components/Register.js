@@ -91,11 +91,16 @@ class Register extends React.Component {
 
 Register.propTypes = {
   register: PropTypes.func.isRequired,
-  _setModalVisible: PropTypes.func.isRequired
+  _setModalVisible: PropTypes.func.isRequired,
+  registerState: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => ({
+  registerState: state.registerState
+})
 
 const mapDispatchToProps = dispatch => ({
   register: user => dispatch(register(user))
 })
 
-export default connect(null, mapDispatchToProps)(Register)
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
