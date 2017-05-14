@@ -2,7 +2,7 @@ import React from 'react'
 import { AsyncStorage, Alert, ActivityIndicator } from 'react-native'
 import { Container, Content, Header, Left, List, ListItem, Text, Button, Icon } from 'native-base'
 
-import { connect } from 'react-redux',
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { fetchUsers } from '../actions'
