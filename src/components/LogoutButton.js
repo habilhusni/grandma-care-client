@@ -1,6 +1,6 @@
 import React from 'react'
 import { AsyncStorage, Alert, ToastAndroid } from 'react-native'
-import { Button, Text } from 'native-base'
+import { Button, Text, Icon } from 'native-base'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -32,10 +32,11 @@ class LogoutButton extends React.Component {
   render() {
     const { navigation } = this.props
     return (
-      <Button light transparent
+      <Button light transparent vertical
         onPress={()=> {
           this._logout()
         }}>
+        <Icon name="power" color="#FFF"/>
         <Text>Logout</Text>
       </Button>
     )

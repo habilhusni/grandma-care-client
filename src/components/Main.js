@@ -13,11 +13,20 @@ class Main extends React.Component {
   }
 
   state = {
-    modalUserListVisible: false
+    modalUserListVisible: false,
+    mapWidth: 0,
+    mapHeight: 0
   }
 
   _setModalUserListVisible = (val) => {
     this.setState({ modalUserListVisible: val })
+  }
+
+  _getContentSize = (e) => {
+    this.setState({
+      mapWidth: e.nativeEvent.layout.width,
+      mapHeight e.nativeEvent.layout.height
+    })
   }
 
   componentWillMount() {
@@ -55,15 +64,15 @@ class Main extends React.Component {
         <Header>
 
         </Header>
-        <Content>
+        <Content onLayout={e => this._getContentSize(e)}>
           <View style={{width:400,height:500,alignItems:'center'}}>
             <Maps />
           </View>
         </Content>
         <Footer>
           <FooterTab>
-            <LogoutButton navigation={this.props.navigation}/>
             <UserListButton _setModalUserListVisible={this._setModalUserListVisible}/>
+            <LogoutButton navigation={this.props.navigation}/>
           </FooterTab>
         </Footer>
       </Container>

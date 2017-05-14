@@ -8,12 +8,16 @@ class UserListButton extends React.Component {
   render() {
     return (
       <Button light transparent vertical
-        onPress={() => null}>
-        <Icon name="person" />
+        onPress={() => this.props._setModalUserListVisible(true)}>
+        <Icon name="person" color="#FFF" />
         <Text>User List</Text>
       </Button>
     )
   }
+}
+
+UserListButton.propTypes = {
+  _setModalUserListVisible: PropTypes.func.isRequired
 }
 
 export default UserListButton
