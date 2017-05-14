@@ -15,24 +15,21 @@ class Maps extends React.Component {
 
   watchID: ?number = null
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
-      this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-      })
-    }, error => Alert.alert('Geolocation Error'))
-    this.watchID = navigator.geolocation.watchPosition(position => {
-      this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-      })
-    })
-  }
+  componentWillMount() {
 
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchID)
+    console.log('Component Will Mount')
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log(position)
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        })
+      },
+      (error) => Alert.alert(JSON.stringify(error)),
+      {enableHighAccuracy: true, timeout: 1000, maximumAge: 1000}
+    )
+
   }
 
   render() {
