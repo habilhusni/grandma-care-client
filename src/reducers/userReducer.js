@@ -1,16 +1,9 @@
 import * as types from '../constants'
 
-const user = {}
-
-user.getUser = (state, data) => {
-  const newState = data;
-  return newState;
-}
-
 export const userReducer = (state = {}, action) => {
   switch(action.type) {
-    case types.GET_USER_SUCCESS: return user.getUser(state, action.payload)
-    case types.GET_USER_FAIL : return {error: action.error}
+    case types.FETCH_ONEUSER_SUCCESS: return action.payload
+    case types.FETCH_ONEUSER_FAIL : return {error: action.error}
     default: return state
   }
 }

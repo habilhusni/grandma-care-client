@@ -46,6 +46,7 @@ export const fetchOneUserFail = error => ({
   type: types.FETCH_ONEUSER_FAIL,
   error
 })
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
@@ -100,7 +101,12 @@ export const register = user => (
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then(() => dispatch(registerSuccess()))
-      .catch(err => dispatch(registerFail(err)))
+    }).then(res => {
+      if(res.status === 400){
+        dispatch(registerFail({error: 'error'}))
+      } else {
+        dispatch(registerSuccess())
+      }
+    }).catch(err => dispatch(registerFail(err)))
   )
 )

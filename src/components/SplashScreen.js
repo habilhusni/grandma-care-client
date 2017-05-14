@@ -11,7 +11,6 @@ class SplashScreen extends React.Component {
 
   componentWillUpdate(props, state) {
     const { navigation } = this.props
-    console.log(props)
 
     if(props.token === null || props.token.hasOwnProperty('error')){
       console.log('null')
