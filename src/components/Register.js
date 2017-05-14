@@ -31,7 +31,7 @@ class Register extends React.Component {
       phone: text
     })
   }
-  handlePhoneInput = text => {
+  handleEmailInput = text => {
     this.setState({
       email: text
     })
@@ -84,6 +84,7 @@ class Register extends React.Component {
                   autoCapitalize="none"
                   autoCorrect={false}
                   value={phone}
+                  keyboardType='numeric'
                   onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
                 />
               </Item>
@@ -93,7 +94,8 @@ class Register extends React.Component {
                   autoCapitalize="none"
                   autoCorrect={false}
                   value={email}
-                  onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
+                  keyboardType='email-address'
+                  onChange={e => this.handleEmailInput(e.nativeEvent.text)}
                 />
               </Item>
               <Item>
