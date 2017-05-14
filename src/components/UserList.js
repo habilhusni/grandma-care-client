@@ -5,7 +5,7 @@ import { Container, Content, Header, Left, List, ListItem, Text, Button, Icon } 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { fetchUsers } from '../actions'
+import { fetchOneUser } from '../actions'
 import { styles } from '../styles'
 
 class UserList extends React.Component {
@@ -20,6 +20,10 @@ class UserList extends React.Component {
         self.props.fetchUsers(result)
       }
     })
+  }
+
+  componentWillUnmount() {
+
   }
 
   render() {
@@ -59,17 +63,17 @@ class UserList extends React.Component {
 }
 
 UserList.propTypes = {
-  UserList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  user: PropTypes.object.isRequired
   fetchUsers: PropTypes.func.isRequired,
   _setModalUserListVisible: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-  UserList: state.UserList
+  user: state.user
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchUsers: token => dispatch(fetchUsers(token))
+  fetchOneUser: token => dispatch(fetchOneUser(token))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList)

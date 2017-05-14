@@ -97,7 +97,9 @@ class Main extends React.Component {
           transparent={false}
           visible={modalUserListVisible}
           onRequestClose={()=> null}>
-          <UserList _setModalUserListVisible={this._setModalUserListVisible}/>
+          <UserList
+            user={user}
+            _setModalUserListVisible={this._setModalUserListVisible}/>
         </Modal>
       </Container>
     )
