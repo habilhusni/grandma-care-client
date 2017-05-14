@@ -12,7 +12,8 @@ class Register extends React.Component {
   state = {
     username: '',
     password: '',
-    phone: ''
+    phone: '',
+    email: ''
   }
 
   handleUsernameInput = text => {
@@ -30,6 +31,11 @@ class Register extends React.Component {
       phone: text
     })
   }
+  handlePhoneInput = text => {
+    this.setState({
+      email: text
+    })
+  }
 
   componentWillUnmount() {
     if(this.props.registerState.hasOwnProperty('register')){
@@ -43,7 +49,7 @@ class Register extends React.Component {
   }
 
   render() {
-    const { username, password, phone } = this.state
+    const { username, password, phone, email } = this.state
     const { register, _setModalVisible } = this.props
     return (
       <Container>
@@ -81,10 +87,19 @@ class Register extends React.Component {
                   onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
                 />
               </Item>
+              <Item floatingLabel>
+                <Label>Email</Label>
+                <Input
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  value={email}
+                  onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
+                />
+              </Item>
               <Item>
                 <Button full style={{width:'100%', marginTop:15}}
                   onPress={()=> {
-                    register({username,password,phone})
+                    register({username,password,phone,email})
                     setTimeout(()=> {
                       _setModalVisible(false)
                     }, 500)
