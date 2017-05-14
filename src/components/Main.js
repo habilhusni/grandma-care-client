@@ -4,6 +4,7 @@ import { Container, Content, Header, Footer, FooterTab } from 'native-base'
 
 import Maps from './Maps'
 import LogoutButton from './LogoutButton'
+import UserListButton from './UserListButton'
 
 class Main extends React.Component {
 
@@ -12,7 +13,11 @@ class Main extends React.Component {
   }
 
   state = {
-    
+    modalUserListVisible: false
+  }
+
+  _setModalUserListVisible = (val) => {
+    this.setState({ modalUserListVisible: val })
   }
 
   componentWillMount() {
@@ -58,6 +63,7 @@ class Main extends React.Component {
         <Footer>
           <FooterTab>
             <LogoutButton navigation={this.props.navigation}/>
+            <UserListButton _setModalUserListVisible={this._setModalUserListVisible}/>
           </FooterTab>
         </Footer>
       </Container>
