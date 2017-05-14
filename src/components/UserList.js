@@ -29,13 +29,14 @@ class UserList extends React.Component {
         <Header>
           <Left>
             <Button>
-              <Icon></Icon>
+              <Icon name="arrow-back" />
+              <Text>Back</Text>
             </Button>
           </Left>
         </Header>
         <Content>
           <List>
-            { UserList.length > 0
+            { UserList.length > 0 && Array.isArray(UserList)
               ?
               UserList.map(user => (
                 <ListItem key={user._id}>

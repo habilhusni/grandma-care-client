@@ -27,17 +27,17 @@ export const logout = () => ({
   type: types.LOGOUT
 })
 
-export fetchUsersSuccess = payload => ({
+export const fetchUsersSuccess = payload => ({
   type: types.FETCH_USERLIST_SUCCESS,
   payload
 })
 
-export fetchUsersFail = error => ({
+export const fetchUsersFail = error => ({
   type: types.FETCH_USERLIST_FAIL,
   error
 })
 
-export fetchUsers = token => (
+export const fetchUsers = token => (
   dispatch => (
     fetch('http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users', {
       method: 'get',
