@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, AsyncStorage, Alert, BackHandler, Modal } from 'react-native'
+import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator } from 'react-native'
 import { Container, Content, Header, Footer, FooterTab } from 'native-base'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { fetchOneUser } from '../actions'
+import { styles } from '../styles'
 
 import Maps from './Maps'
 import LogoutButton from './LogoutButton'
@@ -21,7 +22,9 @@ class Main extends React.Component {
   state = {
     modalUserListVisible: false,
     mapWidth: 0,
-    mapHeight: 0
+    mapHeight: 0,
+    token: '',
+    userID: ''
   }
 
   _setModalUserListVisible = (val) => {
@@ -51,6 +54,9 @@ class Main extends React.Component {
           if(err) {
             Alert.alert('','Error getting user ID')
           } else {
+            this.setState({
+              token, userID
+            })
             fetchOneUser(token, userID)
           }
         })
@@ -74,7 +80,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { mapWidth, mapHeight, modalUserListVisible } = this.state
+    const { mapWidth, mapHeight, modalUserListVisible, token, userID } = this.state
     const { user } = this.props
     return (
       <Container>
@@ -82,9 +88,17 @@ class Main extends React.Component {
 
         </Header>
         <Content onLayout={e => this._getContentSize(e)}>
-          <View style={{width:mapWidth,height:mapHeight,alignItems:'center'}}>
-            <Maps user={user}/>
-          </View>
+          { mapWidth > 0 && mapHeight > 0 ?
+            <View style={{width:mapWidth,height:mapHeight,alignItems:'center'}}>
+              <Maps user={user}/>
+            </View>
+            :
+            <ActivityIndicator
+              animating={true}
+              size="large"
+              color="#292988"
+              style={styles.loadingIcon}/>
+          }
         </Content>
         <Footer>
           <FooterTab>
@@ -97,7 +111,11 @@ class Main extends React.Component {
           transparent={false}
           visible={modalUserListVisible}
           onRequestClose={()=> null}>
-          <UserList _setModalUserListVisible={this._setModalUserListVisible}/>
+          <UserList
+            user={user}
+            token={token}
+            userID={userID}
+            _setModalUserListVisible={this._setModalUserListVisible}/>
         </Modal>
       </Container>
     )

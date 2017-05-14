@@ -5,30 +5,23 @@ import { Container, Content, Header, Left, List, ListItem, Text, Button, Icon } 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { fetchUsers } from '../actions'
+import { fetchOneUser } from '../actions'
 import { styles } from '../styles'
 
 class UserList extends React.Component {
 
-  componentWillMount() {
-    const self = this
-
-    AsyncStorage.getItem('token', (err,result)=> {
-      if(err) {
-        Alert.alert('Error getting token')
-      } else {
-        self.props.fetchUsers(result)
-      }
-    })
+  componentWillUnmount() {
+    const { user, fetchOneUser, token, userID } = this.props
+    fetchOneUser(token, userID)
   }
 
   render() {
-    const { UserList, _setModalUserListVisible } = this.props
+    const { user, _setModalUserListVisible } = this.props
     return (
       <Container>
         <Header>
           <Left>
-            <Button light transparent vertical
+            <Button light transparent iconLeft
               onPress={()=> _setModalUserListVisible(false)}>
               <Icon name="arrow-back" color="#FFF"/>
               <Text>Back</Text>
@@ -37,17 +30,18 @@ class UserList extends React.Component {
         </Header>
         <Content>
           <List>
-            { UserList.length > 0 && Array.isArray(UserList)
+            { user.friends !== undefined
               ?
-              UserList.map(user => (
-                <ListItem key={user._id}>
-                  <Text>{user.username}</Text>
+              user.friends.map(friend => (
+                <ListItem key={friend._id}>
+                  <Text>{friend.username}</Text>
                 </ListItem>
               ))
               :
               <ActivityIndicator
                 animating={true}
                 size="large"
+                color="#292988"
                 style={styles.loadingIcon}/>
             }
           </List>
@@ -59,17 +53,15 @@ class UserList extends React.Component {
 }
 
 UserList.propTypes = {
-  UserList: PropTypes.arrayOf(PropTypes.object).isRequired,
-  fetchUsers: PropTypes.func.isRequired,
-  _setModalUserListVisible: PropTypes.func.isRequired
+  user: PropTypes.object.isRequired,
+  fetchOneUser: PropTypes.func.isRequired,
+  _setModalUserListVisible: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired
 }
 
-const mapStateToProps = state => ({
-  UserList: state.UserList
-})
-
 const mapDispatchToProps = dispatch => ({
-  fetchUsers: token => dispatch(fetchUsers(token))
+  fetchOneUser: (token,userID) => dispatch(fetchOneUser(token,userID))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserList)
+export default connect(null, mapDispatchToProps)(UserList)
