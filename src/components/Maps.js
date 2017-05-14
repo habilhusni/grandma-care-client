@@ -8,6 +8,7 @@ import { styles } from '../styles'
 class Maps extends React.Component {
 
   render() {
+    const { user } = this.props
     return (
       <MapView
         style={styles.map}
@@ -21,6 +22,10 @@ class Maps extends React.Component {
       </MapView>
     )
   }
+}
+
+Maps.propTypes = {
+  user: PropTypes.object.isRequired
 }
 
 export default Maps
