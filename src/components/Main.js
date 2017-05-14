@@ -1,10 +1,16 @@
 import React from 'react'
-import { View, AsyncStorage, Alert, BackHandler } from 'react-native'
+import { View, AsyncStorage, Alert, BackHandler, Modal } from 'react-native'
 import { Container, Content, Header, Footer, FooterTab } from 'native-base'
+
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
+import { fetchOneUser } from '../actions'
 
 import Maps from './Maps'
 import LogoutButton from './LogoutButton'
 import UserListButton from './UserListButton'
+import UserList from './UserList'
 
 class Main extends React.Component {
 
@@ -31,14 +37,23 @@ class Main extends React.Component {
 
   componentWillMount() {
     const { goBack, state } = this.props.navigation
+    const { fetchOneUser } = this.props
 
-    AsyncStorage.getItem('token', (err,result)=> {
-      if(result == null){
+    AsyncStorage.getItem('token', (err,token)=> {
+      if(token == null){
         goBack(state.params.stateKey)
         Alert.alert(
           'Please Login',
           'Please Login before you can use this App'
         )
+      } else {
+        AsyncStorage.getItem('id', (err,userID) => {
+          if(err) {
+            Alert.alert('','Error getting user ID')
+          } else {
+            fetchOneUser(token, userID)
+          }
+        })
       }
     })
     BackHandler.addEventListener('hardwareBackPress', this._backHandler)
@@ -59,7 +74,8 @@ class Main extends React.Component {
   }
 
   render() {
-    const { mapWidth, mapHeight } = this.state
+    const { mapWidth, mapHeight, modalUserListVisible } = this.state
+    const { user } = this.props
     return (
       <Container>
         <Header>
@@ -67,7 +83,7 @@ class Main extends React.Component {
         </Header>
         <Content onLayout={e => this._getContentSize(e)}>
           <View style={{width:mapWidth,height:mapHeight,alignItems:'center'}}>
-            <Maps />
+            <Maps user={user}/>
           </View>
         </Content>
         <Footer>
@@ -76,9 +92,29 @@ class Main extends React.Component {
             <LogoutButton navigation={this.props.navigation}/>
           </FooterTab>
         </Footer>
+        <Modal
+          animationType={'fade'}
+          transparent={false}
+          visible={modalUserListVisible}
+          onRequestClose={()=> null}>
+          <UserList _setModalUserListVisible={this._setModalUserListVisible}/>
+        </Modal>
       </Container>
     )
   }
 }
 
-export default Main
+Main.propTypes = {
+  user: PropTypes.object.isRequired,
+  fetchOneUser: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+  user: state.user
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchOneUser: (token,userId) => dispatch(fetchOneUser(token,userId))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
