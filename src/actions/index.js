@@ -54,7 +54,7 @@ export const fetchOneUser = (token,userId) => (
       headers: {
         'Accept' : 'application/json',
         'Content-Type' : 'application/json',
-        'token' : JSON.stringify(token)
+        'token' : token
       }
     }).then(res => res.json())
       .then(data => dispatch(fetchOneUserSuccess(data)))

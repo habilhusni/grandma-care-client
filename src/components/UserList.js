@@ -12,7 +12,6 @@ class UserList extends React.Component {
 
   componentWillUnmount() {
     const { user, fetchOneUser, token, userID } = this.props
-
     fetchOneUser(token, userID)
   }
 
