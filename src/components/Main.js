@@ -25,7 +25,7 @@ class Main extends React.Component {
   _getContentSize = (e) => {
     this.setState({
       mapWidth: e.nativeEvent.layout.width,
-      mapHeight e.nativeEvent.layout.height
+      mapHeight: e.nativeEvent.layout.height
     })
   }
 
@@ -59,13 +59,14 @@ class Main extends React.Component {
   }
 
   render() {
+    const { mapWidth, mapHeight } = this.state
     return (
       <Container>
         <Header>
 
         </Header>
         <Content onLayout={e => this._getContentSize(e)}>
-          <View style={{width:400,height:500,alignItems:'center'}}>
+          <View style={{width:mapWidth,height:mapHeight,alignItems:'center'}}>
             <Maps />
           </View>
         </Content>
