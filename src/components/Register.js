@@ -84,7 +84,7 @@ class Register extends React.Component {
                   autoCapitalize="none"
                   autoCorrect={false}
                   value={phone}
-                  keyboardType='numeric'
+                  keyboardType='phone-pad'
                   onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
                 />
               </Item>
