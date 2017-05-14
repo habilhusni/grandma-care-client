@@ -23,13 +23,14 @@ class UserList extends React.Component {
   }
 
   render() {
-    const { UserList } = this.props
+    const { UserList, _setModalUserListVisible } = this.props
     return (
       <Container>
         <Header>
           <Left>
-            <Button>
-              <Icon name="arrow-back" />
+            <Button light transparent vertical
+              onPress={()=> _setModalUserListVisible(false)}>
+              <Icon name="arrow-back" color="#FFF"/>
               <Text>Back</Text>
             </Button>
           </Left>
@@ -59,7 +60,8 @@ class UserList extends React.Component {
 
 UserList.propTypes = {
   UserList: PropTypes.arrayOf(PropTypes.object).isRequired,
-  fetchUsers: PropTypes.func.isRequired
+  fetchUsers: PropTypes.func.isRequired,
+  _setModalUserListVisible: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({

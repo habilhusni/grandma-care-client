@@ -7,7 +7,7 @@ user.getUser = (state, data) => {
   return newState;
 }
 
-export const UserListReducer = (state = [], action) => {
+export const userReducer = (state = {}, action) => {
   switch(action.type) {
     case types.GET_USER_SUCCESS: return user.getUser(state, action.payload)
     case types.GET_USER_FAIL : return {error: action.error}
