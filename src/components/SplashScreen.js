@@ -9,17 +9,28 @@ import { styles } from '../styles'
 
 class SplashScreen extends React.Component {
 
-  componentDidMount() {
-    const { token, navigation } = this.props
+  componentWillUpdate(props, state) {
+    const { navigation } = this.props
+    console.log(props)
 
-    if(token === null || token.hasOwnProperty('error')){
-      navigation.goBack()
+    if(props.token === null || props.token.hasOwnProperty('error')){
+      console.log('null')
+      setTimeout(()=> {
+        navigation.goBack()
+        Alert.alert(
+          'Please Login',
+          'Please Login before you can use this App'
+        )
+      }, 750)
     } else {
-      AsyncStorage.setItem('token', token.token, (err)=> {
+      AsyncStorage.setItem('token', props.token.token, (err) =>{
+        if(props.token.id) AsyncStorage.setItem('id', props.token.id)
         if(err) {
           Alert.alert('Error','Oops.. something wrong happened')
         } else {
-          navigation.navigate('Main')
+          setTimeout(()=> {
+            navigation.navigate('Main', {stateKey:navigation.state.key})
+          }, 500)
         }
       })
     }

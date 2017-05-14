@@ -25,7 +25,7 @@ class Login extends React.Component {
 
     AsyncStorage.getItem('token', (err,result) => {
       if(result !== null){
-        self.props.navigation.goBack('Main')
+        self.props.navigation.navigate('Main')
       }
     })
   }
@@ -51,9 +51,7 @@ class Login extends React.Component {
     const { login, navigation } = this.props
 
     login(input)
-    setTimeout(()=> {
-      navigation.navigate('SplashScreen')
-    }, 500)
+    navigation.navigate('SplashScreen')
   }
 
   render() {
@@ -116,11 +114,16 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  login: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  registerState: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => ({
+  registerState: state.registerState
+})
 
 const mapDispatchToProps = dispatch => ({
   login: user => dispatch(login(user))
 })
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

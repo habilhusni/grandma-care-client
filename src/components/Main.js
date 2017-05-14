@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, AsyncStorage, Alert, BackHandler } from 'react-native'
-import { Container, Content, Header, Footer } from 'native-base'
+import { Container, Content, Header, Footer, FooterTab } from 'native-base'
 
 import Maps from './Maps'
 import LogoutButton from './LogoutButton'
@@ -12,15 +12,15 @@ class Main extends React.Component {
   }
 
   state = {
-
+    
   }
 
   componentWillMount() {
-    let self = this
+    const { goBack, state } = this.props.navigation
 
     AsyncStorage.getItem('token', (err,result)=> {
       if(result == null){
-        self.props.navigation.goBack()
+        goBack(state.params.stateKey)
         Alert.alert(
           'Please Login',
           'Please Login before you can use this App'
@@ -35,9 +35,10 @@ class Main extends React.Component {
   }
 
   _backHandler = async () => {
+    const { goBack, state } = this.props.navigation
     let result = await AsyncStorage.getItem('token')
     if(result === null) {
-      this.props.navigation.goBack('SplashScreen')
+      goBack(state.params.stateKey)
       return true
     }
     return false
@@ -55,7 +56,9 @@ class Main extends React.Component {
           </View>
         </Content>
         <Footer>
-          <LogoutButton navigation={this.props.navigation}/>
+          <FooterTab>
+            <LogoutButton navigation={this.props.navigation}/>
+          </FooterTab>
         </Footer>
       </Container>
     )

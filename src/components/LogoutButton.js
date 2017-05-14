@@ -8,20 +8,25 @@ import { logout } from '../actions'
 
 class LogoutButton extends React.Component {
 
-  _logout = async () => {
-    try {
-      await AsyncStorage.removeItem('token')
-      ToastAndroid.showWithGravity(
-        'Logging out',
-        ToastAndroid.LONG,
-        ToastAndroid.CENTER
-      )
-    } catch (err) {
-      Alert.alert(
-        'Logout Error',
-        'Press Logout Button again'
-      )
-    }
+  _logout = () => {
+    const { goBack, state } = this.props.navigation
+    AsyncStorage.multiRemove(['token','id'], (err)=> {
+      if(err) {
+        Alert.alert(
+          'Logout Error',
+          'Press Logout Button again'
+        )
+      } else {
+        ToastAndroid.showWithGravity(
+          'Logging out',
+          ToastAndroid.LONG,
+          ToastAndroid.CENTER
+        )
+        setTimeout(()=> {
+          goBack(state.params.stateKey)
+        }, 750)
+      }
+    })
   }
 
   render() {
@@ -30,9 +35,6 @@ class LogoutButton extends React.Component {
       <Button light transparent
         onPress={()=> {
           this._logout()
-          setTimeout(()=> {
-            navigation.goBack()
-          }, 750)
         }}>
         <Text>Logout</Text>
       </Button>
