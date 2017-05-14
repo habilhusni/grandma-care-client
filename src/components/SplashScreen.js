@@ -9,7 +9,6 @@ import { styles } from '../styles'
 
 class SplashScreen extends React.Component {
 
-
   componentWillUpdate(props, state) {
     const { navigation } = this.props
     console.log(props)

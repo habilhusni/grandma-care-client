@@ -15,7 +15,7 @@ class Maps extends React.Component {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421
         }}>
-
+        
       </MapView>
     )
   }

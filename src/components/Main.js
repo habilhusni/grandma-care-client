@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, AsyncStorage, Alert, BackHandler } from 'react-native'
-import { Container, Content, Header, Footer } from 'native-base'
+import { Container, Content, Header, Footer, FooterTab } from 'native-base'
 
 import Maps from './Maps'
 import LogoutButton from './LogoutButton'
@@ -12,7 +12,7 @@ class Main extends React.Component {
   }
 
   state = {
-
+    
   }
 
   componentWillMount() {
@@ -56,7 +56,9 @@ class Main extends React.Component {
           </View>
         </Content>
         <Footer>
-          <LogoutButton navigation={this.props.navigation}/>
+          <FooterTab>
+            <LogoutButton navigation={this.props.navigation}/>
+          </FooterTab>
         </Footer>
       </Container>
     )
