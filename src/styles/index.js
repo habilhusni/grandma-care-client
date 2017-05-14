@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   loadingIcon: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
-    color: '#292988'
+    padding: 10
   }
 })

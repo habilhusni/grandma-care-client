@@ -21,7 +21,9 @@ class Main extends React.Component {
   state = {
     modalUserListVisible: false,
     mapWidth: 0,
-    mapHeight: 0
+    mapHeight: 0,
+    token: '',
+    userID: ''
   }
 
   _setModalUserListVisible = (val) => {
@@ -51,6 +53,9 @@ class Main extends React.Component {
           if(err) {
             Alert.alert('','Error getting user ID')
           } else {
+            this.setState({
+              token, userID
+            })
             fetchOneUser(token, userID)
           }
         })
@@ -74,7 +79,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { mapWidth, mapHeight, modalUserListVisible } = this.state
+    const { mapWidth, mapHeight, modalUserListVisible, token, userID } = this.state
     const { user } = this.props
     return (
       <Container>
@@ -99,6 +104,8 @@ class Main extends React.Component {
           onRequestClose={()=> null}>
           <UserList
             user={user}
+            token={token}
+            userID={userID}
             _setModalUserListVisible={this._setModalUserListVisible}/>
         </Modal>
       </Container>

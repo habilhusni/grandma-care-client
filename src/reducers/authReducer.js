@@ -1,5 +1,3 @@
-import { AsyncStorage } from 'react-native'
-
 import * as types from '../constants'
 
 export const authReducer = (state = null, action) => {
