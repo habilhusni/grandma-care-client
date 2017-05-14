@@ -37,6 +37,30 @@ export const fetchUsersFail = error => ({
   error
 })
 
+export const fetchOneUserSuccess = payload => ({
+  type: types.FETCH_ONEUSER_SUCCESS,
+  payload
+})
+
+export const fetchOneUserFail = error => ({
+  type: types.FETCH_ONEUSER_FAIL,
+  error
+})
+export const fetchOneUser = (token,userId) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
+      method: 'get',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'token' : token
+      }
+    }).then(res => res.json())
+      .then(data => dispatch(fetchOneUserSuccess(data)))
+      .catch(err => dispatch(fetchOneUserFail(err)))
+  )
+)
+
 export const fetchUsers = token => (
   dispatch => (
     fetch('http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users', {
@@ -47,8 +71,8 @@ export const fetchUsers = token => (
         'token': token
       }
     }).then(res => res.json())
-      .then(data => dispatch())
-      .catch(err => dispatch())
+      .then(data => dispatch(fetchUsersSuccess(data)))
+      .catch(err => dispatch(fetchUsersFail(err)))
   )
 )
 
