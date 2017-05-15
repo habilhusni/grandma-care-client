@@ -20,13 +20,13 @@ class AddFriend extends React.Component {
   }
 
   componentWillUnmount() {
-    const { token, userID, fetchOneUser, addFriendState } = this.props
+    const { token, userID, fetchOneUser, addFriendState, addFriendDone } = this.props
     fetchOneUser(token,userID)
 
     if(addFriendState.hasOwnProperty('added')) {
       if(addFriendState.added) {
         ToastAndroid.showWithGravity('Friend added !', ToastAndroid.SHORT, ToastAndroid.CENTER)
-
+        addFriendDone()
       } else {
         ToastAndroid.showWithGravity('Error', ToastAndroid.SHORT, ToastAndroid.CENTER)
       }
