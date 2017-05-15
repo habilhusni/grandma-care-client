@@ -47,6 +47,16 @@ export const fetchOneUserFail = error => ({
   error
 })
 
+export const updateLocationSuccess = payload => ({
+  type: types.FETCH_UPDATELOC_SUCCESS,
+  payload
+})
+
+export const updateLocationFail = error => ({
+  type: types.FETCH_UPDATELOC_FAIL,
+  error
+})
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
@@ -108,5 +118,21 @@ export const register = user => (
         dispatch(registerSuccess())
       }
     }).catch(err => dispatch(registerFail(err)))
+  )
+)
+
+export const updateLocation = (latitude, longitude, userID, token) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/location/${lat}/${long}/`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token':token,
+      },
+    })
+    .then((res) => res.json())
+    .then((data) => dispatch(updateLocationSuccess(data))
+    .catch((error) => dispatch(updateLocationFail(err))
   )
 )

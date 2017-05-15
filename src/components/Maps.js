@@ -1,7 +1,7 @@
 import React from 'react'
 import { Alert, PermissionsAndroid } from 'react-native'
 import MapView from 'react-native-maps'
-import BackgroundTimer from 'react-native-background-timer';
+import BackgroundTimer from 'react-native-background-timer'
 import PropTypes from 'prop-types'
 
 import { styles } from '../styles'
@@ -9,24 +9,15 @@ import { styles } from '../styles'
 class Maps extends React.Component {
 
   state = {
+    idTimer: null,
     latitude: 0,
-    longitude: 0
+    longitude: 0,
   }
 
   watchID: ?number = null
 
-
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.setState({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude
-        })
-      },
-      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
-      {timeout: 5000, maximumAge: 2000}
-    );
+    intervalId(this.state.latitude, this.state.longitude)
   }
 
   render() {
@@ -52,6 +43,23 @@ class Maps extends React.Component {
 
 Maps.propTypes = {
   user: PropTypes.object.isRequired
+}
+
+const intervalId = (lat, long, userID, token) => {
+  return BackgroundTimer.setInterval(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        })
+        
+      },
+      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
+      {timeout: 5000, maximumAge: 2000}
+    );
+
+  }, 1000);
 }
 
 export default Maps
