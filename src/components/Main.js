@@ -99,7 +99,7 @@ class Main extends React.Component {
         })
       }
     })
-    BackHandler.addEventListener('hardwareBackPress', this._backHandler)
+    BackHandler.addEventListener('hardwareBackPress', this._backHandler);
   }
 
   componentDidMount(){
@@ -107,7 +107,8 @@ class Main extends React.Component {
   }
 
   componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this._backHandler)
+    SensorManager.stopAccelerometer();
+    BackHandler.removeEventListener('hardwareBackPress', this._backHandler);
   }
 
   _backHandler = async () => {
@@ -121,7 +122,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { mapWidth, mapHeight, modalUserListVisible, token, userID, modalAddFriendVisible } = this.state
+    const { mapWidth, mapHeight, modalUserListVisible, token, userID, modalAddFriendVisible, mapLatitude, mapLongitude } = this.state
     const { user } = this.props
     const { navigate } = this.props.navigation
     return (

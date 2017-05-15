@@ -22,6 +22,19 @@ class Maps extends React.Component {
     this.intervalId=this.intervalId.bind(this);
   }
 
+  getInitialData(){
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({
+          mapLatitude: position.coords.latitude,
+          mapLongitude: position.coords.longitude
+        })
+      },
+      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
+      {timeout: 5000}
+    );
+  }
+
   intervalId(userID,token){
     let self = this
     return BackgroundTimer.setInterval(() => {
@@ -48,19 +61,6 @@ class Maps extends React.Component {
 
   watchID: ?number = null
 
-  getInitialData(){
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.setState({
-          mapLatitude: position.coords.latitude,
-          mapLongitude: position.coords.longitude
-        })
-      },
-      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
-      {timeout: 5000}
-    );
-  }
-
   componentDidMount() {
     this.getInitialData()
     this.setState({idTimer: this.intervalId(this.props.userID,this.props.token)});
@@ -73,7 +73,7 @@ class Maps extends React.Component {
   render() {
     const { user } = this.props
     const { latitude, longitude, mapLatitude, mapLongitude } = this.state
-    if (user.friends) {
+    if(user.friends){
       return (
         <MapView
           style={styles.map}
@@ -84,12 +84,12 @@ class Maps extends React.Component {
             longitudeDelta: 0.0421
           }}>
           <MapView.Marker
-            coordinate={{ latitude, longitude }}
+            coordinate={{latitude, longitude}}
             title={user.username}/>
 
             {user.friends.map(friend => (
-            <MapView.Marker key={friend._id}
-              coordinate={{ latitude: friend.latitude, longitude: friend.longitude }}
+            <MapView.Marker.Animated key={friend._id}
+              coordinate={{latitude: friend.latitude, longitude: friend.longitude}}
               title={friend.username}/>
           ))}
         </MapView>
@@ -105,7 +105,7 @@ class Maps extends React.Component {
             longitudeDelta: 0.0421
           }}>
           <MapView.Marker
-            coordinate={{ latitude, longitude }}
+            coordinate={{latitude, longitude}}
             title={user.username}/>
         </MapView>
       )
