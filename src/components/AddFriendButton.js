@@ -9,7 +9,7 @@ class AddFriendButton extends React.Component {
     return (
       <Button light transparent vertical
         onPress={() => this.props._setModalAddFriendVisible(true)}>
-        <Icon name="ion-person-add" color="#FFF"/>
+        <Icon name="person-add" android="md-person-add" color="#FFF"/>
         <Text>Add Friend</Text>
       </Button>
     )
