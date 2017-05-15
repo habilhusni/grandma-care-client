@@ -1,12 +1,14 @@
 import React from 'react'
 import { AsyncStorage, Alert, ActivityIndicator } from 'react-native'
-import { Container, Content, Header, Left, List, ListItem, Text, Button, Icon } from 'native-base'
+import { Container, Content, Header, Left, Body, Right, List, ListItem, Text, Button, Icon } from 'native-base'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import { fetchOneUser } from '../actions'
 import { styles } from '../styles'
+
+import DeleteFriendButton from './DeleteFriendButton'
 
 class UserList extends React.Component {
 
@@ -16,7 +18,7 @@ class UserList extends React.Component {
   }
 
   render() {
-    const { user, _setModalUserListVisible } = this.props
+    const { user, _setModalUserListVisible, token, userID } = this.props
     return (
       <Container>
         <Header>
@@ -34,7 +36,16 @@ class UserList extends React.Component {
               ?
               user.friends.map(friend => (
                 <ListItem key={friend._id}>
-                  <Text>{friend.username}</Text>
+                  <Body>
+                    <Text>{friend.username}</Text>
+                  </Body>
+                  <Right>
+                    <DeleteFriendButton
+                      token={token}
+                      userID={userID}
+                      friendID={friend._id}
+                      _setModalUserListVisible={_setModalUserListVisible}/>
+                  </Right>
                 </ListItem>
               ))
               :
