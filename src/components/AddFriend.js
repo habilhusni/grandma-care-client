@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToastAndroid, View, ToastAndroid } from 'react-native'
+import { ToastAndroid, View } from 'react-native'
 import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text, Button, Label, Form } from 'native-base'
 
 import { connect } from 'react-redux'
@@ -34,7 +34,7 @@ class AddFriend extends React.Component {
   }
 
   render() {
-    const { _setModalAddFriendVisible, token, userID } = this.props
+    const { _setModalAddFriendVisible, token, userID, addFriend } = this.props
     const { friendID } = this.state
     return (
       <Container>
@@ -65,7 +65,7 @@ class AddFriend extends React.Component {
                     addFriend(token,userID,friendID)
                     setTimeout(()=> {
                       _setModalAddFriendVisible(false)
-                    })
+                    }, 500)
                   }}>
                   <Icon name="add" android="md-add" color="#292988"/>
                 </Button>
@@ -93,7 +93,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addFriend: (token, userID, friendID) => dispatch(addFriend(token,userID,friendID)),
-  addFriendDone: () => dispatch(addFriendDone())
+  addFriendDone: () => dispatch(addFriendDone()),
   fetchOneUser: (token,userID) => dispatch(fetchOneUser(token,userID))
 })
 
