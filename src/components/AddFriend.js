@@ -1,13 +1,13 @@
 import React from 'react'
-import { ToastAndroid } from 'react-native'
-import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text, Button } from 'native-base'
+import { ToastAndroid, View } from 'react-native'
+import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text, Button, Label, Form } from 'native-base'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import {} from '../actions'
 
-class UserList extends React.Component {
+class AddFriend extends React.Component {
 
   state = {
     friendID: ''
@@ -27,27 +27,35 @@ class UserList extends React.Component {
         <Header>
           <Left>
             <Button light transparent iconLeft
-              onPress={()=> _setModalUserListVisible(false)}>
+              onPress={()=> _setModalAddFriendVisible(false)}>
               <Icon name="arrow-back" color="#FFF"/>
               <Text>Back</Text>
             </Button>
           </Left>
         </Header>
         <Content>
-          <Item inlineLabel>
-            <Label>ID</Label>
-            <Input
-              autoCapitalize="none"
-              autoCorrect={false}
-              value={friendID}
-              onChange={(e) => this.handleFriendIDInput(e.nativeEvent.text)}
-              />
-            <Button bordered>
-              <Icon name="ion-plus" color="#292988"/>
-            </Button>
-          </Item>
+          <View style={{marginTop:'45%',alignItems:'center'}}>
+            <Form style={{width:'90%'}}>
+              <Item floatingLabel>
+                <Label>Friend ID</Label>
+                <Input
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  value={friendID}
+                  onChange={(e) => this.handleFriendIDInput(e.nativeEvent.text)}
+                  />
+              </Item>
+              <Item last style={{marginTop:20, borderColor:'transparent'}}>
+                <Button bordered>
+                  <Icon name="add" android="md-add" color="#292988"/>
+                </Button>
+              </Item>
+            </Form>
+          </View>
         </Content>
       </Container>
     )
   }
 }
+
+export default AddFriend
