@@ -1,7 +1,8 @@
 import React from 'react'
 import  Icon  from 'react-native-vector-icons/Ionicons'
-import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator } from 'react-native'
+import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator, DeviceEventEmitter } from 'react-native'
 import { Container, Content, Header, Footer, FooterTab, Right, Button } from 'native-base'
+import { SensorManager } from 'NativeModules';
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -28,6 +29,15 @@ class Main extends React.Component {
     mapHeight: 0,
     token: '',
     userID: ''
+  }
+
+  getAccel(){
+    SensorManager.startAccelerometer(1000);
+    DeviceEventEmitter.addListener('Accelerometer', function (data) {
+      if(Math.abs(Number(data.x)) > 10 || Math.abs(Number(data.y)) > 10 || Math.abs(Number(data.z)) > 10 ) {
+        console.log('something went wrong with the device');
+      }
+    });
   }
 
   _setModalUserListVisible = (val) => {
@@ -70,6 +80,10 @@ class Main extends React.Component {
       }
     })
     BackHandler.addEventListener('hardwareBackPress', this._backHandler)
+  }
+
+  componentDidMount(){
+    this.getAccel()
   }
 
   componentWillUnmount() {
