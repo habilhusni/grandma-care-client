@@ -5,7 +5,7 @@ import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text,
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import {} from '../actions'
+import { addFriend } from '../actions'
 
 class AddFriend extends React.Component {
 
@@ -46,7 +46,10 @@ class AddFriend extends React.Component {
                   />
               </Item>
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
-                <Button bordered>
+                <Button bordered
+                  onPress={() => {
+
+                  }}>
                   <Icon name="add" android="md-add" color="#292988"/>
                 </Button>
               </Item>
@@ -58,4 +61,16 @@ class AddFriend extends React.Component {
   }
 }
 
-export default AddFriend
+AddFriend.propTypes = {
+  addFriend: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+  addFriendState: state.addFriendState
+})
+
+const mapDispatchToProps = dispatch => ({
+  addFriend:
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddFriend)
