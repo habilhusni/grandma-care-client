@@ -49,7 +49,7 @@ class Maps extends React.Component {
 
   componentDidMount() {
     this.setState({idTimer: this.intervalId(this.props.userID,this.props.token)});
-
+    
   }
 
   componentWillUnmount() {

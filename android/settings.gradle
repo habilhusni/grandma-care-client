@@ -1,4 +1,6 @@
 rootProject.name = 'client'
+include ':react-native-sensor-manager'
+project(':react-native-sensor-manager').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sensor-manager/android')
 include ':react-native-background-timer'
 project(':react-native-background-timer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-background-timer/android')
 include ':react-native-vector-icons'
