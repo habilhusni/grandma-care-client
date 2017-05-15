@@ -7,7 +7,7 @@ import { SensorManager } from 'NativeModules';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { fetchOneUser } from '../actions'
+import { fetchOneUser, updateSensor } from '../actions'
 import { styles } from '../styles'
 
 import Maps from './Maps'
@@ -33,10 +33,18 @@ class Main extends React.Component {
   }
 
   getAccel(){
+    let self = this
     SensorManager.startAccelerometer(1000);
     DeviceEventEmitter.addListener('Accelerometer', function (data) {
-      if(Math.abs(Number(data.x)) > 10 || Math.abs(Number(data.y)) > 10 || Math.abs(Number(data.z)) > 10 ) {
-        console.log('something went wrong with the device');
+      if(Math.abs(data.x) > 10 || Math.abs(data.y) > 10 || Math.abs(data.z) > 10 ) {
+        const sensorUpdate = {
+          x: Math.abs(Math.round(data.x)),
+          y: Math.abs(Math.round(data.y)),
+          z: Math.abs(Math.round(data.z)),
+          token: self.state.token,
+          userID: self.state.userID
+        }
+        self.props.updateSensor(sensorUpdate);
       }
     });
   }
@@ -167,7 +175,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchOneUser: (token,userId) => dispatch(fetchOneUser(token,userId))
+  fetchOneUser: (token,userId) => dispatch(fetchOneUser(token,userId)),
+  updateSensor: (sensorUpdate) => dispatch(updateSensor(sensorUpdate))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main)

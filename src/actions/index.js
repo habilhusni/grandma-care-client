@@ -57,6 +57,16 @@ export const updateLocationFail = error => ({
   error
 })
 
+export const updateSensorSuccess = payload => ({
+  type: types.FETCH_UPDSENSOR_SUCCESS,
+  payload
+})
+
+export const updateSensorFail = error => ({
+  type: types.FETCH_UPDSENSOR_FAIL,
+  error
+})
+
 export const addFriendSuccess = () => ({
   type: types.ADD_FRIEND_SUCCESS
 })
@@ -152,17 +162,17 @@ export const updateLocation = (locUpdate) => (
 
 export const updateSensor = (sensorUpdate) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${sensorUpdate.userID}/accelero/:x/:y/:z}`, {
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${sensorUpdate.userID}/accelero/${sensorUpdate.x}/${sensorUpdate.y}/${sensorUpdate.z}`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'token':locUpdate.token,
+        'token':sensorUpdate.token,
       },
     })
     .then((res) => res.json())
-    .then((data) => dispatch(updateLocationSuccess(data)))
-    .catch((err) => dispatch(updateLocationFail(err)))
+    .then((data) => dispatch(updateSensorSuccess(data)))
+    .catch((err) => dispatch(updateSensorFail(err)))
   )
 )
 

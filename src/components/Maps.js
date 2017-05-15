@@ -5,7 +5,7 @@ import BackgroundTimer from 'react-native-background-timer'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { updateLocation } from '../actions'
+import { updateLocation, fetchOneUser } from '../actions'
 import { styles } from '../styles'
 
 class Maps extends React.Component {
@@ -36,6 +36,7 @@ class Maps extends React.Component {
             token: self.props.token
           }
           this.props.updateLocation(locUpdate)
+          this.props.fetchOneUser(self.props.token,self.props.userID)
         },
         (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
         {timeout: 5000}
@@ -49,7 +50,6 @@ class Maps extends React.Component {
 
   componentDidMount() {
     this.setState({idTimer: this.intervalId(this.props.userID,this.props.token)});
-    
   }
 
   componentWillUnmount() {
@@ -70,8 +70,12 @@ class Maps extends React.Component {
         }}>
         <MapView.Marker
           coordinate={{ latitude, longitude }}
-          title={user.username}
-          description={"test"}/>
+          title={user.username}/>
+        {user.friends.map(friend => {
+          <MapView.Marker
+            coordinate={{ latitude: friend.latitude, longitude: friend.longitude }}
+            title={friend.username}/>
+        })}
       </MapView>
     )
   }
@@ -82,7 +86,8 @@ Maps.propTypes = {
 }
 
 const mapDispatchToProps = dispatch => ({
-  updateLocation: (locUpdate) => dispatch(updateLocation(locUpdate))
+  updateLocation: (locUpdate) => dispatch(updateLocation(locUpdate)),
+  fetchOneUser: (token,userId) => dispatch(fetchOneUser(token,userId))
 })
 
 export default connect(null,mapDispatchToProps)(Maps);
