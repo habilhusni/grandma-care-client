@@ -16,6 +16,7 @@ import AddFriend from './AddFriend'
 import LogoutButton from './LogoutButton'
 import UserListButton from './UserListButton'
 import UserList from './UserList'
+import PanicButton from './PanicButton'
 
 class Main extends React.Component {
 
@@ -126,6 +127,7 @@ class Main extends React.Component {
               color="#292988"
               style={styles.loadingIcon}/>
           }
+          <PanicButton />
         </Content>
         <Footer>
           <FooterTab>
@@ -150,7 +152,10 @@ class Main extends React.Component {
           transparent={false}
           visible={modalAddFriendVisible}
           onRequestClose={()=> null}>
-          <AddFriend _setModalAddFriendVisible={this._setModalAddFriendVisible} />
+          <AddFriend
+            token={token}
+            userID={userID}
+            _setModalAddFriendVisible={this._setModalAddFriendVisible} />
         </Modal>
       </Container>
     )
