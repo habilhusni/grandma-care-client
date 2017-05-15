@@ -80,6 +80,18 @@ export const addFriendDone = () => ({
   type: types.ADD_FRIEND_DONE
 })
 
+export const deleteFriendSuccess = () => ({
+  type: types.DELETE_FRIEND_SUCCESS
+})
+
+export const deleteFriendFail = () => ({
+  type: types.DELETE_FRIEND_SUCCESS
+})
+
+export const deleteFriendDone = () => ({
+  type: types.DELETE_FRIEND_SUCCESS
+})
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
