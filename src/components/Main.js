@@ -10,6 +10,7 @@ import { fetchOneUser } from '../actions'
 import { styles } from '../styles'
 
 import Maps from './Maps'
+import AddFriendButton from './AddFriendButton'
 import LogoutButton from './LogoutButton'
 import UserListButton from './UserListButton'
 import UserList from './UserList'
@@ -22,6 +23,7 @@ class Main extends React.Component {
 
   state = {
     modalUserListVisible: false,
+    modalAddFriendVisible: false,
     mapWidth: 0,
     mapHeight: 0,
     token: '',
@@ -30,6 +32,10 @@ class Main extends React.Component {
 
   _setModalUserListVisible = (val) => {
     this.setState({ modalUserListVisible: val })
+  }
+
+  _setModalAddFriendVisible = (val) => {
+    this.setState({ modalAddFriendVisible: val })
   }
 
   _getContentSize = (e) => {
@@ -108,6 +114,7 @@ class Main extends React.Component {
         </Content>
         <Footer>
           <FooterTab>
+            <AddFriendButton _setModalAddFriendVisible={this._setModalAddFriendVisible}/>
             <UserListButton _setModalUserListVisible={this._setModalUserListVisible}/>
             <LogoutButton navigation={this.props.navigation}/>
           </FooterTab>
