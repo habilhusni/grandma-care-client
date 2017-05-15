@@ -7,17 +7,38 @@ import PropTypes from 'prop-types'
 import { styles } from '../styles'
 
 class Maps extends React.Component {
-
-  state = {
-    idTimer: null,
-    latitude: 0,
-    longitude: 0,
+  constructor(props){
+    super(props)
+    this.state = {
+      idTimer: null,
+      latitude: 0,
+      longitude: 0,
+    }
+    this.props.updateLocation=this.props.updateLocation.bind(this);
   }
+
+  const intervalId = (lat,long,userID,token) => {
+    return BackgroundTimer.setInterval(() => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          this.setState({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          })
+          this.props.updateLocation(lat,long,userID,token)
+        },
+        (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
+        {timeout: 5000, maximumAge: 2000}
+      );
+    }, 1000);
+  }
+
+
 
   watchID: ?number = null
 
   componentDidMount() {
-    intervalId(this.state.latitude, this.state.longitude)
+    intervalId(this.state.latitude, this.state.longitude,this.props.userID,this.props.token)
   }
 
   render() {
@@ -45,21 +66,8 @@ Maps.propTypes = {
   user: PropTypes.object.isRequired
 }
 
-const intervalId = (lat, long, userID, token) => {
-  return BackgroundTimer.setInterval(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        this.setState({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude
-        })
-        
-      },
-      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
-      {timeout: 5000, maximumAge: 2000}
-    );
+const mapDispatchToProps = dispatch => ({
+  updateLocation: (lat,long,userID,token) => dispatch(updateLocation(latitude,longitude,userID,token))
+})
 
-  }, 1000);
-}
-
-export default Maps
+export default connect(null,mapDispatchToProps)(Maps);

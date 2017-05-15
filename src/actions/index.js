@@ -121,7 +121,7 @@ export const register = user => (
   )
 )
 
-export const updateLocation = (latitude, longitude, userID, token) => (
+export const updateLocation = (latitude,longitude,userID,token) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/location/${lat}/${long}/`, {
       method: 'PUT',
