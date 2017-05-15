@@ -57,6 +57,19 @@ export const updateLocationFail = error => ({
   error
 })
 
+export const addFriendSuccess = () => ({
+  type: types.ADD_FRIEND_SUCCESS
+})
+
+export const addFriendFail = error => ({
+  type: types.ADD_FRIEND_FAIL,
+  error
+})
+
+export const addFriendDone = () => ({
+  type: types.ADD_FRIEND_DONE
+})
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
@@ -134,5 +147,11 @@ export const updateLocation = (locUpdate) => (
     .then((res) => res.json())
     .then((data) => dispatch(updateLocationSuccess(data)))
     .catch((err) => dispatch(updateLocationFail(err)))
+  )
+)
+
+export const addFriend = (token, userID, friendID) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendID}`)
   )
 )
