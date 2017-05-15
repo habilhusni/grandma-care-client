@@ -35,9 +35,10 @@ class Main extends React.Component {
 
   getAccel(){
     let self = this
-    SensorManager.startAccelerometer(1000);
+    SensorManager.startAccelerometer(100);
     DeviceEventEmitter.addListener('Accelerometer', function (data) {
-      if(Math.abs(data.x) > 10 || Math.abs(data.y) > 10 || Math.abs(data.z) > 10 ) {
+      console.log(data.x, data.y, data.z);
+      if(Math.abs(data.x) > 15 || Math.abs(data.y) > 15 || Math.abs(data.z) > 15 ) {
         const sensorUpdate = {
           x: Math.abs(Math.round(data.x)),
           y: Math.abs(Math.round(data.y)),

@@ -15,6 +15,8 @@ class Maps extends React.Component {
       idTimer: null,
       latitude: 0,
       longitude: 0,
+      mapLatitude: 0,
+      mapLongitude: 0
     }
     this.props.updateLocation=this.props.updateLocation.bind(this);
     this.intervalId=this.intervalId.bind(this);
@@ -44,11 +46,23 @@ class Maps extends React.Component {
     }, 5000);
   }
 
-
-
   watchID: ?number = null
 
+  getInitialData(){
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({
+          mapLatitude: position.coords.latitude,
+          mapLongitude: position.coords.longitude
+        })
+      },
+      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
+      {timeout: 5000}
+    );
+  }
+
   componentDidMount() {
+    this.getInitialData()
     this.setState({idTimer: this.intervalId(this.props.userID,this.props.token)});
   }
 
@@ -58,26 +72,44 @@ class Maps extends React.Component {
 
   render() {
     const { user } = this.props
-    const { latitude, longitude } = this.state
-    return (
-      <MapView
-        style={styles.map}
-        region={{
-          latitude: latitude,
-          longitude: longitude,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421
-        }}>
-        <MapView.Marker
-          coordinate={{ latitude, longitude }}
-          title={user.username}/>
-        {user.friends.map(friend => {
+    const { latitude, longitude, mapLatitude, mapLongitude } = this.state
+    if (user.friends) {
+      return (
+        <MapView
+          style={styles.map}
+          region={{
+            latitude: mapLatitude,
+            longitude: mapLongitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}>
           <MapView.Marker
-            coordinate={{ latitude: friend.latitude, longitude: friend.longitude }}
-            title={friend.username}/>
-        })}
-      </MapView>
-    )
+            coordinate={{ latitude, longitude }}
+            title={user.username}/>
+
+            {user.friends.map(friend => (
+            <MapView.Marker key={friend._id}
+              coordinate={{ latitude: friend.latitude, longitude: friend.longitude }}
+              title={friend.username}/>
+          ))}
+        </MapView>
+      )
+    } else {
+      return (
+        <MapView
+          style={styles.map}
+          region={{
+            latitude: mapLatitude,
+            longitude: mapLongitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}>
+          <MapView.Marker
+            coordinate={{ latitude, longitude }}
+            title={user.username}/>
+        </MapView>
+      )
+    }
   }
 }
 
