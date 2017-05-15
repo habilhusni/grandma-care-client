@@ -12,6 +12,7 @@ import { styles } from '../styles'
 
 import Maps from './Maps'
 import AddFriendButton from './AddFriendButton'
+import AddFriend from './AddFriend'
 import LogoutButton from './LogoutButton'
 import UserListButton from './UserListButton'
 import UserList from './UserList'
@@ -101,7 +102,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const { mapWidth, mapHeight, modalUserListVisible, token, userID } = this.state
+    const { mapWidth, mapHeight, modalUserListVisible, token, userID, modalAddFriendVisible } = this.state
     const { user } = this.props
     const { navigate } = this.props.navigation
     return (
@@ -143,6 +144,13 @@ class Main extends React.Component {
             token={token}
             userID={userID}
             _setModalUserListVisible={this._setModalUserListVisible}/>
+        </Modal>
+        <Modal
+          animationType={'fade'}
+          transparent={false}
+          visible={modalAddFriendVisible}
+          onRequestClose={()=> null}>
+          <AddFriend _setModalAddFriendVisible={this._setModalAddFriendVisible} />
         </Modal>
       </Container>
     )
