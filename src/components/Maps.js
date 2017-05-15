@@ -1,7 +1,7 @@
 import React from 'react'
 import { Alert, PermissionsAndroid } from 'react-native'
 import MapView from 'react-native-maps'
-
+import BackgroundTimer from 'react-native-background-timer';
 import PropTypes from 'prop-types'
 
 import { styles } from '../styles'

@@ -96,7 +96,7 @@ class Main extends React.Component {
         <Content onLayout={e => this._getContentSize(e)}>
           { mapWidth > 0 && mapHeight > 0 ?
             <View style={{width:mapWidth,height:mapHeight,alignItems:'center'}}>
-              <Maps user={user}/>
+              <Maps user={user} token={token} userID={userID}/>
             </View>
             :
             <ActivityIndicator
