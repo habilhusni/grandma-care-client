@@ -1,6 +1,7 @@
 import React from 'react'
+import  Icon  from 'react-native-vector-icons/Ionicons'
 import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator } from 'react-native'
-import { Container, Content, Header, Footer, FooterTab } from 'native-base'
+import { Container, Content, Header, Footer, FooterTab, Right, Button } from 'native-base'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -82,10 +83,15 @@ class Main extends React.Component {
   render() {
     const { mapWidth, mapHeight, modalUserListVisible, token, userID } = this.state
     const { user } = this.props
+    const { navigate } = this.props.navigation
     return (
       <Container>
         <Header>
-
+          <Right>
+            <Button transparent onPress={() => navigate('Profile')}>
+              <Icon name="md-settings" style={{fontSize: 28, color: 'white'}}/>
+            </Button>
+          </Right>
         </Header>
         <Content onLayout={e => this._getContentSize(e)}>
           { mapWidth > 0 && mapHeight > 0 ?

@@ -15,21 +15,17 @@ class Maps extends React.Component {
 
   watchID: ?number = null
 
-  componentWillMount() {
-
-    console.log('Component Will Mount')
+  componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position)
         this.setState({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
         })
       },
       (error) => Alert.alert(JSON.stringify(error)),
-      {enableHighAccuracy: true, timeout: 1000, maximumAge: 1000}
-    )
-
+      {timeout: 20000, maximumAge: 1000}
+    );
   }
 
   render() {
