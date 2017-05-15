@@ -5,7 +5,7 @@ import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text,
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import {} from '../actions'
+import { addFriend, fetchOneUser, addFriendDone } from '../actions'
 
 class AddFriend extends React.Component {
 
@@ -19,8 +19,22 @@ class AddFriend extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    const { token, userID, fetchOneUser, addFriendState } = this.props
+    fetchOneUser(token,userID)
+
+    if(addFriendState.hasOwnProperty('added')) {
+      if(addFriendState.added) {
+        ToastAndroid.showWithGravity('Friend added !', ToastAndroid.SHORT, ToastAndroid.CENTER)
+
+      } else {
+        ToastAndroid.showWithGravity('Error', ToastAndroid.SHORT, ToastAndroid.CENTER)
+      }
+    }
+  }
+
   render() {
-    const { _setModalAddFriendVisible } = this.props
+    const { _setModalAddFriendVisible, token, userID, addFriend } = this.props
     const { friendID } = this.state
     return (
       <Container>
@@ -46,7 +60,13 @@ class AddFriend extends React.Component {
                   />
               </Item>
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
-                <Button bordered>
+                <Button bordered
+                  onPress={() => {
+                    addFriend(token,userID,friendID)
+                    setTimeout(()=> {
+                      _setModalAddFriendVisible(false)
+                    }, 500)
+                  }}>
                   <Icon name="add" android="md-add" color="#292988"/>
                 </Button>
               </Item>
@@ -58,4 +78,23 @@ class AddFriend extends React.Component {
   }
 }
 
-export default AddFriend
+AddFriend.propTypes = {
+  addFriend: PropTypes.func.isRequired,
+  addFriendDone: PropTypes.func.isRequired,
+  fetchOneUser: PropTypes.func.isRequired,
+  addFriendState: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired
+}
+
+const mapStateToProps = state => ({
+  addFriendState: state.addFriendState
+})
+
+const mapDispatchToProps = dispatch => ({
+  addFriend: (token, userID, friendID) => dispatch(addFriend(token,userID,friendID)),
+  addFriendDone: () => dispatch(addFriendDone()),
+  fetchOneUser: (token,userID) => dispatch(fetchOneUser(token,userID))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddFriend)
