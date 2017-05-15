@@ -152,6 +152,14 @@ export const updateLocation = (locUpdate) => (
 
 export const addFriend = (token, userID, friendID) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendID}`)
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendID}`, {
+      method: 'put',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token': token
+      }
+    }).then(() => dispatch(addFriendSuccess()))
+      .catch(err => dispatch(addFriendFail(err)))
   )
 )
