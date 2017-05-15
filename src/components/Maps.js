@@ -3,6 +3,7 @@ import { Alert } from 'react-native'
 import MapView from 'react-native-maps'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import BackgroundTimer from 'react-native-background-timer'
 
 import { updateLocation, fetchOneUser } from '../actions'
 import { styles } from '../styles'
@@ -30,8 +31,14 @@ class Maps extends React.Component {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({
-          'region.latitude' : position.coords.latitude,
-          'region.longitude' : position.coords.longitude
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        })
+        this._onRegionChange({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421
         })
       },
       (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),

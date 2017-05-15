@@ -156,7 +156,7 @@ class Main extends React.Component {
           </FooterTab>
         </Footer>
         <Modal
-          animationType={'fade'}
+          animationType={'slide'}
           transparent={false}
           visible={modalUserListVisible}
           onRequestClose={()=> null}>
@@ -167,7 +167,7 @@ class Main extends React.Component {
             _setModalUserListVisible={this._setModalUserListVisible}/>
         </Modal>
         <Modal
-          animationType={'fade'}
+          animationType={'slide'}
           transparent={false}
           visible={modalAddFriendVisible}
           onRequestClose={()=> null}>

@@ -13,7 +13,8 @@ class SettingPage extends Component {
       <Container>
         <Header>
           <Left>
-            <Button light transparent onPress={() => goBack()}>
+            <Button light transparent iconLeft
+              onPress={() => goBack()}>
               <Icon name="arrow-back" style={{color: 'white'}}/>
               <Text>Back</Text>
             </Button>
@@ -23,21 +24,21 @@ class SettingPage extends Component {
           <Card >
             <View style={styles.child}>
               <Text>User id: </Text>
-              <Text style={styles.userId}>{user._id}</Text>
+              <Text>{user._id}</Text>
             </View>
           </Card>
           <Card >
             <View style={styles.child}>
               <Text>Username: </Text>
-              <Text style={styles.userId}>{user.username}</Text>
+              <Text>{user.username}</Text>
             </View>
             <View style={styles.child}>
               <Text>Phone: </Text>
-              <Text style={styles.userId}>{user.phone}</Text>
+              <Text>{user.phone}</Text>
             </View>
             <View style={styles.child}>
               <Text>Email: </Text>
-              <Text style={styles.userId}>{user.email}</Text>
+              <Text>{user.email}</Text>
             </View>
           </Card>
           <Card>
@@ -47,11 +48,11 @@ class SettingPage extends Component {
               </View>
               <View style={styles.child}>
                 <Text>Latitude: </Text>
-                <Text style={styles.userId}>{user.latitude}</Text>
+                <Text>{user.latitude}</Text>
               </View>
               <View style={styles.child}>
                 <Text>Longitude: </Text>
-                <Text style={styles.userId}>{user.longitude}</Text>
+                <Text>{user.longitude}</Text>
               </View>
             </View>
           </Card>

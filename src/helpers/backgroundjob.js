@@ -20,5 +20,5 @@ export default intervalId = (userID,token,instance) => {
       (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
       {timeout: 5000}
     );
-  }, 5000);
+  }, 4000);
 }
