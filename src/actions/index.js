@@ -121,18 +121,18 @@ export const register = user => (
   )
 )
 
-export const updateLocation = (latitude,longitude,userID,token) => (
+export const updateLocation = (locUpdate) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/location/${lat}/${long}/`, {
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${locUpdate.userID}/location/${locUpdate.latitude}/${locUpdate.longitude}`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'token':token,
+        'token':locUpdate.token,
       },
     })
     .then((res) => res.json())
-    .then((data) => dispatch(updateLocationSuccess(data))
-    .catch((error) => dispatch(updateLocationFail(err))
+    .then((data) => dispatch(updateLocationSuccess(data)))
+    .catch((err) => dispatch(updateLocationFail(err)))
   )
 )
