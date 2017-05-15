@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body } from 'native-base';
+import { View, Image, StyleSheet } from 'react-native';
+import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body, Text, Icon } from 'native-base';
 
 import { connect } from 'react-redux';
-
-const styles = StyleSheet.create({
-  child:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 2,
-    padding: 5,
-  },
-  userId:{
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'black'
-  }
-})
+import { styles } from '../styles'
 
 class SettingPage extends Component {
   render() {
@@ -27,9 +13,9 @@ class SettingPage extends Component {
       <Container>
         <Header>
           <Left>
-            <Button transparent onPress={() => goBack()}>
-              <Icon name="md-arrow-back" style={{fontSize: 24, color: 'white'}}/>
-              <Text style={{fontSize: 24, color: 'white'}}> Back</Text>
+            <Button light transparent onPress={() => goBack()}>
+              <Icon name="arrow-back" style={{color: 'white'}}/>
+              <Text>Back</Text>
             </Button>
           </Left>
         </Header>
