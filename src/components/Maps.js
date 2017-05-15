@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert } from 'react-native'
+import { Alert, PermissionsAndroid } from 'react-native'
 import MapView from 'react-native-maps'
 
 import PropTypes from 'prop-types'
@@ -15,6 +15,7 @@ class Maps extends React.Component {
 
   watchID: ?number = null
 
+
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -23,8 +24,8 @@ class Maps extends React.Component {
           longitude: position.coords.longitude
         })
       },
-      (error) => Alert.alert(JSON.stringify(error)),
-      {timeout: 20000, maximumAge: 1000}
+      (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
+      {timeout: 5000, maximumAge: 2000}
     );
   }
 
