@@ -136,7 +136,10 @@ class Main extends React.Component {
           transparent={false}
           visible={modalAddFriendVisible}
           onRequestClose={()=> null}>
-          <AddFriend _setModalAddFriendVisible={this._setModalAddFriendVisible} />
+          <AddFriend
+            token={token}
+            userID={userID}
+            _setModalAddFriendVisible={this._setModalAddFriendVisible} />
         </Modal>
       </Container>
     )

@@ -1,11 +1,11 @@
 import React from 'react'
-import { ToastAndroid, View } from 'react-native'
+import { ToastAndroid, View, ToastAndroid } from 'react-native'
 import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text, Button, Label, Form } from 'native-base'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { addFriend } from '../actions'
+import { addFriend, fetchOneUser, addFriendDone } from '../actions'
 
 class AddFriend extends React.Component {
 
@@ -19,8 +19,22 @@ class AddFriend extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    const { token, userID, fetchOneUser, addFriendState } = this.props
+    fetchOneUser(token,userID)
+
+    if(addFriendState.hasOwnProperty('added')) {
+      if(addFriendState.added) {
+        ToastAndroid.showWithGravity('Friend added !', ToastAndroid.SHORT, ToastAndroid.CENTER)
+
+      } else {
+        ToastAndroid.showWithGravity('Error', ToastAndroid.SHORT, ToastAndroid.CENTER)
+      }
+    }
+  }
+
   render() {
-    const { _setModalAddFriendVisible } = this.props
+    const { _setModalAddFriendVisible, token, userID } = this.props
     const { friendID } = this.state
     return (
       <Container>
@@ -48,7 +62,10 @@ class AddFriend extends React.Component {
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
                 <Button bordered
                   onPress={() => {
-
+                    addFriend(token,userID,friendID)
+                    setTimeout(()=> {
+                      _setModalAddFriendVisible(false)
+                    })
                   }}>
                   <Icon name="add" android="md-add" color="#292988"/>
                 </Button>
@@ -62,7 +79,12 @@ class AddFriend extends React.Component {
 }
 
 AddFriend.propTypes = {
-  addFriend: PropTypes.func.isRequired
+  addFriend: PropTypes.func.isRequired,
+  addFriendDone: PropTypes.func.isRequired,
+  fetchOneUser: PropTypes.func.isRequired,
+  addFriendState: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -70,7 +92,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addFriend:
+  addFriend: (token, userID, friendID) => dispatch(addFriend(token,userID,friendID)),
+  addFriendDone: () => dispatch(addFriendDone())
+  fetchOneUser: (token,userID) => dispatch(fetchOneUser(token,userID))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddFriend)
