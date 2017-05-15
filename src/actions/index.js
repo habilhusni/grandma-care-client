@@ -150,6 +150,22 @@ export const updateLocation = (locUpdate) => (
   )
 )
 
+export const updateSensor = (sensorUpdate) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${sensorUpdate.userID}/accelero/:x/:y/:z}`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token':locUpdate.token,
+      },
+    })
+    .then((res) => res.json())
+    .then((data) => dispatch(updateLocationSuccess(data)))
+    .catch((err) => dispatch(updateLocationFail(err)))
+  )
+)
+
 export const addFriend = (token, userID, friendID) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendID}`, {
