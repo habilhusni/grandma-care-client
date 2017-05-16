@@ -236,7 +236,9 @@ export const updateUser = (token, userID, newUser) => (
         'Content-Type': 'application/json',
         'token': token
       }
-    }).then((data) => dispatch(updateUserSuccess(data)))
-      .catch(err => dispatch(updateUserFail(err)))
+    })
+    .then((res) => res.json())
+    .then((data) => dispatch(updateUserSuccess(data)))
+    .catch(err => dispatch(updateUserFail(err)))
   )
 )
