@@ -125,11 +125,17 @@ class Main extends React.Component {
     const { mapWidth, mapHeight, modalUserListVisible, token, userID, modalAddFriendVisible, mapLatitude, mapLongitude } = this.state
     const { user } = this.props
     const { navigate } = this.props.navigation
+    const { params } = this.props.navigation.state
+    console.log(this.props.navigation.state)
     return (
       <Container>
         <Header>
           <Right>
-            <Button transparent onPress={() => navigate('Profile')}>
+            <Button transparent onPress={() => navigate(
+                'Profile',
+                {token, stateKey: params.stateKey}
+              )}
+              >
               <Icon name="md-settings" style={{fontSize: 28, color: 'white'}}/>
             </Button>
           </Right>
@@ -146,7 +152,7 @@ class Main extends React.Component {
               color="#292988"
               style={styles.loadingIcon}/>
           }
-          <PanicButton />
+          <PanicButton token={token} userID={userID}/>
         </Content>
         <Footer>
           <FooterTab>
@@ -167,8 +173,8 @@ class Main extends React.Component {
             _setModalUserListVisible={this._setModalUserListVisible}/>
         </Modal>
         <Modal
-          animationType={'slide'}
-          transparent={false}
+          animationType={'fade'}
+          transparent={true}
           visible={modalAddFriendVisible}
           onRequestClose={()=> null}>
           <AddFriend

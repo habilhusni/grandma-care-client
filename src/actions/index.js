@@ -23,10 +23,6 @@ export const loginFail = error => ({
   error
 })
 
-export const logout = () => ({
-  type: types.LOGOUT
-})
-
 export const fetchUsersSuccess = payload => ({
   type: types.FETCH_USERLIST_SUCCESS,
   payload
@@ -90,6 +86,26 @@ export const deleteFriendFail = () => ({
 
 export const deleteFriendDone = () => ({
   type: types.DELETE_FRIEND_DONE
+})
+
+
+export const deactivateSuccess = () => ({
+  type: types.DEACTIVATE_SUCCESS
+})
+
+export const deactivateFail = error => ({
+  type: types.DEACTIVATE_FAIL,
+  error
+})
+
+export const updateUserSuccess = payload => ({
+  type: types.FETCH_UPDUSER_SUCCESS,
+  payload
+})
+
+export const updateUserFail = error => ({
+  type: types.FETCH_UPDUSER_FAIL,
+  error
 })
 
 export const fetchOneUser = (token,userId) => (
@@ -159,7 +175,7 @@ export const register = user => (
 export const updateLocation = (locUpdate) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${locUpdate.userID}/location/${locUpdate.latitude}/${locUpdate.longitude}`, {
-      method: 'PUT',
+      method: 'put',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -175,7 +191,7 @@ export const updateLocation = (locUpdate) => (
 export const updateSensor = (sensorUpdate) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${sensorUpdate.userID}/accelero/${sensorUpdate.x}/${sensorUpdate.y}/${sensorUpdate.z}`, {
-      method: 'PUT',
+      method: 'put',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -188,9 +204,9 @@ export const updateSensor = (sensorUpdate) => (
   )
 )
 
-export const addFriend = (token, userID, friendID) => (
+export const addFriend = (token, userID, friendEmail) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendID}`, {
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendEmail}`, {
       method: 'put',
       headers: {
         'Accept': 'application/json',
@@ -213,5 +229,36 @@ export const deleteFriend = (token, userID, friendID) => (
       }
     }).then(() => dispatch(deleteFriendSuccess()))
       .catch(err => dispatch(deleteFriendFail(err)))
+  )
+)
+
+export const deactivate = (token,userID) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+      method: 'delete',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token': token
+      }
+    }).then(() => dispatch(deactivateSuccess()))
+      .catch(err => dispatch(deactivateFail(err)))
+  )
+)
+
+export const updateUser = (token, userID, newUser) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+      method: 'put',
+      body: JSON.stringify(newUser),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token': token
+      }
+    })
+    .then((res) => res.json())
+    .then((data) => dispatch(updateUserSuccess(data)))
+    .catch(err => dispatch(updateUserFail(err)))
   )
 )
