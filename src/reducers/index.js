@@ -6,6 +6,7 @@ import { UserListReducer } from './UserListReducer'
 import { userReducer } from './userReducer'
 import { addFriendReducer } from './addFriendReducer'
 import { deleteFriendReducer } from './deleteFriendReducer'
+import { deactivateReducer } from './deactivateReducer'
 
 export default combineReducers({
   token: authReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
   userList: UserListReducer,
   user: userReducer,
   addFriendState: addFriendReducer,
-  deleteFriendState: deleteFriendReducer
+  deleteFriendState: deleteFriendReducer,
+  deactivateState: deactivateReducer
 })

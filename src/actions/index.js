@@ -23,10 +23,6 @@ export const loginFail = error => ({
   error
 })
 
-export const logout = () => ({
-  type: types.LOGOUT
-})
-
 export const fetchUsersSuccess = payload => ({
   type: types.FETCH_USERLIST_SUCCESS,
   payload
@@ -90,6 +86,16 @@ export const deleteFriendFail = () => ({
 
 export const deleteFriendDone = () => ({
   type: types.DELETE_FRIEND_DONE
+})
+
+
+export const deactivateSuccess = () => ({
+  type: types.DEACTIVATE_SUCCESS
+})
+
+export const deactivateFail = error => ({
+  type: types.DEACTIVATE_FAIL,
+  error
 })
 
 export const updateUserSuccess = payload => ({
@@ -226,6 +232,21 @@ export const deleteFriend = (token, userID, friendID) => (
   )
 )
 
+
+export const deactivate = (token,userID) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+      method: 'delete',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token': token
+      }
+    }).then(() => dispatch(deactivateSuccess()))
+      .catch(err => dispatch(deactivateFail(err)))
+  )
+)
+
 export const updateUser = (token, userID, newUser) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
@@ -236,7 +257,9 @@ export const updateUser = (token, userID, newUser) => (
         'Content-Type': 'application/json',
         'token': token
       }
-    }).then((data) => dispatch(updateUserSuccess(data)))
-      .catch(err => dispatch(updateUserFail(err)))
+    })
+    .then((res) => res.json())
+    .then((data) => dispatch(updateUserSuccess(data)))
+    .catch(err => dispatch(updateUserFail(err)))
   )
 )
