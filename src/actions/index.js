@@ -92,6 +92,19 @@ export const deleteFriendDone = () => ({
   type: types.DELETE_FRIEND_DONE
 })
 
+export const deactivateSuccess = () => ({
+  type: types.DEACTIVATE_SUCCESS
+})
+
+export const deactivateFail = error => ({
+  type: types.DEACTIVATE_FAIL,
+  error
+})
+
+export const deactivateDone = () => ({
+  type: types.DEACTIVATE_DONE
+})
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
@@ -213,5 +226,19 @@ export const deleteFriend = (token, userID, friendID) => (
       }
     }).then(() => dispatch(deleteFriendSuccess()))
       .catch(err => dispatch(deleteFriendFail(err)))
+  )
+)
+
+export const deactivate = (token,userID) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+      method: 'delete',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token': token
+      }
+    }).then(() => dispatch(deactivateSuccess()))
+      .catch(err => dispatch(deactivateFail(err)))
   )
 )
