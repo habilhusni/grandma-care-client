@@ -6,9 +6,9 @@ import reducers from '../src/reducers';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { applyMiddleware, createStore } from 'redux';
+import { shallow } from 'enzyme';
 
-import App from '../src/index.js';
-import { StackNavigator } from 'react-navigation';
+import App from '../src';
 
 import AddFriend from '../src/components/AddFriend.js';
 import AddFriendButton from '../src/components/AddFriendButton.js';
@@ -25,15 +25,14 @@ import sum from '../math.js';
 
 const store = createStore(reducers, applyMiddleware(thunk, logger));
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
 
 it('renders with snapshot', () => {
-  const tree = renderer.create(<client />);
+  const tree = shallow(<client />);
   expect(tree).toMatchSnapshot();
 });
 
 it('renders AddFriend snapshot', () => {
-  const compAddFriend = renderer.create(
+  const compAddFriend = shallow(
     <Provider store={store}>
       <AddFriend/>
     </Provider>
@@ -42,12 +41,12 @@ it('renders AddFriend snapshot', () => {
 });
 
 it('renders AddFriendButton snapshot', () => {
-  const compAddFriendButton = renderer.create(<AddFriendButton/>);
+  const compAddFriendButton = shallow(<AddFriendButton/>);
   expect(compAddFriendButton).toMatchSnapshot();
 });
 
 it('renders Login snapshot', () => {
-  const compLogin = renderer.create(
+  const compLogin = shallow(
     <Provider store={store}>
       <Login/>
     </Provider>
@@ -56,23 +55,24 @@ it('renders Login snapshot', () => {
 });
 
 it('renders LogoutButton snapshot', () => {
-  const compLogoutButton = renderer.create(<LogoutButton/>);
+  const compLogoutButton = shallow(<LogoutButton/>);
   expect(compLogoutButton).toMatchSnapshot();
 });
 
 it('renders Main snapshot', () => {
-  const compMain = renderer.create(
-    <Provider store={store}>
-      <App>
-        <Main/>
-      </App>
-    </Provider>
+  const compMain = shallow(
+  <Provider store={store}>
+    <App>
+      <Main/>
+    </App>
+  </Provider>
   );
   expect(compMain).toMatchSnapshot();
 });
 
+
 it('renders Maps snapshot', () => {
-  const compMaps = renderer.create(
+  const compMaps = shallow(
     <Provider store={store}>
       <App>
         <Maps/>
@@ -83,7 +83,7 @@ it('renders Maps snapshot', () => {
 });
 
 it('renders Register snapshot', () => {
-  const compRegister = renderer.create(
+  const compRegister = shallow(
     <Provider store={store}>
       <Register/>
     </Provider>
@@ -92,16 +92,18 @@ it('renders Register snapshot', () => {
 });
 
 it('renders SettingPage snapshot', () => {
-  const compSettingPage = renderer.create(
+  const compSettingPage = shallow(
     <Provider store={store}>
-      <SettingPage/>
+      <App>
+        <SettingPage/>
+      </App>
     </Provider>
   );
   expect(compSettingPage).toMatchSnapshot();
 });
 
 it('renders SplashScreen snapshot', () => {
-  const compSplashScreen = renderer.create(
+  const compSplashScreen = shallow(
     <Provider store={store}>
       <SplashScreen/>
     </Provider>
@@ -110,7 +112,7 @@ it('renders SplashScreen snapshot', () => {
 });
 
 it('renders UserList snapshot', () => {
-  const compUserList = renderer.create(
+  const compUserList = shallow(
     <Provider store={store}>
       <App>
         <UserList/>
@@ -121,7 +123,7 @@ it('renders UserList snapshot', () => {
 });
 
 it('renders UserListButton snapshot', () => {
-  const compUserListButton = renderer.create(<UserListButton/>);
+  const compUserListButton = shallow(<UserListButton/>);
   expect(compUserListButton).toMatchSnapshot();
 });
 
