@@ -92,6 +92,16 @@ export const deleteFriendDone = () => ({
   type: types.DELETE_FRIEND_DONE
 })
 
+export const updateUserSuccess = payload => ({
+  type: types.FETCH_UPDUSER_SUCCESS,
+  payload
+})
+
+export const updateUserFail = error => ({
+  type: types.FETCH_UPDUSER_FAIL,
+  error
+})
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
@@ -159,7 +169,7 @@ export const register = user => (
 export const updateLocation = (locUpdate) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${locUpdate.userID}/location/${locUpdate.latitude}/${locUpdate.longitude}`, {
-      method: 'PUT',
+      method: 'put',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -175,7 +185,7 @@ export const updateLocation = (locUpdate) => (
 export const updateSensor = (sensorUpdate) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${sensorUpdate.userID}/accelero/${sensorUpdate.x}/${sensorUpdate.y}/${sensorUpdate.z}`, {
-      method: 'PUT',
+      method: 'put',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -213,5 +223,20 @@ export const deleteFriend = (token, userID, friendID) => (
       }
     }).then(() => dispatch(deleteFriendSuccess()))
       .catch(err => dispatch(deleteFriendFail(err)))
+  )
+)
+
+export const updateUser = (token, userID, newUser) => (
+  dispatch => (
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+      method: 'put',
+      body: JSON.stringify(newUser),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'token': token
+      }
+    }).then((data) => dispatch(updateUserSuccess(data)))
+      .catch(err => dispatch(updateUserFail(err)))
   )
 )
