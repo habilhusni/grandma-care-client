@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToastAndroid, View } from 'react-native'
+import { ToastAndroid, View, Dimensions } from 'react-native'
 import { Container, Content, Header, Left, Body, Right, Input, Item, Icon, Text, Button, Label, Form } from 'native-base'
 
 import { connect } from 'react-redux'
@@ -36,8 +36,20 @@ class AddFriend extends React.Component {
   render() {
     const { _setModalAddFriendVisible, token, userID, addFriend } = this.props
     const { friendID } = this.state
+    const { height, width } = Dimensions.get('window')
     return (
-      <Container>
+      <View style={{
+          width, height,
+          backgroundColor: 'rgba(0,0,0,0.6)'
+        }}>
+      <Container style={{
+          width: width * 0.75,
+          height: 400,
+          marginTop: '25%',
+          marginLeft: '10%',
+          marginBottom: '40%',
+          backgroundColor: '#FFF'
+        }}>
         <Header>
           <Left>
             <Button light transparent iconLeft
@@ -48,7 +60,7 @@ class AddFriend extends React.Component {
           </Left>
         </Header>
         <Content>
-          <View style={{marginTop:'45%',alignItems:'center'}}>
+          <View style={{marginTop:'30%',alignItems:'center'}}>
             <Form style={{width:'90%'}}>
               <Item floatingLabel>
                 <Label>Friend ID</Label>
@@ -60,7 +72,7 @@ class AddFriend extends React.Component {
                   />
               </Item>
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
-                <Button bordered
+                <Button bordered full iconLeft
                   onPress={() => {
                     addFriend(token,userID,friendID)
                     setTimeout(()=> {
@@ -74,6 +86,7 @@ class AddFriend extends React.Component {
           </View>
         </Content>
       </Container>
+      </View>
     )
   }
 }

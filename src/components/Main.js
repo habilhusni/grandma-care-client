@@ -168,7 +168,7 @@ class Main extends React.Component {
         </Modal>
         <Modal
           animationType={'slide'}
-          transparent={false}
+          transparent={true}
           visible={modalAddFriendVisible}
           onRequestClose={()=> null}>
           <AddFriend
