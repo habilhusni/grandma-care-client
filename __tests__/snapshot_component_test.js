@@ -21,7 +21,8 @@ import SettingPage from '../src/components/SettingPage.js';
 import SplashScreen from '../src/components/SplashScreen.js';
 import UserList from '../src/components/UserList.js';
 import UserListButton from '../src/components/UserListButton.js';
-import sum from '../math.js';
+import DeleteFriendButton from '../src/components/DeleteFriendButton.js';
+import PanicButton from '../src/components/PanicButton.js';
 
 const store = createStore(reducers, applyMiddleware(thunk, logger));
 // Note: test renderer must be required after react-native.
@@ -125,8 +126,4 @@ it('renders UserList snapshot', () => {
 it('renders UserListButton snapshot', () => {
   const compUserListButton = shallow(<UserListButton/>);
   expect(compUserListButton).toMatchSnapshot();
-});
-
-test('Adds two number', () => {
-  expect(sum(2,3)).toBe(5)
 });
