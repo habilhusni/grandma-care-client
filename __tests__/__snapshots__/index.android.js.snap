@@ -1,3052 +1,1313 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders AddFriend snapshot 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-      "height": 1334,
-    }
-  }
-  virtual={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Connect(AddFriend) />,
+  "nodes": Array [
+    <Connect(AddFriend) />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
 >
-  <View>
-    <View
-      style={
+        <Connect(AddFriend) />
+</Provider>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <Connect(AddFriend) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Connect(AddFriend) />,
+        "_debugID": 2,
+        "_renderedOutput": <Connect(AddFriend) />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
         Object {
-          "backgroundColor": "#F8F8F8",
-          "borderBottomColor": "#a7a6ab",
-          "borderBottomWidth": 0.5,
-          "elevation": 3,
-          "flexDirection": "row",
-          "height": 64,
-          "justifyContent": "center",
-          "left": 0,
-          "paddingLeft": 10,
-          "paddingRight": 10,
-          "paddingTop": 15,
-          "right": 0,
-          "top": 0,
-        }
-      }
-      virtual={undefined}
-    >
-      <View
-        style={
-          Object {
-            "alignItems": "flex-start",
-            "alignSelf": "center",
-            "flex": 1,
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
           }
-        }
-        virtual={undefined}
-      >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "alignSelf": null,
-              "backgroundColor": null,
-              "borderBottomWidth": null,
-              "borderColor": null,
-              "borderLeftWidth": null,
-              "borderRadius": 5,
-              "borderRightWidth": null,
-              "borderTopWidth": null,
-              "elevation": 0,
-              "flexDirection": "row",
-              "height": 45,
-              "justifyContent": "space-between",
-              "marginLeft": -3,
-              "opacity": 1,
-              "paddingBottom": 6,
-              "paddingLeft": 6,
-              "paddingRight": 6,
-              "paddingTop": 6,
-              "shadowColor": null,
-              "shadowOffset": null,
-              "shadowOpacity": null,
-              "shadowRadius": null,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={false}
-            ellipsizeMode="tail"
-            style={
-              Array [
-                Object {
-                  "color": "#FFF",
-                  "fontSize": 12,
-                },
-                Object {
-                  "color": "#f4f4f4",
-                  "fontSize": 33,
-                  "marginLeft": 0,
-                  "marginRight": 10,
-                  "marginTop": 2,
-                  "paddingTop": 2,
-                },
-                Object {
-                  "fontFamily": "Ionicons",
-                  "fontStyle": "normal",
-                  "fontWeight": "normal",
-                },
-              ]
-            }
-            virtual={undefined}
-          >
-            
-          </Text>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#f4f4f4",
-                "fontFamily": "System",
-                "fontSize": 17,
-                "lineHeight": 19,
-                "marginLeft": 0,
-                "marginRight": 0,
-              }
-            }
-            virtual={undefined}
-          >
-            Back
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
     }
-    enableAutoAutomaticScroll={true}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    keyboardDismissMode="interactive"
-    onScroll={[Function]}
-    resetScrollToCoords={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    scrollEventThrottle={0}
-    showsVerticalScrollIndicator={true}
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "flex": 1,
-      }
-    }
-    virtual={undefined}
-  >
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "marginTop": "45%",
-          }
-        }
-      >
-        <View
-          style={
-            Object {
-              "width": "90%",
-            }
-          }
-          virtual={undefined}
-        >
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Friend ID
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "transparent",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 0,
-                "marginTop": 20,
-                "opacity": 1,
-                "paddingLeft": 15,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              isTVSelectable={true}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "flex-start",
-                  "backgroundColor": "transparent",
-                  "borderBottomWidth": 1,
-                  "borderColor": "#007aff",
-                  "borderLeftWidth": 1,
-                  "borderRadius": 5,
-                  "borderRightWidth": 1,
-                  "borderTopWidth": 1,
-                  "borderWidth": 1,
-                  "elevation": null,
-                  "flexDirection": "row",
-                  "height": 45,
-                  "justifyContent": "space-between",
-                  "opacity": 1,
-                  "paddingBottom": 6,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 6,
-                  "shadowColor": null,
-                  "shadowOffset": null,
-                  "shadowOpacity": null,
-                  "shadowRadius": null,
-                }
-              }
-              testID={undefined}
-              tvParallaxProperties={undefined}
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={false}
-                android="md-add"
-                ellipsizeMode="tail"
-                style={
-                  Array [
-                    Object {
-                      "color": "#292988",
-                      "fontSize": 12,
-                    },
-                    Object {
-                      "color": "#007aff",
-                      "fontSize": 24,
-                      "marginLeft": 5,
-                      "marginRight": 5,
-                      "paddingTop": 2,
-                    },
-                    Object {
-                      "fontFamily": "Ionicons",
-                      "fontStyle": "normal",
-                      "fontWeight": "normal",
-                    },
-                  ]
-                }
-                virtual={undefined}
-              >
-                
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    supportedOrientations={null}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "justifyContent": "flex-start",
-          "margin": 20,
-        }
-      }
-    >
-      <View
-        danger={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0,0,0,0.8)",
-            "borderRadius": 5,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "minHeight": 50,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          }
-        }
-        success={false}
-        virtual={undefined}
-        warning={false}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#fff",
-              "flex": 1,
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-      </View>
-    </View>
-  </Modal>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0,0,0,0.4)",
-          "flex": 1,
-          "justifyContent": "flex-end",
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "elevation": 4,
-            "height": NaN,
-            "opacity": 1,
-            "padding": 15,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#757575",
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-        <RCTScrollView
-          dataArray={Array []}
-          dataSource={
-            ListViewDataSource {
-              "items": 0,
-            }
-          }
-          enableEmptySections={true}
-          renderRow={[Function]}
-          renderScrollComponent={[Function]}
-          style={
-            Object {
-              "marginHorizontal": -15,
-              "marginTop": 15,
-            }
-          }
-          virtual={undefined}
-        >
-          <View />
-        </RCTScrollView>
-      </View>
-    </View>
-  </Modal>
-</View>
+>
+    <Connect(AddFriend) />
+</Provider>,
+}
 `;
 
 exports[`renders AddFriendButton snapshot 1`] = `
-<View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "alignSelf": "flex-start",
-      "backgroundColor": null,
-      "borderBottomWidth": null,
-      "borderColor": "#007aff",
-      "borderLeftWidth": null,
-      "borderRadius": 5,
-      "borderRightWidth": null,
-      "borderTopWidth": null,
-      "elevation": 0,
-      "flexDirection": "column",
-      "height": null,
-      "justifyContent": "space-between",
-      "opacity": 1,
-      "paddingBottom": 6,
-      "paddingLeft": 16,
-      "paddingRight": 16,
-      "paddingTop": 6,
-      "shadowColor": null,
-      "shadowOffset": null,
-      "shadowOpacity": null,
-      "shadowRadius": null,
-    }
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Styled(Button)
+    light={true}
+    onPress={[Function]}
+    transparent={true}
+    vertical={true}
+    virtual={undefined}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    android="md-person-add"
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#FFF",
-          "fontSize": 12,
+    <Styled(Icon)
+        android="md-person-add"
+        color="#FFF"
+        name="person-add"
+        virtual={undefined}
+    />
+    <Styled(Text)
+        virtual={undefined}
+    >
+        Add Friend
+    </Styled(Text)>
+</Styled(Button)>,
+  "nodes": Array [
+    <Styled(Button)
+      light={true}
+      onPress={[Function]}
+      transparent={true}
+      vertical={true}
+      virtual={undefined}
+>
+      <Styled(Icon)
+            android="md-person-add"
+            color="#FFF"
+            name="person-add"
+            virtual={undefined}
+      />
+      <Styled(Text)
+            virtual={undefined}
+      >
+            Add Friend
+      </Styled(Text)>
+</Styled(Button)>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <AddFriendButton />,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": AddFriendButton {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
         },
-        Object {
-          "color": "#f4f4f4",
-          "fontSize": 24,
-          "marginLeft": 5,
-          "marginRight": 5,
-          "paddingTop": 2,
-        },
-        Object {
-          "fontFamily": "Ionicons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
-    }
-    virtual={undefined}
-  >
-    
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#f4f4f4",
-        "fontFamily": "System",
-        "fontSize": 16.5,
-        "lineHeight": 19,
-        "marginLeft": 0,
-        "marginRight": 0,
-      }
-    }
-    virtual={undefined}
-  >
-    Add Friend
-  </Text>
-</View>
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Styled(Button)
+          light={true}
+          onPress={[Function]}
+          transparent={true}
+          vertical={true}
+          virtual={undefined}
+>
+          <Styled(Icon)
+                    android="md-person-add"
+                    color="#FFF"
+                    name="person-add"
+                    virtual={undefined}
+          />
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    Add Friend
+          </Styled(Text)>
+</Styled(Button)>,
+        "_debugID": 4,
+        "_renderedOutput": <Styled(Button)
+          light={true}
+          onPress={[Function]}
+          transparent={true}
+          vertical={true}
+          virtual={undefined}
+>
+          <Styled(Icon)
+                    android="md-person-add"
+                    color="#FFF"
+                    name="person-add"
+                    virtual={undefined}
+          />
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    Add Friend
+          </Styled(Text)>
+</Styled(Button)>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <AddFriendButton />,
+}
 `;
 
 exports[`renders Login snapshot 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-      "height": 1334,
-    }
-  }
-  virtual={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Connect(Login) />,
+  "nodes": Array [
+    <Connect(Login) />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
 >
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutoAutomaticScroll={true}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    keyboardDismissMode="interactive"
-    onScroll={[Function]}
-    resetScrollToCoords={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    scrollEventThrottle={0}
-    showsVerticalScrollIndicator={true}
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "flex": 1,
-      }
-    }
-    virtual={undefined}
-  >
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "marginTop": "50%",
-          }
-        }
-      >
-        <View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontSize": 25,
-              }
-            }
-          >
-            Login Here
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "width": "85%",
-            }
-          }
-          virtual={undefined}
-        >
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Username
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Password
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              secureTextEntry={true}
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "transparent",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 0,
-                "marginTop": 20,
-                "opacity": 1,
-                "paddingLeft": 15,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              isTVSelectable={true}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#007aff",
-                  "borderBottomWidth": null,
-                  "borderColor": "#007aff",
-                  "borderLeftWidth": null,
-                  "borderRadius": 5,
-                  "borderRightWidth": null,
-                  "borderTopWidth": null,
-                  "elevation": 2,
-                  "flexDirection": "row",
-                  "height": 45,
-                  "justifyContent": "center",
-                  "opacity": 1,
-                  "paddingBottom": 6,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 6,
-                }
-              }
-              testID={undefined}
-              tvParallaxProperties={undefined}
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-              >
-                Login
-              </Text>
-            </View>
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              isTVSelectable={true}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "flex-start",
-                  "backgroundColor": null,
-                  "borderBottomWidth": null,
-                  "borderColor": "#007aff",
-                  "borderLeftWidth": null,
-                  "borderRadius": 5,
-                  "borderRightWidth": null,
-                  "borderTopWidth": null,
-                  "elevation": 0,
-                  "flexDirection": "row",
-                  "height": 45,
-                  "justifyContent": "space-between",
-                  "opacity": 1,
-                  "paddingBottom": 6,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 6,
-                  "shadowColor": null,
-                  "shadowOffset": null,
-                  "shadowOpacity": null,
-                  "shadowRadius": null,
-                }
-              }
-              testID={undefined}
-              tvParallaxProperties={undefined}
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-              >
-                or Register here
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-  <Modal
-    animationType="slide"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={false}
-    visible={false}
-  >
-    <View
-      style={
+        <Connect(Login) />
+</Provider>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <Connect(Login) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Connect(Login) />,
+        "_debugID": 6,
+        "_renderedOutput": <Connect(Login) />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
         Object {
-          "flex": 1,
-          "height": 1334,
-        }
-      }
-      virtual={undefined}
-    >
-      <RCTScrollView
-        automaticallyAdjustContentInsets={false}
-        contentInset={
-          Object {
-            "bottom": 0,
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
           }
-        }
-        enableAutoAutomaticScroll={true}
-        enableResetScrollToCoords={true}
-        extraHeight={75}
-        extraScrollHeight={0}
-        keyboardDismissMode="interactive"
-        onScroll={[Function]}
-        resetScrollToCoords={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        scrollEventThrottle={0}
-        showsVerticalScrollIndicator={true}
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "flex": 1,
-          }
-        }
-        virtual={undefined}
-      >
-        <View>
-          <View
-            style={
-              Object {
-                "alignItems": "center",
-                "marginTop": "45%",
-              }
-            }
-          >
-            <View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "fontSize": 25,
-                  }
-                }
-              >
-                Register Here
-              </Text>
-            </View>
-            <View
-              style={
-                Object {
-                  "width": "85%",
-                }
-              }
-              virtual={undefined}
-            >
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#D9D5DC",
-                    "borderLeftWidth": 0,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
-                    "flexDirection": "row",
-                    "marginLeft": 15,
-                    "marginTop": 15,
-                    "opacity": 1,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <View
-                  style={
-                    Object {
-                      "left": 0,
-                      "opacity": 1,
-                      "paddingBottom": undefined,
-                      "paddingTop": undefined,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 18,
-                    }
-                  }
-                >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#575757",
-                        "fontSize": 17,
-                        "left": 0,
-                        "paddingRight": 5,
-                        "top": 8,
-                      }
-                    }
-                    virtual={undefined}
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "fontSize": 17,
-                        }
-                      }
-                      virtual={undefined}
-                    >
-                      Username
-                    </Text>
-                  </Text>
-                </View>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={true}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onChangeText={[Function]}
-                  onFocus={[Function]}
-                  placeholderTextColor="#575757"
-                  style={
-                    Object {
-                      "color": "#000",
-                      "flex": 1,
-                      "fontSize": 17,
-                      "height": 60,
-                      "lineHeight": 24,
-                      "paddingLeft": null,
-                      "paddingRight": 5,
-                      "top": 10,
-                    }
-                  }
-                  underlineColorAndroid="rgba(0,0,0,0)"
-                  value=""
-                  virtual={undefined}
-                />
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#D9D5DC",
-                    "borderLeftWidth": 0,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
-                    "flexDirection": "row",
-                    "marginLeft": 15,
-                    "marginTop": 15,
-                    "opacity": 1,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <View
-                  style={
-                    Object {
-                      "left": 0,
-                      "opacity": 1,
-                      "paddingBottom": undefined,
-                      "paddingTop": undefined,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 18,
-                    }
-                  }
-                >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#575757",
-                        "fontSize": 17,
-                        "left": 0,
-                        "paddingRight": 5,
-                        "top": 8,
-                      }
-                    }
-                    virtual={undefined}
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "fontSize": 17,
-                        }
-                      }
-                      virtual={undefined}
-                    >
-                      Password
-                    </Text>
-                  </Text>
-                </View>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={true}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onChangeText={[Function]}
-                  onFocus={[Function]}
-                  placeholderTextColor="#575757"
-                  secureTextEntry={true}
-                  style={
-                    Object {
-                      "color": "#000",
-                      "flex": 1,
-                      "fontSize": 17,
-                      "height": 60,
-                      "lineHeight": 24,
-                      "paddingLeft": null,
-                      "paddingRight": 5,
-                      "top": 10,
-                    }
-                  }
-                  underlineColorAndroid="rgba(0,0,0,0)"
-                  value=""
-                  virtual={undefined}
-                />
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#D9D5DC",
-                    "borderLeftWidth": 0,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
-                    "flexDirection": "row",
-                    "marginLeft": 15,
-                    "marginTop": 15,
-                    "opacity": 1,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <View
-                  style={
-                    Object {
-                      "left": 0,
-                      "opacity": 1,
-                      "paddingBottom": undefined,
-                      "paddingTop": undefined,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 18,
-                    }
-                  }
-                >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#575757",
-                        "fontSize": 17,
-                        "left": 0,
-                        "paddingRight": 5,
-                        "top": 8,
-                      }
-                    }
-                    virtual={undefined}
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "fontSize": 17,
-                        }
-                      }
-                      virtual={undefined}
-                    >
-                      Phone
-                    </Text>
-                  </Text>
-                </View>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={true}
-                  keyboardType="phone-pad"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onChangeText={[Function]}
-                  onFocus={[Function]}
-                  placeholderTextColor="#575757"
-                  style={
-                    Object {
-                      "color": "#000",
-                      "flex": 1,
-                      "fontSize": 17,
-                      "height": 60,
-                      "lineHeight": 24,
-                      "paddingLeft": null,
-                      "paddingRight": 5,
-                      "top": 10,
-                    }
-                  }
-                  underlineColorAndroid="rgba(0,0,0,0)"
-                  value=""
-                  virtual={undefined}
-                />
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#D9D5DC",
-                    "borderLeftWidth": 0,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
-                    "flexDirection": "row",
-                    "marginLeft": 15,
-                    "marginTop": 15,
-                    "opacity": 1,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <View
-                  style={
-                    Object {
-                      "left": 0,
-                      "opacity": 1,
-                      "paddingBottom": undefined,
-                      "paddingTop": undefined,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 18,
-                    }
-                  }
-                >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#575757",
-                        "fontSize": 17,
-                        "left": 0,
-                        "paddingRight": 5,
-                        "top": 8,
-                      }
-                    }
-                    virtual={undefined}
-                  >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "fontSize": 17,
-                        }
-                      }
-                      virtual={undefined}
-                    >
-                      Email
-                    </Text>
-                  </Text>
-                </View>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={true}
-                  keyboardType="email-address"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onChangeText={[Function]}
-                  onFocus={[Function]}
-                  placeholderTextColor="#575757"
-                  style={
-                    Object {
-                      "color": "#000",
-                      "flex": 1,
-                      "fontSize": 17,
-                      "height": 60,
-                      "lineHeight": 24,
-                      "paddingLeft": null,
-                      "paddingRight": 5,
-                      "top": 10,
-                    }
-                  }
-                  underlineColorAndroid="rgba(0,0,0,0)"
-                  value=""
-                  virtual={undefined}
-                />
-              </View>
-              <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
-                accessible={true}
-                hitSlop={undefined}
-                isTVSelectable={true}
-                onLayout={undefined}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#D9D5DC",
-                    "borderLeftWidth": 0,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
-                    "flexDirection": "row",
-                    "marginLeft": 15,
-                    "opacity": 1,
-                  }
-                }
-                testID={undefined}
-                tvParallaxProperties={undefined}
-              >
-                <View
-                  accessibilityComponentType={undefined}
-                  accessibilityLabel={undefined}
-                  accessibilityTraits={undefined}
-                  accessible={true}
-                  hitSlop={undefined}
-                  isTVSelectable={true}
-                  onLayout={undefined}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#007aff",
-                      "borderBottomWidth": null,
-                      "borderColor": "#007aff",
-                      "borderLeftWidth": null,
-                      "borderRadius": 0,
-                      "borderRightWidth": null,
-                      "borderTopWidth": null,
-                      "elevation": 2,
-                      "flexDirection": "row",
-                      "height": 45,
-                      "justifyContent": "center",
-                      "marginTop": 15,
-                      "opacity": 1,
-                      "paddingBottom": 6,
-                      "paddingLeft": 16,
-                      "paddingRight": 16,
-                      "paddingTop": 6,
-                      "width": "100%",
-                    }
-                  }
-                  testID={undefined}
-                  tvParallaxProperties={undefined}
-                >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                  >
-                    Register
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
-      </RCTScrollView>
-      <Modal
-        animationType="fade"
-        hardwareAccelerated={false}
-        onRequestClose={[Function]}
-        supportedOrientations={null}
-        transparent={true}
-        visible={false}
-      >
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "justifyContent": "flex-start",
-              "margin": 20,
-            }
-          }
-        >
-          <View
-            danger={false}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "rgba(0,0,0,0.8)",
-                "borderRadius": 5,
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-                "minHeight": 50,
-                "paddingBottom": 10,
-                "paddingLeft": 10,
-                "paddingRight": 10,
-                "paddingTop": 10,
-              }
-            }
-            success={false}
-            virtual={undefined}
-            warning={false}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#fff",
-                  "flex": 1,
-                  "fontFamily": "System",
-                  "fontSize": 16,
-                }
-              }
-              virtual={undefined}
-            />
-          </View>
-        </View>
-      </Modal>
-      <Modal
-        animationType="fade"
-        hardwareAccelerated={false}
-        onRequestClose={[Function]}
-        transparent={true}
-        visible={false}
-      >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "rgba(0,0,0,0.4)",
-              "flex": 1,
-              "justifyContent": "flex-end",
-              "opacity": 1,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#fff",
-                "elevation": 4,
-                "height": NaN,
-                "opacity": 1,
-                "padding": 15,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#757575",
-                  "fontFamily": "System",
-                  "fontSize": 16,
-                }
-              }
-              virtual={undefined}
-            />
-            <RCTScrollView
-              dataArray={Array []}
-              dataSource={
-                ListViewDataSource {
-                  "items": 0,
-                }
-              }
-              enableEmptySections={true}
-              renderRow={[Function]}
-              renderScrollComponent={[Function]}
-              style={
-                Object {
-                  "marginHorizontal": -15,
-                  "marginTop": 15,
-                }
-              }
-              virtual={undefined}
-            >
-              <View />
-            </RCTScrollView>
-          </View>
-        </View>
-      </Modal>
-    </View>
-  </Modal>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    supportedOrientations={null}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "justifyContent": "flex-start",
-          "margin": 20,
-        }
-      }
-    >
-      <View
-        danger={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0,0,0,0.8)",
-            "borderRadius": 5,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "minHeight": 50,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          }
-        }
-        success={false}
-        virtual={undefined}
-        warning={false}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#fff",
-              "flex": 1,
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-      </View>
-    </View>
-  </Modal>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "backgroundColor": "rgba(0,0,0,0.4)",
-          "flex": 1,
-          "justifyContent": "flex-end",
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "elevation": 4,
-            "height": NaN,
-            "opacity": 1,
-            "padding": 15,
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#757575",
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-        <RCTScrollView
-          dataArray={Array []}
-          dataSource={
-            ListViewDataSource {
-              "items": 0,
-            }
-          }
-          enableEmptySections={true}
-          renderRow={[Function]}
-          renderScrollComponent={[Function]}
-          style={
-            Object {
-              "marginHorizontal": -15,
-              "marginTop": 15,
-            }
-          }
-          virtual={undefined}
-        >
-          <View />
-        </RCTScrollView>
-      </View>
-    </View>
-  </Modal>
-</View>
+    }
+>
+    <Connect(Login) />
+</Provider>,
+}
 `;
 
 exports[`renders LogoutButton snapshot 1`] = `
-<View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "alignSelf": "flex-start",
-      "backgroundColor": null,
-      "borderBottomWidth": null,
-      "borderColor": "#007aff",
-      "borderLeftWidth": null,
-      "borderRadius": 5,
-      "borderRightWidth": null,
-      "borderTopWidth": null,
-      "elevation": 0,
-      "flexDirection": "column",
-      "height": null,
-      "justifyContent": "space-between",
-      "opacity": 1,
-      "paddingBottom": 6,
-      "paddingLeft": 16,
-      "paddingRight": 16,
-      "paddingTop": 6,
-      "shadowColor": null,
-      "shadowOffset": null,
-      "shadowOpacity": null,
-      "shadowRadius": null,
-    }
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Styled(Button)
+    light={true}
+    onPress={[Function]}
+    transparent={true}
+    vertical={true}
+    virtual={undefined}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#FFF",
-          "fontSize": 12,
+    <Styled(Icon)
+        color="#FFF"
+        name="power"
+        virtual={undefined}
+    />
+    <Styled(Text)
+        virtual={undefined}
+    >
+        Logout
+    </Styled(Text)>
+</Styled(Button)>,
+  "nodes": Array [
+    <Styled(Button)
+      light={true}
+      onPress={[Function]}
+      transparent={true}
+      vertical={true}
+      virtual={undefined}
+>
+      <Styled(Icon)
+            color="#FFF"
+            name="power"
+            virtual={undefined}
+      />
+      <Styled(Text)
+            virtual={undefined}
+      >
+            Logout
+      </Styled(Text)>
+</Styled(Button)>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <LogoutButton />,
+      "_debugID": 7,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": LogoutButton {
+        "_logout": [Function],
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
         },
-        Object {
-          "color": "#f4f4f4",
-          "fontSize": 24,
-          "marginLeft": 5,
-          "marginRight": 5,
-          "paddingTop": 2,
+      },
+      "_mountOrder": 4,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Styled(Button)
+          light={true}
+          onPress={[Function]}
+          transparent={true}
+          vertical={true}
+          virtual={undefined}
+>
+          <Styled(Icon)
+                    color="#FFF"
+                    name="power"
+                    virtual={undefined}
+          />
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    Logout
+          </Styled(Text)>
+</Styled(Button)>,
+        "_debugID": 8,
+        "_renderedOutput": <Styled(Button)
+          light={true}
+          onPress={[Function]}
+          transparent={true}
+          vertical={true}
+          virtual={undefined}
+>
+          <Styled(Icon)
+                    color="#FFF"
+                    name="power"
+                    virtual={undefined}
+          />
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    Logout
+          </Styled(Text)>
+</Styled(Button)>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <LogoutButton />,
+}
+`;
+
+exports[`renders Main snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <NavigationContainer>
+    <Connect(Main) />
+</NavigationContainer>,
+  "nodes": Array [
+    <NavigationContainer>
+      <Connect(Main) />
+</NavigationContainer>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <NavigationContainer>
+                <Connect(Main) />
+        </NavigationContainer>
+</Provider>,
+      "_debugID": 9,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <NavigationContainer>
+            <Connect(Main) />
+</NavigationContainer>,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
         },
-        Object {
-          "fontFamily": "Ionicons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
         },
-      ]
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 5,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <NavigationContainer>
+          <Connect(Main) />
+</NavigationContainer>,
+        "_debugID": 10,
+        "_renderedOutput": <NavigationContainer>
+          <Connect(Main) />
+</NavigationContainer>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
     }
-    virtual={undefined}
-  >
-    
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#f4f4f4",
-        "fontFamily": "System",
-        "fontSize": 16.5,
-        "lineHeight": 19,
-        "marginLeft": 0,
-        "marginRight": 0,
-      }
+>
+    <NavigationContainer>
+        <Connect(Main) />
+    </NavigationContainer>
+</Provider>,
+}
+`;
+
+exports[`renders Maps snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <NavigationContainer>
+    <Connect(Maps) />
+</NavigationContainer>,
+  "nodes": Array [
+    <NavigationContainer>
+      <Connect(Maps) />
+</NavigationContainer>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <NavigationContainer>
+                <Connect(Maps) />
+        </NavigationContainer>
+</Provider>,
+      "_debugID": 11,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <NavigationContainer>
+            <Connect(Maps) />
+</NavigationContainer>,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 6,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <NavigationContainer>
+          <Connect(Maps) />
+</NavigationContainer>,
+        "_debugID": 12,
+        "_renderedOutput": <NavigationContainer>
+          <Connect(Maps) />
+</NavigationContainer>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
     }
-    virtual={undefined}
-  >
-    Logout
-  </Text>
-</View>
+>
+    <NavigationContainer>
+        <Connect(Maps) />
+    </NavigationContainer>
+</Provider>,
+}
 `;
 
 exports[`renders Register snapshot 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-      "height": 1334,
-    }
-  }
-  virtual={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Connect(Register) />,
+  "nodes": Array [
+    <Connect(Register) />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
 >
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutoAutomaticScroll={true}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    keyboardDismissMode="interactive"
-    onScroll={[Function]}
-    resetScrollToCoords={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    scrollEventThrottle={0}
-    showsVerticalScrollIndicator={true}
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "flex": 1,
-      }
-    }
-    virtual={undefined}
-  >
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "marginTop": "45%",
-          }
-        }
-      >
-        <View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "fontSize": 25,
-              }
-            }
-          >
-            Register Here
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "width": "85%",
-            }
-          }
-          virtual={undefined}
-        >
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Username
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Password
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              secureTextEntry={true}
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Phone
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              keyboardType="phone-pad"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "marginTop": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              style={
-                Object {
-                  "left": 0,
-                  "opacity": 1,
-                  "paddingBottom": undefined,
-                  "paddingTop": undefined,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 18,
-                }
-              }
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-                style={
-                  Object {
-                    "color": "#575757",
-                    "fontSize": 17,
-                    "left": 0,
-                    "paddingRight": 5,
-                    "top": 8,
-                  }
-                }
-                virtual={undefined}
-              >
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
-                  style={
-                    Object {
-                      "fontSize": 17,
-                    }
-                  }
-                  virtual={undefined}
-                >
-                  Email
-                </Text>
-              </Text>
-            </View>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              editable={true}
-              keyboardType="email-address"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onChangeText={[Function]}
-              onFocus={[Function]}
-              placeholderTextColor="#575757"
-              style={
-                Object {
-                  "color": "#000",
-                  "flex": 1,
-                  "fontSize": 17,
-                  "height": 60,
-                  "lineHeight": 24,
-                  "paddingLeft": null,
-                  "paddingRight": 5,
-                  "top": 10,
-                }
-              }
-              underlineColorAndroid="rgba(0,0,0,0)"
-              value=""
-              virtual={undefined}
-            />
-          </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "borderBottomWidth": 1,
-                "borderColor": "#D9D5DC",
-                "borderLeftWidth": 0,
-                "borderRightWidth": 0,
-                "borderTopWidth": 0,
-                "flexDirection": "row",
-                "marginLeft": 15,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <View
-              accessibilityComponentType={undefined}
-              accessibilityLabel={undefined}
-              accessibilityTraits={undefined}
-              accessible={true}
-              hitSlop={undefined}
-              isTVSelectable={true}
-              onLayout={undefined}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "alignItems": "center",
-                  "alignSelf": "stretch",
-                  "backgroundColor": "#007aff",
-                  "borderBottomWidth": null,
-                  "borderColor": "#007aff",
-                  "borderLeftWidth": null,
-                  "borderRadius": 0,
-                  "borderRightWidth": null,
-                  "borderTopWidth": null,
-                  "elevation": 2,
-                  "flexDirection": "row",
-                  "height": 45,
-                  "justifyContent": "center",
-                  "marginTop": 15,
-                  "opacity": 1,
-                  "paddingBottom": 6,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 6,
-                  "width": "100%",
-                }
-              }
-              testID={undefined}
-              tvParallaxProperties={undefined}
-            >
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
-              >
-                Register
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </RCTScrollView>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    supportedOrientations={null}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
+        <Connect(Register) />
+</Provider>,
+      "_debugID": 13,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <Connect(Register) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 7,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Connect(Register) />,
+        "_debugID": 14,
+        "_renderedOutput": <Connect(Register) />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
         Object {
-          "flex": 1,
-          "justifyContent": "flex-start",
-          "margin": 20,
-        }
-      }
-    >
-      <View
-        danger={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0,0,0,0.8)",
-            "borderRadius": 5,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "minHeight": 50,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
           }
+    }
+>
+    <Connect(Register) />
+</Provider>,
+}
+`;
+
+exports[`renders SettingPage snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <NavigationContainer>
+    <Connect(SettingPage) />
+</NavigationContainer>,
+  "nodes": Array [
+    <NavigationContainer>
+      <Connect(SettingPage) />
+</NavigationContainer>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
         }
-        success={false}
-        virtual={undefined}
-        warning={false}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#fff",
-              "flex": 1,
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-      </View>
-    </View>
-  </Modal>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
+>
+        <NavigationContainer>
+                <Connect(SettingPage) />
+        </NavigationContainer>
+</Provider>,
+      "_debugID": 15,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <NavigationContainer>
+            <Connect(SettingPage) />
+</NavigationContainer>,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 8,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <NavigationContainer>
+          <Connect(SettingPage) />
+</NavigationContainer>,
+        "_debugID": 16,
+        "_renderedOutput": <NavigationContainer>
+          <Connect(SettingPage) />
+</NavigationContainer>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
         Object {
-          "backgroundColor": "rgba(0,0,0,0.4)",
-          "flex": 1,
-          "justifyContent": "flex-end",
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "elevation": 4,
-            "height": NaN,
-            "opacity": 1,
-            "padding": 15,
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
           }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#757575",
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-        <RCTScrollView
-          dataArray={Array []}
-          dataSource={
-            ListViewDataSource {
-              "items": 0,
-            }
-          }
-          enableEmptySections={true}
-          renderRow={[Function]}
-          renderScrollComponent={[Function]}
-          style={
-            Object {
-              "marginHorizontal": -15,
-              "marginTop": 15,
-            }
-          }
-          virtual={undefined}
-        >
-          <View />
-        </RCTScrollView>
-      </View>
-    </View>
-  </Modal>
-</View>
+    }
+>
+    <NavigationContainer>
+        <Connect(SettingPage) />
+    </NavigationContainer>
+</Provider>,
+}
 `;
 
 exports[`renders SplashScreen snapshot 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-      "height": 1334,
-    }
-  }
-  virtual={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Connect(SplashScreen) />,
+  "nodes": Array [
+    <Connect(SplashScreen) />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
 >
-  <RCTScrollView
-    automaticallyAdjustContentInsets={false}
-    contentInset={
-      Object {
-        "bottom": 0,
-      }
-    }
-    enableAutoAutomaticScroll={true}
-    enableResetScrollToCoords={true}
-    extraHeight={75}
-    extraScrollHeight={0}
-    keyboardDismissMode="interactive"
-    onScroll={[Function]}
-    resetScrollToCoords={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    scrollEventThrottle={0}
-    showsVerticalScrollIndicator={true}
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "flex": 1,
-      }
-    }
-    virtual={undefined}
-  >
-    <View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flex": 1,
-            "marginTop": "15%",
-          }
-        }
-      >
-        <Image
-          source={
-            Object {
-              "uri": "http://us.sulekhalive.com/images/photos/thumbnailfull/photos-2014-7-3-8-35-8.jpg",
-            }
-          }
-          style={
-            Object {
-              "height": 400,
-              "width": 400,
-            }
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "rgba(152,152,152,0.7)",
-              "fontSize": 25,
-              "marginTop": 15,
-            }
-          }
-        >
-          Grandma Care
-        </Text>
-      </View>
-    </View>
-  </RCTScrollView>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    supportedOrientations={null}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      style={
+        <Connect(SplashScreen) />
+</Provider>,
+      "_debugID": 17,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <Connect(SplashScreen) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 9,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Connect(SplashScreen) />,
+        "_debugID": 18,
+        "_renderedOutput": <Connect(SplashScreen) />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
         Object {
-          "flex": 1,
-          "justifyContent": "flex-start",
-          "margin": 20,
-        }
-      }
-    >
-      <View
-        danger={false}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0,0,0,0.8)",
-            "borderRadius": 5,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "minHeight": 50,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
           }
+    }
+>
+    <Connect(SplashScreen) />
+</Provider>,
+}
+`;
+
+exports[`renders UserList snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <NavigationContainer>
+    <Connect(UserList) />
+</NavigationContainer>,
+  "nodes": Array [
+    <NavigationContainer>
+      <Connect(UserList) />
+</NavigationContainer>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
         }
-        success={false}
-        virtual={undefined}
-        warning={false}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#fff",
-              "flex": 1,
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-      </View>
-    </View>
-  </Modal>
-  <Modal
-    animationType="fade"
-    hardwareAccelerated={false}
-    onRequestClose={[Function]}
-    transparent={true}
-    visible={false}
-  >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
+>
+        <NavigationContainer>
+                <Connect(UserList) />
+        </NavigationContainer>
+</Provider>,
+      "_debugID": 19,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <NavigationContainer>
+            <Connect(UserList) />
+</NavigationContainer>,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 10,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <NavigationContainer>
+          <Connect(UserList) />
+</NavigationContainer>,
+        "_debugID": 20,
+        "_renderedOutput": <NavigationContainer>
+          <Connect(UserList) />
+</NavigationContainer>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
         Object {
-          "backgroundColor": "rgba(0,0,0,0.4)",
-          "flex": 1,
-          "justifyContent": "flex-end",
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "elevation": 4,
-            "height": NaN,
-            "opacity": 1,
-            "padding": 15,
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
           }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#757575",
-              "fontFamily": "System",
-              "fontSize": 16,
-            }
-          }
-          virtual={undefined}
-        />
-        <RCTScrollView
-          dataArray={Array []}
-          dataSource={
-            ListViewDataSource {
-              "items": 0,
-            }
-          }
-          enableEmptySections={true}
-          renderRow={[Function]}
-          renderScrollComponent={[Function]}
-          style={
-            Object {
-              "marginHorizontal": -15,
-              "marginTop": 15,
-            }
-          }
-          virtual={undefined}
-        >
-          <View />
-        </RCTScrollView>
-      </View>
-    </View>
-  </Modal>
-</View>
+    }
+>
+    <NavigationContainer>
+        <Connect(UserList) />
+    </NavigationContainer>
+</Provider>,
+}
 `;
 
 exports[`renders UserListButton snapshot 1`] = `
-<View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "alignItems": "center",
-      "alignSelf": "flex-start",
-      "backgroundColor": null,
-      "borderBottomWidth": null,
-      "borderColor": "#007aff",
-      "borderLeftWidth": null,
-      "borderRadius": 5,
-      "borderRightWidth": null,
-      "borderTopWidth": null,
-      "elevation": 0,
-      "flexDirection": "column",
-      "height": null,
-      "justifyContent": "space-between",
-      "opacity": 1,
-      "paddingBottom": 6,
-      "paddingLeft": 16,
-      "paddingRight": 16,
-      "paddingTop": 6,
-      "shadowColor": null,
-      "shadowOffset": null,
-      "shadowOpacity": null,
-      "shadowRadius": null,
-    }
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Styled(Button)
+    light={true}
+    onPress={[Function]}
+    transparent={true}
+    vertical={true}
+    virtual={undefined}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#FFF",
-          "fontSize": 12,
+    <Styled(Icon)
+        color="#FFF"
+        name="person"
+        virtual={undefined}
+    />
+    <Styled(Text)
+        virtual={undefined}
+    >
+        Friend List
+    </Styled(Text)>
+</Styled(Button)>,
+  "nodes": Array [
+    <Styled(Button)
+      light={true}
+      onPress={[Function]}
+      transparent={true}
+      vertical={true}
+      virtual={undefined}
+>
+      <Styled(Icon)
+            color="#FFF"
+            name="person"
+            virtual={undefined}
+      />
+      <Styled(Text)
+            virtual={undefined}
+      >
+            Friend List
+      </Styled(Text)>
+</Styled(Button)>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <UserListButton />,
+      "_debugID": 21,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": UserListButton {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
         },
-        Object {
-          "color": "#f4f4f4",
-          "fontSize": 24,
-          "marginLeft": 5,
-          "marginRight": 5,
-          "paddingTop": 2,
-        },
-        Object {
-          "fontFamily": "Ionicons",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
-    }
-    virtual={undefined}
-  >
-    
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#f4f4f4",
-        "fontFamily": "System",
-        "fontSize": 16.5,
-        "lineHeight": 19,
-        "marginLeft": 0,
-        "marginRight": 0,
-      }
-    }
-    virtual={undefined}
-  >
-    Friend List
-  </Text>
-</View>
+      },
+      "_mountOrder": 11,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Styled(Button)
+          light={true}
+          onPress={[Function]}
+          transparent={true}
+          vertical={true}
+          virtual={undefined}
+>
+          <Styled(Icon)
+                    color="#FFF"
+                    name="person"
+                    virtual={undefined}
+          />
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    Friend List
+          </Styled(Text)>
+</Styled(Button)>,
+        "_debugID": 22,
+        "_renderedOutput": <Styled(Button)
+          light={true}
+          onPress={[Function]}
+          transparent={true}
+          vertical={true}
+          virtual={undefined}
+>
+          <Styled(Icon)
+                    color="#FFF"
+                    name="person"
+                    virtual={undefined}
+          />
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    Friend List
+          </Styled(Text)>
+</Styled(Button)>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <UserListButton />,
+}
 `;
 
-exports[`renders with snapshot 1`] = `<client />`;
+exports[`renders with snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <client />,
+  "nodes": Array [
+    <client />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": null,
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <client />,
+}
+`;
