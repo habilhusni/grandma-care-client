@@ -23,6 +23,9 @@ import UserList from '../src/components/UserList.js';
 import UserListButton from '../src/components/UserListButton.js';
 import DeleteFriendButton from '../src/components/DeleteFriendButton.js';
 import PanicButton from '../src/components/PanicButton.js';
+import DeactivateAccountButton from '../src/components/DeactivateAccountButton.js';
+import EditProfile from '../src/components/EditProfile.js';
+import EditProfileButton from '../src/components/EditProfileButton.js';
 
 const store = createStore(reducers, applyMiddleware(thunk, logger));
 // Note: test renderer must be required after react-native.
@@ -44,6 +47,40 @@ it('renders AddFriend snapshot', () => {
 it('renders AddFriendButton snapshot', () => {
   const compAddFriendButton = shallow(<AddFriendButton/>);
   expect(compAddFriendButton).toMatchSnapshot();
+});
+
+it('renders DeactivateAccountButton snapshot', () => {
+  const compDeactivateAccountButton = shallow(
+    <Provider store={store}>
+      <DeactivateAccountButton/>
+    </Provider>
+  );
+  expect(compDeactivateAccountButton).toMatchSnapshot();
+});
+
+it('renders DeleteFriendButton snapshot', () => {
+  const compDeleteFriendButton = shallow(
+    <Provider store={store}>
+      <DeleteFriendButton/>
+    </Provider>
+  );
+  expect(compDeleteFriendButton).toMatchSnapshot();
+});
+
+it('renders EditProfile snapshot', () => {
+  const compEditProfile = shallow(
+    <Provider store={store}>
+      <EditProfile/>
+    </Provider>
+  );
+  expect(compEditProfile).toMatchSnapshot();
+});
+
+it('renders EditProfileButton snapshot', () => {
+  const compEditProfileButton = shallow(
+      <EditProfileButton/>
+  );
+  expect(compEditProfileButton).toMatchSnapshot();
 });
 
 it('renders Login snapshot', () => {
