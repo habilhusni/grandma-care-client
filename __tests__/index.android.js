@@ -21,6 +21,8 @@ import SettingPage from '../src/components/SettingPage.js';
 import SplashScreen from '../src/components/SplashScreen.js';
 import UserList from '../src/components/UserList.js';
 import UserListButton from '../src/components/UserListButton.js';
+import DeleteFriendButton from '../src/components/DeleteFriendButton.js';
+import PanicButton from '../src/components/PanicButton.js';
 import sum from '../math.js';
 
 const store = createStore(reducers, applyMiddleware(thunk, logger));
@@ -43,6 +45,15 @@ it('renders AddFriend snapshot', () => {
 it('renders AddFriendButton snapshot', () => {
   const compAddFriendButton = shallow(<AddFriendButton/>);
   expect(compAddFriendButton).toMatchSnapshot();
+});
+
+it('renders DeleteFriendButton snapshot', () => {
+  const compDeleteFriendButton = shallow(
+    <Provider store={store}>
+      <DeleteFriendButton/>
+    </Provider>
+  );
+  expect(compDeleteFriendButton).toMatchSnapshot();
 });
 
 it('renders Login snapshot', () => {
@@ -81,6 +92,13 @@ it('renders Maps snapshot', () => {
   );
   expect(compMaps).toMatchSnapshot();
 });
+
+it('renders PanicButton snapshot', () => {
+  const compPanicButton = shallow(
+    <PanicButton/>
+  );
+  expect(compPanicButton).toMatchSnapshot();
+})
 
 it('renders Register snapshot', () => {
   const compRegister = shallow(
