@@ -4,7 +4,6 @@ import { Button, Text, Icon } from 'native-base'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { logout } from '../actions'
 
 class LogoutButton extends React.Component {
 
@@ -23,7 +22,7 @@ class LogoutButton extends React.Component {
           ToastAndroid.CENTER
         )
         setTimeout(()=> {
-          if(state.params.stateKey) {
+          if(state.params.stateKey !== undefined) {
             goBack(state.params.stateKey)
           } else {
             goBack(null)
