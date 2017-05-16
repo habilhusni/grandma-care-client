@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Alert } from 'react-native'
+import { View, Text, Alert, ToastAndroid } from 'react-native'
 import { Container, Content, Form, Item, Button, Label, Input } from 'native-base'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -102,9 +102,10 @@ class Register extends React.Component {
                 <Button full style={{width:'100%', marginTop:15}}
                   onPress={()=> {
                     register({username,password,phone,email})
+                    ToastAndroid.showWithGravity('Registering...', ToastAndroid.SHORT, ToastAndroid.CENTER)
                     setTimeout(()=> {
                       _setModalVisible(false)
-                    }, 500)
+                    }, 750)
                   }}>
                   <Text>Register</Text>
                 </Button>
