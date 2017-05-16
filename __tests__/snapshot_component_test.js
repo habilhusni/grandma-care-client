@@ -94,7 +94,9 @@ it('renders Maps snapshot', () => {
 
 it('renders PanicButton snapshot', () => {
   const compPanicButton = shallow(
-    <PanicButton/>
+    <Provider store={store}>
+      <PanicButton/>
+    </Provider>
   );
   expect(compPanicButton).toMatchSnapshot();
 })

@@ -825,41 +825,9 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Styled(Fab)
-    active={false}
-    onPress={[Function]}
-    position="bottomLeft"
-    style={
-        Object {
-            "backgroundColor": "#FF2821",
-          }
-    }
-    virtual={undefined}
->
-    <Styled(Icon)
-        android="md-alert"
-        name="alert"
-        virtual={undefined}
-    />
-</Styled(Fab)>,
+  "node": <Connect(PanicButton) />,
   "nodes": Array [
-    <Styled(Fab)
-      active={false}
-      onPress={[Function]}
-      position="bottomLeft"
-      style={
-            Object {
-                  "backgroundColor": "#FF2821",
-                }
-      }
-      virtual={undefined}
->
-      <Styled(Icon)
-            android="md-alert"
-            name="alert"
-            virtual={undefined}
-      />
-</Styled(Fab)>,
+    <Connect(PanicButton) />,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -867,16 +835,44 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <PanicButton />,
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <Connect(PanicButton) />
+</Provider>,
       "_debugID": 15,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": PanicButton {
+      "_instance": Provider {
         "_reactInternalInstance": [Circular],
         "context": Object {},
-        "props": Object {},
+        "props": Object {
+          "children": <Connect(PanicButton) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
         "refs": Object {},
         "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -895,41 +891,9 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Styled(Fab)
-          active={false}
-          onPress={[Function]}
-          position="bottomLeft"
-          style={
-                    Object {
-                              "backgroundColor": "#FF2821",
-                            }
-          }
-          virtual={undefined}
->
-          <Styled(Icon)
-                    android="md-alert"
-                    name="alert"
-                    virtual={undefined}
-          />
-</Styled(Fab)>,
+        "_currentElement": <Connect(PanicButton) />,
         "_debugID": 16,
-        "_renderedOutput": <Styled(Fab)
-          active={false}
-          onPress={[Function]}
-          position="bottomLeft"
-          style={
-                    Object {
-                              "backgroundColor": "#FF2821",
-                            }
-          }
-          virtual={undefined}
->
-          <Styled(Icon)
-                    android="md-alert"
-                    name="alert"
-                    virtual={undefined}
-          />
-</Styled(Fab)>,
+        "_renderedOutput": <Connect(PanicButton) />,
       },
       "_renderedNodeType": 1,
       "_rootNodeID": 0,
@@ -941,7 +905,19 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <PanicButton />,
+  "unrendered": <Provider
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+>
+    <Connect(PanicButton) />
+</Provider>,
 }
 `;
 
