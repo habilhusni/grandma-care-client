@@ -12,7 +12,7 @@ class PanicButton extends React.Component {
       <Fab
         active={false}
         style={{backgroundColor:'#FF2821'}}
-        position="bottomRight"
+        position="bottomLeft"
         onPress={()=> null}>
         <Icon name="alert" android="md-alert" />
       </Fab>

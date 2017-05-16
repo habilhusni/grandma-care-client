@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
-import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body } from 'native-base';
+import { View, Image, StyleSheet } from 'react-native';
+import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body, Text, Icon } from 'native-base';
 
 import { connect } from 'react-redux';
-
-const styles = StyleSheet.create({
-  child:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 2,
-    padding: 5,
-  },
-  userId:{
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'black'
-  }
-})
+import { styles } from '../styles'
 
 class SettingPage extends Component {
   render() {
@@ -27,9 +13,10 @@ class SettingPage extends Component {
       <Container>
         <Header>
           <Left>
-            <Button transparent onPress={() => goBack()}>
-              <Icon name="md-arrow-back" style={{fontSize: 24, color: 'white'}}/>
-              <Text style={{fontSize: 24, color: 'white'}}> Back</Text>
+            <Button light transparent iconLeft
+              onPress={() => goBack()}>
+              <Icon name="arrow-back" style={{color: 'white'}}/>
+              <Text>Back</Text>
             </Button>
           </Left>
         </Header>
@@ -37,21 +24,21 @@ class SettingPage extends Component {
           <Card >
             <View style={styles.child}>
               <Text>User id: </Text>
-              <Text style={styles.userId}>{user._id}</Text>
+              <Text>{user._id}</Text>
             </View>
           </Card>
           <Card >
             <View style={styles.child}>
               <Text>Username: </Text>
-              <Text style={styles.userId}>{user.username}</Text>
+              <Text>{user.username}</Text>
             </View>
             <View style={styles.child}>
               <Text>Phone: </Text>
-              <Text style={styles.userId}>{user.phone}</Text>
+              <Text>{user.phone}</Text>
             </View>
             <View style={styles.child}>
               <Text>Email: </Text>
-              <Text style={styles.userId}>{user.email}</Text>
+              <Text>{user.email}</Text>
             </View>
           </Card>
           <Card>
@@ -61,11 +48,11 @@ class SettingPage extends Component {
               </View>
               <View style={styles.child}>
                 <Text>Latitude: </Text>
-                <Text style={styles.userId}>{user.latitude}</Text>
+                <Text>{user.latitude}</Text>
               </View>
               <View style={styles.child}>
                 <Text>Longitude: </Text>
-                <Text style={styles.userId}>{user.longitude}</Text>
+                <Text>{user.longitude}</Text>
               </View>
             </View>
           </Card>
