@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for grandma-care-client/src/components/UserListButton.js</title>
+    <title>Code coverage report for grandma-care-client/src/helpers/backgroundjob.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">grandma-care-client/src/components</a> UserListButton.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">grandma-care-client/src/helpers</a> backgroundjob.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>0/7</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -69,12 +69,12 @@
 24</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -82,37 +82,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
-import { Button, Text, Icon } from 'native-base'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BackgroundTimer from 'react-native-background-timer'
 &nbsp;
-import PropTypes from 'prop-types'
-&nbsp;
-class UserListButton extends React.Component {
-&nbsp;
-  render() {
-    return (
-      &lt;Button light transparent vertical
-        onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.props._setModalUserListVisible(true)}</span>&gt;
-        &lt;Icon name="person" color="#FFF" /&gt;
-        &lt;Text&gt;Friend List&lt;/Text&gt;
-      &lt;/Button&gt;
-    )
-  }
-}
-&nbsp;
-UserListButton.propTypes = {
-  _setModalUserListVisible: PropTypes.func.isRequired
-}
-&nbsp;
-export default UserListButton
-&nbsp;</pre></td></tr>
+export default intervalId = <span class="fstat-no" title="function not covered" >(u</span>serID,token,instance) =&gt; {
+<span class="cstat-no" title="statement not covered" >  return BackgroundTimer.setInterval(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    navigator.geolocation.getCurrentPosition(</span>
+<span class="fstat-no" title="function not covered" >      (p</span>osition) =&gt; {
+<span class="cstat-no" title="statement not covered" >        instance.setState({</span>
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        })
+        const locUpdate = <span class="cstat-no" title="statement not covered" >{</span>
+          latitude: instance.state.latitude,
+          longitude: instance.state.longitude,
+          userID: instance.props.userID,
+          token: instance.props.token
+        }
+<span class="cstat-no" title="statement not covered" >        instance.props.updateLocation(locUpdate)</span>
+<span class="cstat-no" title="statement not covered" >        instance.props.fetchOneUser(instance.props.token,instance.props.userID)</span>
+      },
+<span class="fstat-no" title="function not covered" >      (e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >Alert.alert('Turn on GPS',JSON.stringify(error)),</span>
+      {timeout: 5000}
+    );
+  }, 4000);
+}</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

@@ -240,7 +240,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`renders DeleteFriendButton snapshot 1`] = `
+exports[`renders DeactivateAccountButton snapshot 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -248,9 +248,9 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Connect(DeleteFriendButton) />,
+  "node": <Connect(DeactivateAccountButton) />,
   "nodes": Array [
-    <Connect(DeleteFriendButton) />,
+    <Connect(DeactivateAccountButton) />,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -269,7 +269,7 @@ ShallowWrapper {
                       }
         }
 >
-        <Connect(DeleteFriendButton) />
+        <Connect(DeactivateAccountButton) />
 </Provider>,
       "_debugID": 5,
       "_hostContainerInfo": null,
@@ -278,7 +278,7 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "children": <Connect(DeleteFriendButton) />,
+          "children": <Connect(DeactivateAccountButton) />,
           "store": Object {
             "dispatch": [Function],
             "getState": [Function],
@@ -314,9 +314,9 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Connect(DeleteFriendButton) />,
+        "_currentElement": <Connect(DeactivateAccountButton) />,
         "_debugID": 6,
-        "_renderedOutput": <Connect(DeleteFriendButton) />,
+        "_renderedOutput": <Connect(DeactivateAccountButton) />,
       },
       "_renderedNodeType": 1,
       "_rootNodeID": 0,
@@ -339,12 +339,12 @@ ShallowWrapper {
           }
     }
 >
-    <Connect(DeleteFriendButton) />
+    <Connect(DeactivateAccountButton) />
 </Provider>,
 }
 `;
 
-exports[`renders Login snapshot 1`] = `
+exports[`renders DeleteFriendButton snapshot 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -352,9 +352,9 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Connect(Login) />,
+  "node": <Connect(DeleteFriendButton) />,
   "nodes": Array [
-    <Connect(Login) />,
+    <Connect(DeleteFriendButton) />,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -373,7 +373,7 @@ ShallowWrapper {
                       }
         }
 >
-        <Connect(Login) />
+        <Connect(DeleteFriendButton) />
 </Provider>,
       "_debugID": 7,
       "_hostContainerInfo": null,
@@ -382,7 +382,7 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "children": <Connect(Login) />,
+          "children": <Connect(DeleteFriendButton) />,
           "store": Object {
             "dispatch": [Function],
             "getState": [Function],
@@ -418,8 +418,320 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Connect(Login) />,
+        "_currentElement": <Connect(DeleteFriendButton) />,
         "_debugID": 8,
+        "_renderedOutput": <Connect(DeleteFriendButton) />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+>
+    <Connect(DeleteFriendButton) />
+</Provider>,
+}
+`;
+
+exports[`renders EditProfile snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Connect(EditProfile) />,
+  "nodes": Array [
+    <Connect(EditProfile) />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <Connect(EditProfile) />
+</Provider>,
+      "_debugID": 9,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <Connect(EditProfile) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 5,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Connect(EditProfile) />,
+        "_debugID": 10,
+        "_renderedOutput": <Connect(EditProfile) />,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Provider
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+>
+    <Connect(EditProfile) />
+</Provider>,
+}
+`;
+
+exports[`renders EditProfileButton snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Styled(Button)
+    block={true}
+    onPress={[Function]}
+    virtual={undefined}
+>
+    <Styled(Text)
+        virtual={undefined}
+    >
+        EDIT PROFILE
+    </Styled(Text)>
+</Styled(Button)>,
+  "nodes": Array [
+    <Styled(Button)
+      block={true}
+      onPress={[Function]}
+      virtual={undefined}
+>
+      <Styled(Text)
+            virtual={undefined}
+      >
+            EDIT PROFILE
+      </Styled(Text)>
+</Styled(Button)>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <EditProfileButton />,
+      "_debugID": 11,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": EditProfileButton {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 6,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Styled(Button)
+          block={true}
+          onPress={[Function]}
+          virtual={undefined}
+>
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    EDIT PROFILE
+          </Styled(Text)>
+</Styled(Button)>,
+        "_debugID": 12,
+        "_renderedOutput": <Styled(Button)
+          block={true}
+          onPress={[Function]}
+          virtual={undefined}
+>
+          <Styled(Text)
+                    virtual={undefined}
+          >
+                    EDIT PROFILE
+          </Styled(Text)>
+</Styled(Button)>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <EditProfileButton />,
+}
+`;
+
+exports[`renders Login snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Connect(Login) />,
+  "nodes": Array [
+    <Connect(Login) />,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <Connect(Login) />
+</Provider>,
+      "_debugID": 13,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Provider {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <Connect(Login) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 7,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Connect(Login) />,
+        "_debugID": 14,
         "_renderedOutput": <Connect(Login) />,
       },
       "_renderedNodeType": 1,
@@ -501,7 +813,7 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <LogoutButton />,
-      "_debugID": 9,
+      "_debugID": 15,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": LogoutButton {
@@ -522,7 +834,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 5,
+      "_mountOrder": 8,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -547,7 +859,7 @@ ShallowWrapper {
                     Logout
           </Styled(Text)>
 </Styled(Button)>,
-        "_debugID": 10,
+        "_debugID": 16,
         "_renderedOutput": <Styled(Button)
           light={true}
           onPress={[Function]}
@@ -618,7 +930,7 @@ ShallowWrapper {
                 <Connect(Main) />
         </NavigationContainer>
 </Provider>,
-      "_debugID": 11,
+      "_debugID": 17,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -656,7 +968,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 6,
+      "_mountOrder": 9,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -666,7 +978,7 @@ ShallowWrapper {
         "_currentElement": <NavigationContainer>
           <Connect(Main) />
 </NavigationContainer>,
-        "_debugID": 12,
+        "_debugID": 18,
         "_renderedOutput": <NavigationContainer>
           <Connect(Main) />
 </NavigationContainer>,
@@ -736,7 +1048,7 @@ ShallowWrapper {
                 <Connect(Maps) />
         </NavigationContainer>
 </Provider>,
-      "_debugID": 13,
+      "_debugID": 19,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -774,7 +1086,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 7,
+      "_mountOrder": 10,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -784,7 +1096,7 @@ ShallowWrapper {
         "_currentElement": <NavigationContainer>
           <Connect(Maps) />
 </NavigationContainer>,
-        "_debugID": 14,
+        "_debugID": 20,
         "_renderedOutput": <NavigationContainer>
           <Connect(Maps) />
 </NavigationContainer>,
@@ -848,7 +1160,7 @@ ShallowWrapper {
 >
         <Connect(PanicButton) />
 </Provider>,
-      "_debugID": 15,
+      "_debugID": 21,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -884,7 +1196,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 8,
+      "_mountOrder": 11,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -892,7 +1204,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <Connect(PanicButton) />,
-        "_debugID": 16,
+        "_debugID": 22,
         "_renderedOutput": <Connect(PanicButton) />,
       },
       "_renderedNodeType": 1,
@@ -952,7 +1264,7 @@ ShallowWrapper {
 >
         <Connect(Register) />
 </Provider>,
-      "_debugID": 17,
+      "_debugID": 23,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -988,7 +1300,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 9,
+      "_mountOrder": 12,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -996,7 +1308,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <Connect(Register) />,
-        "_debugID": 18,
+        "_debugID": 24,
         "_renderedOutput": <Connect(Register) />,
       },
       "_renderedNodeType": 1,
@@ -1062,7 +1374,7 @@ ShallowWrapper {
                 <Connect(SettingPage) />
         </NavigationContainer>
 </Provider>,
-      "_debugID": 19,
+      "_debugID": 25,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -1100,7 +1412,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 10,
+      "_mountOrder": 13,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -1110,7 +1422,7 @@ ShallowWrapper {
         "_currentElement": <NavigationContainer>
           <Connect(SettingPage) />
 </NavigationContainer>,
-        "_debugID": 20,
+        "_debugID": 26,
         "_renderedOutput": <NavigationContainer>
           <Connect(SettingPage) />
 </NavigationContainer>,
@@ -1174,7 +1486,7 @@ ShallowWrapper {
 >
         <Connect(SplashScreen) />
 </Provider>,
-      "_debugID": 21,
+      "_debugID": 27,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -1210,7 +1522,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 11,
+      "_mountOrder": 14,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -1218,7 +1530,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <Connect(SplashScreen) />,
-        "_debugID": 22,
+        "_debugID": 28,
         "_renderedOutput": <Connect(SplashScreen) />,
       },
       "_renderedNodeType": 1,
@@ -1284,7 +1596,7 @@ ShallowWrapper {
                 <Connect(UserList) />
         </NavigationContainer>
 </Provider>,
-      "_debugID": 23,
+      "_debugID": 29,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Provider {
@@ -1322,7 +1634,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 12,
+      "_mountOrder": 15,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -1332,7 +1644,7 @@ ShallowWrapper {
         "_currentElement": <NavigationContainer>
           <Connect(UserList) />
 </NavigationContainer>,
-        "_debugID": 24,
+        "_debugID": 30,
         "_renderedOutput": <NavigationContainer>
           <Connect(UserList) />
 </NavigationContainer>,
@@ -1418,7 +1730,7 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <UserListButton />,
-      "_debugID": 25,
+      "_debugID": 31,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": UserListButton {
@@ -1438,7 +1750,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 13,
+      "_mountOrder": 16,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -1463,7 +1775,7 @@ ShallowWrapper {
                     Friend List
           </Styled(Text)>
 </Styled(Button)>,
-        "_debugID": 26,
+        "_debugID": 32,
         "_renderedOutput": <Styled(Button)
           light={true}
           onPress={[Function]}
