@@ -204,9 +204,9 @@ export const updateSensor = (sensorUpdate) => (
   )
 )
 
-export const addFriend = (token, userID, friendID) => (
+export const addFriend = (token, userID, friendEmail) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendID}`, {
+    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendEmail}`, {
       method: 'put',
       headers: {
         'Accept': 'application/json',
