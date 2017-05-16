@@ -33,12 +33,9 @@ class LogoutButton extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props
     return (
       <Button light transparent vertical
-        onPress={()=> {
-          this._logout()
-        }}>
+        onPress={()=> { this._logout() }}>
         <Icon name="power" color="#FFF"/>
         <Text>Logout</Text>
       </Button>

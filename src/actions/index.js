@@ -97,10 +97,6 @@ export const deactivateFail = error => ({
   error
 })
 
-export const deactivateDone = () => ({
-  type: types.DEACTIVATE_DONE
-})
-
 export const fetchOneUser = (token,userId) => (
   dispatch => (
     fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
