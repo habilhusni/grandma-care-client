@@ -34,7 +34,7 @@
 	"jest": {
 		"preset": "react-native",
 		"transformIgnorePatterns": [
-			"node_modules/(?!react-native-base-shoutem-theme)/"
+			"node_modules/(?!native-base-shoutem-theme)/"
 		],
 		"setupFiles": [
 			"./jest/setup.js"

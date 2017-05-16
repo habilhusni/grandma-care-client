@@ -83,6 +83,15 @@ it('renders Maps snapshot', () => {
   expect(compMaps).toMatchSnapshot();
 });
 
+it('renders PanicButton snapshot', () => {
+  const compPanicButton = shallow(
+    <Provider store={store}>
+      <PanicButton/>
+    </Provider>
+  );
+  expect(compPanicButton).toMatchSnapshot();
+})
+
 it('renders Register snapshot', () => {
   const compRegister = shallow(
     <Provider store={store}>
