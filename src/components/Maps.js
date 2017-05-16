@@ -78,6 +78,7 @@ class Maps extends React.Component {
 
             {user.friends.map(friend => (
             <MapView.Marker.Animated key={friend._id}
+              pinColor={'blue'}
               coordinate={{latitude: friend.latitude, longitude: friend.longitude}}
               title={friend.username}/>
           ))}
