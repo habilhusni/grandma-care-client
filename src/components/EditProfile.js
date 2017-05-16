@@ -8,8 +8,6 @@ import PropTypes from 'prop-types';
 import { fetchOneUser, updateUser } from '../actions';
 import { styles } from '../styles';
 
-import DeleteFriendButton from './DeleteFriendButton';
-
 class EditProfile extends React.Component {
 
   state = {
@@ -97,6 +95,14 @@ class EditProfile extends React.Component {
                     }, 500)
                   }}>
                   <Text style={{color:'white'}}>UPDATE</Text>
+                </Button>
+              </Item>
+              <Item last style={{marginTop:20, borderColor:'transparent'}}>
+                <Button full primary transparent style={{width:'100%'}}
+                  onPress={()=> {
+                    _setModalEditProfileVisible(false)
+                  }}>
+                  <Text>Back</Text>
                 </Button>
               </Item>
             </Form>
