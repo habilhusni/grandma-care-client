@@ -1,5 +1,5 @@
 import React from 'react'
-import { AsyncStorage, ToastAndroid } from 'react-native'
+import { AsyncStorage, ToastAndroid, Alert } from 'react-native'
 import { Button, Text, Icon } from 'native-base'
 
 import { connect } from 'react-redux'
@@ -12,16 +12,26 @@ class DeactivateAccountButton extends React.Component {
   _deactivate = () => {
     const { token, userID, deactivate, deactivateDone } = this.props
     const { goBack, state } = this.props.navigation
-    deactivate(token,userID)
-    AsyncStorage.multiRemove(['token','id'], (err)=> {
-      ToastAndroid.showWithGravity('Deactivating Account..', ToastAndroid.LONG, ToastAndroid.CENTER)
-      setTimeout(()=> {
-        if(state.params.stateKey !== undefined) {
-          goBack(state.params.stateKey)
-        } else {
-          goBack(null)
-      }, 500)
-    })
+    Alert.alert(
+      'Deactivate Account',
+      'Are you sure about this?',
+      [
+        {text: 'No', onPress: () => null},
+        {text: 'Yes', onPress: () => {
+          deactivate(token,userID)
+          AsyncStorage.multiRemove(['token','id'], (err)=> {
+            ToastAndroid.showWithGravity('Deactivating Account..', ToastAndroid.LONG, ToastAndroid.CENTER)
+            setTimeout(()=> {
+              if(state.params.stateKey !== undefined) {
+                goBack(state.params.stateKey)
+              } else {
+                goBack(null)
+              }
+            }, 500)
+          })
+        }}
+      ]
+    )
   }
 
   render() {
