@@ -146,7 +146,7 @@ class Main extends React.Component {
               color="#292988"
               style={styles.loadingIcon}/>
           }
-          <PanicButton />
+          <PanicButton token={token} userID={userID}/>
         </Content>
         <Footer>
           <FooterTab>
