@@ -129,7 +129,7 @@ class Main extends React.Component {
       <Container>
         <Header>
           <Right>
-            <Button transparent onPress={() => navigate('Profile')}>
+            <Button transparent onPress={() => navigate('Profile', {token:token})}>
               <Icon name="md-settings" style={{fontSize: 28, color: 'white'}}/>
             </Button>
           </Right>

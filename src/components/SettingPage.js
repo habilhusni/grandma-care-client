@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, Modal } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body, Text, Icon } from 'native-base';
 
 import { connect } from 'react-redux';
-import { styles } from '../styles'
+import { styles } from '../styles';
+
+import EditProfileButton from './EditProfileButton'
+import EditProfile from './EditProfile'
 
 class SettingPage extends Component {
+
+  state = {
+    modalEditProfileVisible: false,
+  }
+
+  _setModalEditProfileVisible = (val) => {
+    this.setState({ modalEditProfileVisible: val })
+  }
+
   render() {
     const { navigate,goBack } = this.props.navigation
     const { user } = this.props
+    const { token } = this.props.navigation.state.params
+    const { modalEditProfileVisible } = this.state
     return (
       <Container>
         <Header>
@@ -56,7 +70,19 @@ class SettingPage extends Component {
               </View>
             </View>
           </Card>
+          <EditProfileButton _setModalEditProfileVisible={this._setModalEditProfileVisible}/>
         </Content>
+        <Modal
+          animationType={'slide'}
+          transparent={false}
+          visible={modalEditProfileVisible}
+          onRequestClose={()=> null}>
+          <EditProfile
+            user={user}
+            token={token}
+            userID={user._id}
+            _setModalEditProfileVisible={this._setModalEditProfileVisible}/>
+        </Modal>
       </Container>
     );
   }
