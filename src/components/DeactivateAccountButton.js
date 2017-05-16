@@ -1,5 +1,5 @@
 import React from 'react'
-import { AsyncStorage, ToastAndroid, Alert } from 'react-native'
+import { AsyncStorage, ToastAndroid, Alert, View } from 'react-native'
 import { Button, Text, Icon } from 'native-base'
 
 import { connect } from 'react-redux'
@@ -36,10 +36,9 @@ class DeactivateAccountButton extends React.Component {
 
   render() {
     return (
-      <Button bordered danger iconLeft
+      <Button full danger block
         onPress={() => this._deactivate() }>
-        <Icon name="deactivate" android="md-close" />
-        <Text>Deactivate</Text>
+          <Text>DEACTIVATE ACCOUNT</Text>
       </Button>
     )
   }
@@ -54,7 +53,7 @@ DeactivateAccountButton.propTypes = {
 }
 
 const mapDispatchToProps = dispatch => ({
-  deactivate: (token,userID) => dispatch(deactivate(token,userID))
+  deactivate: (token,userID) => dispatch(deactivate(token,userID)),
   deactivateDone: () => dispatch(deactivateDone())
 })
 

@@ -8,6 +8,8 @@ import { styles } from '../styles';
 import EditProfileButton from './EditProfileButton'
 import EditProfile from './EditProfile'
 
+import DeactivateAccountButton from './DeactivateAccountButton'
+
 class SettingPage extends Component {
 
   state = {
@@ -21,7 +23,7 @@ class SettingPage extends Component {
   render() {
     const { navigate,goBack } = this.props.navigation
     const { user } = this.props
-    const { token } = this.props.navigation.state.params
+    const { token, stateKey } = this.props.navigation.state.params
     const { modalEditProfileVisible } = this.state
     return (
       <Container>
@@ -35,42 +37,50 @@ class SettingPage extends Component {
           </Left>
         </Header>
         <Content>
-          <Card >
-            <View style={styles.child}>
-              <Text>User id: </Text>
-              <Text>{user._id}</Text>
-            </View>
-          </Card>
-          <Card >
-            <View style={styles.child}>
-              <Text>Username: </Text>
-              <Text>{user.username}</Text>
-            </View>
-            <View style={styles.child}>
-              <Text>Phone: </Text>
-              <Text>{user.phone}</Text>
-            </View>
-            <View style={styles.child}>
-              <Text>Email: </Text>
-              <Text>{user.email}</Text>
-            </View>
-          </Card>
-          <Card>
-            <View>
+            <Card>
               <View style={styles.child}>
-                <Text>Location: </Text>
+                <Text>User id: </Text>
+                <Text>{user._id}</Text>
+              </View>
+            </Card>
+            <Card>
+              <View style={styles.child}>
+                <Text>Username: </Text>
+                <Text>{user.username}</Text>
               </View>
               <View style={styles.child}>
-                <Text>Latitude: </Text>
-                <Text>{user.latitude}</Text>
+                <Text>Phone: </Text>
+                <Text>{user.phone}</Text>
               </View>
               <View style={styles.child}>
-                <Text>Longitude: </Text>
-                <Text>{user.longitude}</Text>
+                <Text>Email: </Text>
+                <Text>{user.email}</Text>
+              </View>
+            </Card>
+            <Card>
+              <View>
+                <View style={styles.child}>
+                  <Text>Location: </Text>
+                </View>
+                <View style={styles.child}>
+                  <Text>Latitude: </Text>
+                  <Text>{user.latitude}</Text>
+                </View>
+                <View style={styles.child}>
+                  <Text>Longitude: </Text>
+                  <Text>{user.longitude}</Text>
+                </View>
+              </View>
+            </Card>
+            <View style={{marginTop:15}}>
+              <EditProfileButton _setModalEditProfileVisible={this._setModalEditProfileVisible}/>
+              <View style={{width:'100%', justifyContent:'center', alignItems:'center', marginTop: 15}}>
+                <DeactivateAccountButton
+                  token={token}
+                  userID={user._id}
+                  navigation={this.props.navigation}/>
               </View>
             </View>
-          </Card>
-          <EditProfileButton _setModalEditProfileVisible={this._setModalEditProfileVisible}/>
         </Content>
         <Modal
           animationType={'slide'}

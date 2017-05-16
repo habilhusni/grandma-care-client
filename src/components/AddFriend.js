@@ -10,12 +10,12 @@ import { addFriend, fetchOneUser, addFriendDone } from '../actions'
 class AddFriend extends React.Component {
 
   state = {
-    friendID: ''
+    friendEmail: ''
   }
 
-  handleFriendIDInput = text => {
+  handleFriendEmail = text => {
     this.setState({
-      friendID: text
+      friendEmail: text
     })
   }
 
@@ -35,7 +35,7 @@ class AddFriend extends React.Component {
 
   render() {
     const { _setModalAddFriendVisible, token, userID, addFriend } = this.props
-    const { friendID } = this.state
+    const { friendEmail } = this.state
     const { height, width } = Dimensions.get('window')
     return (
       <View style={{
@@ -60,26 +60,28 @@ class AddFriend extends React.Component {
           </Left>
         </Header>
         <Content>
-          <View style={{marginTop:'30%',alignItems:'center'}}>
+          <View style={{marginTop:'30%',alignItems:'center', marginRight:10}}>
             <Form style={{width:'90%'}}>
               <Item floatingLabel>
-                <Label>Friend ID</Label>
+                <Label>Friend Email</Label>
                 <Input
                   autoCapitalize="none"
                   autoCorrect={false}
-                  value={friendID}
-                  onChange={(e) => this.handleFriendIDInput(e.nativeEvent.text)}
+                  value={friendEmail}
+                  onChange={(e) => this.handleFriendEmail(e.nativeEvent.text)}
                   />
               </Item>
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
-                <Button bordered full iconLeft
+                <Button full iconLeft
+                  style={{width:'100%'}}
                   onPress={() => {
-                    addFriend(token,userID,friendID)
+                    addFriend(token,userID,friendEmail)
                     setTimeout(()=> {
                       _setModalAddFriendVisible(false)
                     }, 500)
                   }}>
                   <Icon name="add" android="md-add" color="#292988"/>
+                  <Text>Add</Text>
                 </Button>
               </Item>
             </Form>
@@ -105,7 +107,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addFriend: (token, userID, friendID) => dispatch(addFriend(token,userID,friendID)),
+  addFriend: (token, userID, friendEmail) => dispatch(addFriend(token,userID,friendEmail)),
   addFriendDone: () => dispatch(addFriendDone()),
   fetchOneUser: (token,userID) => dispatch(fetchOneUser(token,userID))
 })
