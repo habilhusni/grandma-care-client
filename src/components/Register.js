@@ -54,7 +54,7 @@ class Register extends React.Component {
     return (
       <Container>
         <Content>
-          <View style={{marginTop:'45%', alignItems:'center'}}>
+          <View style={{marginTop:'35%', alignItems:'center'}}>
             <View>
               <Text style={{fontSize:25}}>Register Here</Text>
             </View>

@@ -35,14 +35,15 @@ class SplashScreen extends React.Component {
     }
   }
 
+
   render() {
     return (
-      <Container>
+      <Container style={{backgroundColor: 'rgba(35,113,255,0.9)'}}>
         <Content>
           <View style={styles.splash}>
             <Image
-              source={{uri: 'http://us.sulekhalive.com/images/photos/thumbnailfull/photos-2014-7-3-8-35-8.jpg'}}
-              style={{width:400,height:400}}
+              source={{uri: 'http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46afd69b4b.png'}}
+              style={{width:300,height:300}}
               />
             <Text style={styles.splashText}>Grandma Care</Text>
           </View>

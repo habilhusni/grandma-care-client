@@ -10,7 +10,7 @@ class UserListButton extends React.Component {
       <Button light transparent vertical
         onPress={() => this.props._setModalUserListVisible(true)}>
         <Icon name="person" color="#FFF" />
-        <Text>Friend List</Text>
+        <Text>Care List</Text>
       </Button>
     )
   }

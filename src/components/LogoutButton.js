@@ -22,7 +22,7 @@ class LogoutButton extends React.Component {
           ToastAndroid.CENTER
         )
         setTimeout(()=> {
-          if(state.params.stateKey !== undefined) {
+          if(state.hasOwnProperty('params')) {
             goBack(state.params.stateKey)
           } else {
             goBack(null)

@@ -40,10 +40,10 @@ class AddFriend extends React.Component {
     return (
       <View style={{
           width, height,
-          backgroundColor: 'rgba(0,0,0,0.6)'
+          backgroundColor: 'rgba(0,0,0,0.5)'
         }}>
       <Container style={{
-          width: width * 0.75,
+          width: width * 0.85,
           height: 400,
           marginTop: '25%',
           marginLeft: '10%',
@@ -61,7 +61,7 @@ class AddFriend extends React.Component {
         </Header>
         <Content>
           <View style={{marginTop:'30%',alignItems:'center', marginRight:10}}>
-            <Form style={{width:'90%'}}>
+            <Form style={{width:'85%'}}>
               <Item floatingLabel>
                 <Label>Friend Email</Label>
                 <Input
