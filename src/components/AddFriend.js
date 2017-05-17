@@ -28,7 +28,7 @@ class AddFriend extends React.Component {
         ToastAndroid.showWithGravity('Friend added !', ToastAndroid.SHORT, ToastAndroid.CENTER)
         addFriendDone()
       } else {
-        ToastAndroid.showWithGravity('Error', ToastAndroid.SHORT, ToastAndroid.CENTER)
+        ToastAndroid.showWithGravity('Add Friend Error', ToastAndroid.SHORT, ToastAndroid.CENTER)
       }
     }
   }

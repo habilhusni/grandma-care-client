@@ -23,6 +23,10 @@ export const loginFail = error => ({
   error
 })
 
+export const logout = () => ({
+  type: types.LOGOUT
+})
+
 export const fetchUsersSuccess = payload => ({
   type: types.FETCH_USERLIST_SUCCESS,
   payload
@@ -215,7 +219,13 @@ export const addFriend = (token, userID, friendEmail) => (
         'Content-Type': 'application/json',
         'token': token
       }
-    }).then(() => dispatch(addFriendSuccess()))
+    }).then(res => {
+      if(res.status === 200) {
+        dispatch(addFriendSuccess())
+      } else {
+        dispatch(addFriendFail({error: 'error'}))
+      }
+    })
       .catch(err => dispatch(addFriendFail(err)))
   )
 )
