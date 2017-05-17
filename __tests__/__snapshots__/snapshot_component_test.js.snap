@@ -128,7 +128,7 @@ ShallowWrapper {
     <Styled(Text)
         virtual={undefined}
     >
-        Add Friend
+        Add Care
     </Styled(Text)>
 </Styled(Button)>,
   "nodes": Array [
@@ -148,7 +148,7 @@ ShallowWrapper {
       <Styled(Text)
             virtual={undefined}
       >
-            Add Friend
+            Add Care
       </Styled(Text)>
 </Styled(Button)>,
   ],
@@ -202,7 +202,7 @@ ShallowWrapper {
           <Styled(Text)
                     virtual={undefined}
           >
-                    Add Friend
+                    Add Care
           </Styled(Text)>
 </Styled(Button)>,
         "_debugID": 4,
@@ -222,7 +222,7 @@ ShallowWrapper {
           <Styled(Text)
                     virtual={undefined}
           >
-                    Add Friend
+                    Add Care
           </Styled(Text)>
 </Styled(Button)>,
       },
@@ -1700,7 +1700,7 @@ ShallowWrapper {
     <Styled(Text)
         virtual={undefined}
     >
-        Friend List
+        Care List
     </Styled(Text)>
 </Styled(Button)>,
   "nodes": Array [
@@ -1719,7 +1719,7 @@ ShallowWrapper {
       <Styled(Text)
             virtual={undefined}
       >
-            Friend List
+            Care List
       </Styled(Text)>
 </Styled(Button)>,
   ],
@@ -1772,7 +1772,7 @@ ShallowWrapper {
           <Styled(Text)
                     virtual={undefined}
           >
-                    Friend List
+                    Care List
           </Styled(Text)>
 </Styled(Button)>,
         "_debugID": 32,
@@ -1791,7 +1791,7 @@ ShallowWrapper {
           <Styled(Text)
                     virtual={undefined}
           >
-                    Friend List
+                    Care List
           </Styled(Text)>
 </Styled(Button)>,
       },
