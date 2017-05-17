@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for grandma-care-client/src/components/SettingPage.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">grandma-care-client/src/components</a> SettingPage.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/9</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+import { View, Image, StyleSheet, Modal } from 'react-native';
+import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body, Text, Icon } from 'native-base';
+&nbsp;
+import { connect } from 'react-redux';
+import { styles } from '../styles';
+&nbsp;
+import EditProfileButton from './EditProfileButton'
+import EditProfile from './EditProfile'
+&nbsp;
+import DeactivateAccountButton from './DeactivateAccountButton'
+&nbsp;
+class SettingPage extends Component {
+&nbsp;
+  state = {
+    modalEditProfileVisible: false,
+  }
+&nbsp;
+  _setModalEditProfileVisible = <span class="fstat-no" title="function not covered" >(v</span>al) =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({ modalEditProfileVisible: val })</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  re</span>nder() {
+    const { navigate,goBack } = <span class="cstat-no" title="statement not covered" >this.props.navigation</span>
+    const { user } = <span class="cstat-no" title="statement not covered" >this.props</span>
+    const { token, stateKey } = <span class="cstat-no" title="statement not covered" >this.props.navigation.state.params</span>
+    const { modalEditProfileVisible } = <span class="cstat-no" title="statement not covered" >this.state</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      &lt;Container&gt;
+        &lt;Header&gt;
+          &lt;Left&gt;
+            &lt;Button light transparent iconLeft
+              onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >goBack()}</span>&gt;
+              &lt;Icon name="arrow-back" style={{color: 'white'}}/&gt;
+              &lt;Text&gt;Back&lt;/Text&gt;
+            &lt;/Button&gt;
+          &lt;/Left&gt;
+        &lt;/Header&gt;
+        &lt;Content&gt;
+            &lt;Card&gt;
+              &lt;View style={styles.child}&gt;
+                &lt;Text&gt;User id: &lt;/Text&gt;
+                &lt;Text&gt;{user._id}&lt;/Text&gt;
+              &lt;/View&gt;
+            &lt;/Card&gt;
+            &lt;Card&gt;
+              &lt;View style={styles.child}&gt;
+                &lt;Text&gt;Username: &lt;/Text&gt;
+                &lt;Text&gt;{user.username}&lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.child}&gt;
+                &lt;Text&gt;Phone: &lt;/Text&gt;
+                &lt;Text&gt;{user.phone}&lt;/Text&gt;
+              &lt;/View&gt;
+              &lt;View style={styles.child}&gt;
+                &lt;Text&gt;Email: &lt;/Text&gt;
+                &lt;Text&gt;{user.email}&lt;/Text&gt;
+              &lt;/View&gt;
+            &lt;/Card&gt;
+            &lt;Card&gt;
+              &lt;View&gt;
+                &lt;View style={styles.child}&gt;
+                  &lt;Text&gt;Location: &lt;/Text&gt;
+                &lt;/View&gt;
+                &lt;View style={styles.child}&gt;
+                  &lt;Text&gt;Latitude: &lt;/Text&gt;
+                  &lt;Text&gt;{user.latitude}&lt;/Text&gt;
+                &lt;/View&gt;
+                &lt;View style={styles.child}&gt;
+                  &lt;Text&gt;Longitude: &lt;/Text&gt;
+                  &lt;Text&gt;{user.longitude}&lt;/Text&gt;
+                &lt;/View&gt;
+              &lt;/View&gt;
+            &lt;/Card&gt;
+            &lt;View style={{marginTop:15}}&gt;
+              &lt;EditProfileButton _setModalEditProfileVisible={this._setModalEditProfileVisible}/&gt;
+              &lt;View style={{width:'100%', justifyContent:'center', alignItems:'center', marginTop: 15}}&gt;
+                &lt;DeactivateAccountButton
+                  token={token}
+                  userID={user._id}
+                  navigation={this.props.navigation}/&gt;
+              &lt;/View&gt;
+            &lt;/View&gt;
+        &lt;/Content&gt;
+        &lt;Modal
+          animationType={'slide'}
+          transparent={false}
+          visible={modalEditProfileVisible}
+          onRequestClose={<span class="fstat-no" title="function not covered" >()</span>=&gt; <span class="cstat-no" title="statement not covered" >null}</span>&gt;
+          &lt;EditProfile
+            user={user}
+            token={token}
+            userID={user._id}
+            _setModalEditProfileVisible={this._setModalEditProfileVisible}/&gt;
+        &lt;/Modal&gt;
+      &lt;/Container&gt;
+    );
+  }
+}
+&nbsp;
+const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  user: state.user
+})
+&nbsp;
+export default connect(mapStateToProps,null)(SettingPage);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 16 2017 16:49:50 GMT+0700 (WIB)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
