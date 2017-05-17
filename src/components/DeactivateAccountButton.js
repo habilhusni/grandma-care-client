@@ -22,7 +22,7 @@ class DeactivateAccountButton extends React.Component {
           AsyncStorage.multiRemove(['token','id'], (err)=> {
             ToastAndroid.showWithGravity('Deactivating Account..', ToastAndroid.LONG, ToastAndroid.CENTER)
             setTimeout(()=> {
-              if(state.params.stateKey !== undefined) {
+              if(state.params !== undefined) {
                 goBack(state.params.stateKey)
               } else {
                 goBack(null)

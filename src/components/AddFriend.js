@@ -46,7 +46,7 @@ class AddFriend extends React.Component {
           width: width * 0.85,
           height: 400,
           marginTop: '25%',
-          marginLeft: '10%',
+          marginLeft: '7.5%',
           marginBottom: '40%',
           backgroundColor: '#FFF'
         }}>

@@ -35,7 +35,7 @@ class Main extends React.Component {
 
   getAccel(){
     let self = this
-    SensorManager.startAccelerometer(1000);
+    SensorManager.startAccelerometer(750);
     DeviceEventEmitter.addListener('Accelerometer', function (data) {
       if(Math.abs(data.x) > 21 || Math.abs(data.y) > 21 || Math.abs(data.z) > 21 ) {
         const sensorUpdate = {
@@ -75,7 +75,7 @@ class Main extends React.Component {
     })
   }
 
-  componentWillMount() {
+  _checkAsyncStorage = () => {
     const { goBack, state } = this.props.navigation
     const { fetchOneUser } = this.props
 
@@ -99,6 +99,10 @@ class Main extends React.Component {
         })
       }
     })
+  }
+
+  componentWillMount() {
+    this._checkAsyncStorage()
     BackHandler.addEventListener('hardwareBackPress', this._backHandler);
   }
 
@@ -125,15 +129,14 @@ class Main extends React.Component {
     const { mapWidth, mapHeight, modalUserListVisible, token, userID, modalAddFriendVisible, mapLatitude, mapLongitude } = this.state
     const { user } = this.props
     const { navigate } = this.props.navigation
-    const { params } = this.props.navigation.state
-    console.log(this.props.navigation.state)
+    const { params, key } = this.props.navigation.state
     return (
       <Container>
         <Header>
           <Right>
             <Button transparent onPress={() => navigate(
                 'Profile',
-                {token, stateKey: params.stateKey}
+                {token, stateKey: params ? params.stateKey : key}
               )}
               >
               <Icon name="md-settings" style={{fontSize: 28, color: 'white'}}/>
@@ -144,6 +147,7 @@ class Main extends React.Component {
           { mapWidth > 0 && mapHeight > 0 ?
             <View style={{width:mapWidth,height:mapHeight,alignItems:'center'}}>
               <Maps user={user} token={token} userID={userID}/>
+              <PanicButton token={token} userID={userID}/>
             </View>
             :
             <ActivityIndicator
@@ -152,7 +156,6 @@ class Main extends React.Component {
               color="#292988"
               style={styles.loadingIcon}/>
           }
-          <PanicButton token={token} userID={userID}/>
         </Content>
         <Footer>
           <FooterTab>

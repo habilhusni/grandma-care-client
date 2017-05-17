@@ -20,7 +20,8 @@ export const styles = StyleSheet.create({
   loadingIcon: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10
+    padding: 10,
+    marginTop: '55%'
   },
   child:{
     flexDirection: 'row',

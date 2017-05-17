@@ -12,7 +12,7 @@ class Register extends React.Component {
   state = {
     username: '',
     password: '',
-    phone: '',
+    phone: '+62',
     email: ''
   }
 
@@ -54,12 +54,12 @@ class Register extends React.Component {
     return (
       <Container>
         <Content>
-          <View style={{marginTop:'35%', alignItems:'center'}}>
+          <View style={{marginTop:'45%', marginLeft: '-5%', alignItems:'center'}}>
             <View>
               <Text style={{fontSize:25}}>Register Here</Text>
             </View>
             <Form style={{width:'85%'}}>
-              <Item floatingLabel>
+              <Item fixedLabel>
                 <Label>Username</Label>
                 <Input
                   autoCapitalize="none"
@@ -68,7 +68,7 @@ class Register extends React.Component {
                   onChange={e => this.handleUsernameInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item floatingLabel>
+              <Item fixedLabel>
                 <Label>Password</Label>
                 <Input
                   autoCapitalize="none"
@@ -78,7 +78,7 @@ class Register extends React.Component {
                   onChange={e => this.handlePasswordInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item floatingLabel>
+              <Item fixedLabel>
                 <Label>Phone</Label>
                 <Input
                   autoCapitalize="none"
@@ -88,7 +88,7 @@ class Register extends React.Component {
                   onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item floatingLabel>
+              <Item fixedLabel>
                 <Label>Email</Label>
                 <Input
                   autoCapitalize="none"
@@ -105,7 +105,7 @@ class Register extends React.Component {
                     ToastAndroid.showWithGravity('Registering...', ToastAndroid.SHORT, ToastAndroid.CENTER)
                     setTimeout(()=> {
                       _setModalVisible(false)
-                    }, 750)
+                    }, 600)
                   }}>
                   <Text>Register</Text>
                 </Button>
