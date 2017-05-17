@@ -108,9 +108,11 @@ export const updateUserFail = error => ({
   error
 })
 
+const HTTP = 'http://52.57.224.90'
+
 export const fetchOneUser = (token,userId) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userId}`,{
+    fetch(`${HTTP}/users/${userId}`,{
       method: 'get',
       headers: {
         'Accept' : 'application/json',
@@ -125,7 +127,7 @@ export const fetchOneUser = (token,userId) => (
 
 export const fetchUsers = token => (
   dispatch => (
-    fetch('http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users', {
+    fetch(`${HTTP}/users`, {
       method: 'get',
       headers: {
         'Accept': 'application/json',
@@ -140,7 +142,7 @@ export const fetchUsers = token => (
 
 export const login = user => (
   dispatch => (
-    fetch('http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/login', {
+    fetch(`${HTTP}/login`, {
       method: 'post',
       body: JSON.stringify(user),
       headers: {
@@ -155,7 +157,7 @@ export const login = user => (
 
 export const register = user => (
   dispatch => (
-    fetch('http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/signup', {
+    fetch(`${HTTP}/signup`, {
       method: 'post',
       body: JSON.stringify(user),
       headers: {
@@ -174,7 +176,7 @@ export const register = user => (
 
 export const updateLocation = (locUpdate) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${locUpdate.userID}/location/${locUpdate.latitude}/${locUpdate.longitude}`, {
+    fetch(`${HTTP}/users/${locUpdate.userID}/location/${locUpdate.latitude}/${locUpdate.longitude}`, {
       method: 'put',
       headers: {
         'Accept': 'application/json',
@@ -190,7 +192,7 @@ export const updateLocation = (locUpdate) => (
 
 export const updateSensor = (sensorUpdate) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${sensorUpdate.userID}/accelero/${sensorUpdate.x}/${sensorUpdate.y}/${sensorUpdate.z}`, {
+    fetch(`${HTTP}/users/${sensorUpdate.userID}/accelero/${sensorUpdate.x}/${sensorUpdate.y}/${sensorUpdate.z}`, {
       method: 'put',
       headers: {
         'Accept': 'application/json',
@@ -206,7 +208,7 @@ export const updateSensor = (sensorUpdate) => (
 
 export const addFriend = (token, userID, friendEmail) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/add/${friendEmail}`, {
+    fetch(`${HTTP}/users/${userID}/add/${friendEmail}`, {
       method: 'put',
       headers: {
         'Accept': 'application/json',
@@ -220,7 +222,7 @@ export const addFriend = (token, userID, friendEmail) => (
 
 export const deleteFriend = (token, userID, friendID) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}/remove/${friendID}`, {
+    fetch(`${HTTP}/users/${userID}/remove/${friendID}`, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
@@ -234,7 +236,7 @@ export const deleteFriend = (token, userID, friendID) => (
 
 export const deactivate = (token,userID) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+    fetch(`${HTTP}/users/${userID}`, {
       method: 'delete',
       headers: {
         'Accept': 'application/json',
@@ -248,7 +250,7 @@ export const deactivate = (token,userID) => (
 
 export const updateUser = (token, userID, newUser) => (
   dispatch => (
-    fetch(`http://ec2-35-157-203-118.eu-central-1.compute.amazonaws.com/users/${userID}`, {
+    fetch(`${HTTP}/users/${userID}`, {
       method: 'put',
       body: JSON.stringify(newUser),
       headers: {
