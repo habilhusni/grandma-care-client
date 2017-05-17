@@ -3,6 +3,10 @@ package com.client;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.showlocationservicesdialogbox.LocationServicesDialogBoxPackage;
+import com.sensormanager.SensorManagerPackage;
+import com.ocetnik.timer.BackgroundTimerPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -25,6 +29,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new LocationServicesDialogBoxPackage(),
+            new SensorManagerPackage(),
+            new BackgroundTimerPackage(),
+            new VectorIconsPackage(),
           new MapsPackage()
       );
     }
