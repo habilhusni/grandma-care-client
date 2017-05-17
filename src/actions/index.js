@@ -108,7 +108,7 @@ export const updateUserFail = error => ({
   error
 })
 
-const HTTP = 'http://52.57.224.90'
+const HTTP = 'http://grandma-care-server-prod.eu-central-1.elasticbeanstalk.com'
 
 export const fetchOneUser = (token,userId) => (
   dispatch => (
