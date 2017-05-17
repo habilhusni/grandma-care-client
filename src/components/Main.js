@@ -1,13 +1,13 @@
 import React from 'react'
 import  Icon  from 'react-native-vector-icons/Ionicons'
-import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator, DeviceEventEmitter } from 'react-native'
-import { Container, Content, Header, Footer, FooterTab, Right, Button } from 'native-base'
+import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator, DeviceEventEmitter, ToastAndroid } from 'react-native'
+import { Container, Content, Header, Footer, FooterTab, Right, Button, Body, Left, Text } from 'native-base'
 import { SensorManager } from 'NativeModules';
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { fetchOneUser, updateSensor } from '../actions'
+import { fetchOneUser, updateSensor, logout } from '../actions'
 import { styles } from '../styles'
 
 import Maps from './Maps'
@@ -30,7 +30,8 @@ class Main extends React.Component {
     mapWidth: 0,
     mapHeight: 0,
     token: '',
-    userID: ''
+    userID: '',
+    counter: 0
   }
 
   getAccel(){
@@ -117,12 +118,22 @@ class Main extends React.Component {
 
   _backHandler = async () => {
     const { goBack, state } = this.props.navigation
-    let result = await AsyncStorage.getItem('token')
-    if(result === null) {
-      goBack(state.params.stateKey)
-      return true
+    this.setState({counter: this.state.counter+1})
+    if(this.state.counter < 2) {
+      ToastAndroid.showWithGravity(
+        'Press Back Button again to Logout',
+        ToastAndroid.SHORT,
+        ToastAndroid.CENTER
+      )
+      setTimeout(()=> {
+        this.setState({counter:0})
+      }, 2500)
+    } else {
+      await AsyncStorage.multiRemove(['token','id'])
+      this.props.logout()
+      goBack()
     }
-    return false
+
   }
 
   render() {
@@ -133,6 +144,10 @@ class Main extends React.Component {
     return (
       <Container>
         <Header>
+          <Left></Left>
+          <Body>
+            <Text style={{color:'#FFF',justifyContent:'center'}}>Grandma Care</Text>
+          </Body>
           <Right>
             <Button transparent onPress={() => navigate(
                 'Profile',
@@ -168,7 +183,7 @@ class Main extends React.Component {
           animationType={'slide'}
           transparent={false}
           visible={modalUserListVisible}
-          onRequestClose={()=> null}>
+          onRequestClose={()=> this._setModalUserListVisible(false)}>
           <UserList
             user={user}
             token={token}
@@ -179,7 +194,7 @@ class Main extends React.Component {
           animationType={'fade'}
           transparent={true}
           visible={modalAddFriendVisible}
-          onRequestClose={()=> null}>
+          onRequestClose={()=> this._setModalAddFriendVisible(false)}>
           <AddFriend
             token={token}
             userID={userID}
@@ -192,7 +207,8 @@ class Main extends React.Component {
 
 Main.propTypes = {
   user: PropTypes.object.isRequired,
-  fetchOneUser: PropTypes.func.isRequired
+  fetchOneUser: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -201,7 +217,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchOneUser: (token,userId) => dispatch(fetchOneUser(token,userId)),
-  updateSensor: (sensorUpdate) => dispatch(updateSensor(sensorUpdate))
+  updateSensor: (sensorUpdate) => dispatch(updateSensor(sensorUpdate)),
+  logout: () => dispatch(logout())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main)

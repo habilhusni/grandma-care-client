@@ -21,7 +21,7 @@ class SettingPage extends Component {
   }
 
   render() {
-    const { navigate,goBack } = this.props.navigation
+    const { navigate, goBack } = this.props.navigation
     const { user } = this.props
     const { token, stateKey } = this.props.navigation.state.params
     const { modalEditProfileVisible } = this.state
@@ -86,7 +86,7 @@ class SettingPage extends Component {
           animationType={'slide'}
           transparent={false}
           visible={modalEditProfileVisible}
-          onRequestClose={()=> null}>
+          onRequestClose={()=> this._setModalEditProfileVisible(false)}>
           <EditProfile
             user={user}
             token={token}

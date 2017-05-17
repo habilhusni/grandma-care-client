@@ -23,6 +23,10 @@ export const loginFail = error => ({
   error
 })
 
+export const logout = () => ({
+  type: types.LOGOUT
+})
+
 export const fetchUsersSuccess = payload => ({
   type: types.FETCH_USERLIST_SUCCESS,
   payload
