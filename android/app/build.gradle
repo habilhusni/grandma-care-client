@@ -126,6 +126,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-android-location-services-dialog-box')
     compile project(':react-native-sensor-manager')
     compile project(':react-native-background-timer')
     compile project(':react-native-vector-icons')

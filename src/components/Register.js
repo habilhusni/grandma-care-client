@@ -105,7 +105,7 @@ class Register extends React.Component {
                     ToastAndroid.showWithGravity('Registering...', ToastAndroid.SHORT, ToastAndroid.CENTER)
                     setTimeout(()=> {
                       _setModalVisible(false)
-                    }, 600)
+                    }, 750)
                   }}>
                   <Text>Register</Text>
                 </Button>
