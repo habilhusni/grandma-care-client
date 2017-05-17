@@ -38,7 +38,7 @@ class SplashScreen extends React.Component {
 
   render() {
     return (
-      <Container style={{backgroundColor: 'rgba(35,113,255,0.9)'}}>
+      <Container style={{backgroundColor: 'rgba(35,113,255,0.8)'}}>
         <Content>
           <View style={styles.splash}>
             <Image

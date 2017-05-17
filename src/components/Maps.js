@@ -4,6 +4,7 @@ import MapView from 'react-native-maps'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import BackgroundTimer from 'react-native-background-timer'
+import LocationServicesDialogBox from "react-native-android-location-services-dialog-box"
 
 import { updateLocation, fetchOneUser } from '../actions'
 import { styles } from '../styles'
@@ -52,7 +53,13 @@ class Maps extends React.Component {
   }
 
   componentWillMount() {
-    this.getInitialData()
+    LocationServicesDialogBox.checkLocationServicesIsEnabled({
+      message: "<h2>Enable Location</h2>This app wants to change your device settings:<br/><br/>Use GPS, Wi-Fi, and cell network for location<br/>",
+      ok: 'YES',
+      cancel: 'NO'
+    }).then(success => {
+      this.getInitialData()
+    }).catch(error => Alert.alert('Location not enabled','Please turn on Location in Setting'))
   }
 
   componentWillUnmount() {

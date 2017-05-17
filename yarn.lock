@@ -3337,6 +3337,10 @@ react-dom@^15.5.4:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
+react-native-android-location-services-dialog-box@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-android-location-services-dialog-box/-/react-native-android-location-services-dialog-box-1.2.1.tgz#65995cdca0300c406220e15f85a7705de26bb351"
+
 react-native-background-timer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-native-background-timer/-/react-native-background-timer-1.0.1.tgz#97712d8df111a117651f7766dfe6d5f13a2ebd59"
