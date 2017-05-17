@@ -71,7 +71,8 @@ class Maps extends React.Component {
         <MapView
           style={styles.map}
           region={region}
-          onRegionChange={this._onRegionChange}>
+          onRegionChange={this._onRegionChange}
+          loadingEnabled={true}>
           <MapView.Marker
             coordinate={{latitude, longitude}}
             title={user.username}/>
@@ -89,7 +90,8 @@ class Maps extends React.Component {
         <MapView
           style={styles.map}
           region={region}
-          onRegionChange={this._onRegionChange}>
+          onRegionChange={this._onRegionChange}
+          loadingEnabled={true}>
           <MapView.Marker
             coordinate={{latitude, longitude}}
             title={user.username}/>

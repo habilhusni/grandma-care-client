@@ -6,19 +6,22 @@ export const styles = StyleSheet.create({
   },
   splash: {
     flex: 1,
-    marginTop: '15%',
+    marginTop: '35%',
     backgroundColor: 'transparent',
     alignItems: 'center'
   },
   splashText: {
     fontSize: 25,
-    marginTop: 15,
-    color: 'rgba(152,152,152,0.7)'
+    marginTop: 25,
+    fontWeight: '200',
+    fontFamily: 'Roboto',
+    color: 'rgba(255,255,255,0.9)'
   },
   loadingIcon: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10
+    padding: 10,
+    marginTop: '55%'
   },
   child:{
     flexDirection: 'row',
