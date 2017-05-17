@@ -21,7 +21,7 @@ export default class CustCallout extends React.Component {
         longitude: friendLoc.longitude
       },
       params: [
-        { key: 'dirflg', value:'w' }
+        { key: 'dirflg', value:'d' }
       ]
     }
     getDirections(data)
@@ -30,24 +30,31 @@ export default class CustCallout extends React.Component {
   render() {
     const { username, friendLoc, userLoc } = this.props
     return (
-      <MapView.Callout>
-        <View style={styles.calloutContainer}>
-          <View style={{flex:1}}>
-            { friendLoc !== null ?
-              <Button iconRight transparent primary style={{marginRight:10}}
-                onPress={() => this._handleGetDirection()}>
-                <Icon name="get-direction" android="md-pin"/>
+      <View>
+      { friendLoc !== null ?
+        <MapView.Callout onPress={() => this._handleGetDirection()}>
+          <View style={styles.calloutContainer}>
+            <View style={{flex:1}}>
+              <Button iconRight transparent primary style={{marginRight:10}}>
+                <Icon name="get-direction" android="md-map"/>
                 <Text style={{marginLeft:12}}>{this.props.username}</Text>
               </Button>
-              :
+            </View>
+          </View>
+        </MapView.Callout>
+        :
+        <MapView.Callout>
+          <View style={styles.calloutContainer}>
+            <View style={{flex:1}}>
               <Button iconRight transparent danger style={{marginRight:10}}>
                 <Icon name="person" android="md-person"/>
                 <Text style={{marginLeft:10}}>{this.props.username}</Text>
               </Button>
-            }
+            </View>
           </View>
-        </View>
-      </MapView.Callout>
+        </MapView.Callout>
+      }
+      </View>
     )
   }
 }

@@ -104,11 +104,11 @@ class Main extends React.Component {
 
   componentWillMount() {
     this._checkAsyncStorage()
-    BackHandler.addEventListener('hardwareBackPress', this._backHandler);
   }
 
   componentDidMount(){
     this.getAccel()
+    BackHandler.addEventListener('hardwareBackPress', this._backHandler);
   }
 
   componentWillUnmount() {
@@ -127,7 +127,7 @@ class Main extends React.Component {
       )
       setTimeout(()=> {
         this.setState({counter:0})
-      }, 2500)
+      }, 1000)
     } else {
       await AsyncStorage.multiRemove(['token','id'])
       this.props.logout()

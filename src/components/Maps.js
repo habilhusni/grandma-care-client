@@ -85,9 +85,7 @@ class Maps extends React.Component {
           <MapView.Marker.Animated
             coordinate={{latitude, longitude}}
             title={user.username}>
-            <MapView.Callout>
-              <CustCallout username={user.username} userLoc={{latitude,longitude}} friendLoc={null} />
-            </MapView.Callout>
+            <CustCallout username={user.username} userLoc={{latitude,longitude}} friendLoc={null} />
           </MapView.Marker.Animated>
 
             { user.friends.map(friend => (
@@ -95,9 +93,7 @@ class Maps extends React.Component {
               pinColor={'blue'}
               coordinate={{latitude: friend.latitude, longitude: friend.longitude}}
               title={friend.username}>
-              <MapView.Callout>
-                <CustCallout username={friend.username} userLoc={{latitude,longitude}} friendLoc={{latitude: friend.latitude, longitude: friend.longitude}} />
-              </MapView.Callout>
+              <CustCallout username={friend.username} userLoc={{latitude,longitude}} friendLoc={{latitude: friend.latitude, longitude: friend.longitude}} />
             </MapView.Marker.Animated>
           )) }
         </MapView>
