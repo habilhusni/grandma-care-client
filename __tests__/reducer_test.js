@@ -19,6 +19,9 @@ import { fetchUsersSuccess, fetchUsersFail } from '../src/actions';
 import { userReducer } from '../src/reducers/userReducer';
 import { fetchOneUserSuccess, fetchOneUserFail } from '../src/actions';
 
+import { deactivateReducer } from '../src/reducers/deactivateReducer';
+import { deactivateSuccess, deactivateFail } from '../src/actions';
+
 
 it('handle addFriendReducer SUCCESS', () => {
   expect(addFriendReducer({}, addFriendSuccess())).toEqual({
@@ -107,5 +110,18 @@ it('handle fetch user list FAIL', () => {
   var eror = 'Fetch a User Fail!!'
   expect(userReducer(state = {}, fetchOneUserFail(eror))).toEqual({
     error: eror
+  })
+})
+
+it('handle deactivate SUCCESS', () => {
+  expect(deactivateReducer(state = {}, deactivateSuccess())).toEqual({
+    deactivate: true
+  })
+})
+
+it('handle deactivate FAIL', () => {
+  var eror = 'Deactivate Fail!!'
+  expect(deactivateReducer(state = {}, deactivateFail(eror))).toEqual({
+    deactivate: false
   })
 })

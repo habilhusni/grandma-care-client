@@ -36,8 +36,8 @@
 		"transformIgnorePatterns": [
 			"node_modules/(?!native-base-shoutem-theme)/"
 		],
-		"setupFiles": [
-			"./jest/setup.js"
-		]
+    "setupFiles": [
+      "./jest/setup.js"
+    ]
 	}
 }
