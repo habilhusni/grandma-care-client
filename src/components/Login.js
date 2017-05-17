@@ -65,7 +65,7 @@ class Login extends React.Component {
               <Text style={{fontSize:25}}>Login Here</Text>
             </View>
             <Form style={{width:'85%'}}>
-              <Item floatingLabel>
+              <Item floatingLabel style={{marginTop:10}}>
                 <Label>Username</Label>
                 <Input
                   autoCapitalize="none"
@@ -74,7 +74,7 @@ class Login extends React.Component {
                   onChange={e => this.handleUsernameInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item floatingLabel>
+              <Item floatingLabel style={{marginTop:10}}>
                 <Label>Password</Label>
                 <Input
                   autoCapitalize="none"
@@ -86,8 +86,11 @@ class Login extends React.Component {
               </Item>
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
                 <Button block
-                  onPress={(e) => {
-                    e.preventDefault()
+                  onPress={() => {
+                    this.setState({
+                      username: '',
+                      password: ''
+                    })
                     this._handleLogin({username,password})
                   }}>
                   <Text>Login</Text>

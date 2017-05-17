@@ -215,7 +215,13 @@ export const addFriend = (token, userID, friendEmail) => (
         'Content-Type': 'application/json',
         'token': token
       }
-    }).then(() => dispatch(addFriendSuccess()))
+    }).then(res => {
+      if(res.status === 200) {
+        dispatch(addFriendSuccess())
+      } else {
+        dispatch(addFriendFail({error: 'error'}))
+      }
+    })
       .catch(err => dispatch(addFriendFail(err)))
   )
 )

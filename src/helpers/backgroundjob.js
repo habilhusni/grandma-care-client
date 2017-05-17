@@ -1,4 +1,5 @@
 import BackgroundTimer from 'react-native-background-timer'
+import { Alert } from 'react-native'
 
 export default intervalId = (userID,token,instance) => {
   return BackgroundTimer.setInterval(() => {
@@ -18,7 +19,7 @@ export default intervalId = (userID,token,instance) => {
         instance.props.fetchOneUser(instance.props.token,instance.props.userID)
       },
       (error) => Alert.alert('Turn on GPS',JSON.stringify(error)),
-      {timeout: 5000}
+      {timeout: 7000}
     );
   }, 3500);
 }
