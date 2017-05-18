@@ -4,7 +4,7 @@ import { Container, Content, Form, Item, Button, Input, Label} from 'native-base
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { login } from '../actions'
+import { login, registerDone } from '../actions'
 import { styles } from '../styles'
 import Register from './Register'
 
@@ -107,7 +107,10 @@ class Login extends React.Component {
           animationType={"slide"}
           transparent={false}
           visible={modalVisible}
-          onRequestClose={() => this._setModalVisible(false)}>
+          onRequestClose={() => {
+            this.props.registerDone()
+            this._setModalVisible(false)}
+          }>
           <Register _setModalVisible={this._setModalVisible} />
         </Modal>
       </Container>
@@ -118,6 +121,7 @@ class Login extends React.Component {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
+  registerDone: PropTypes.func.isRequired,
   registerState: PropTypes.object.isRequired
 }
 
@@ -126,7 +130,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))
+  login: user => dispatch(login(user)),
+  registerDone: () => dispatch(registerDone())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
