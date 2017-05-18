@@ -33,5 +33,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black'
+  },
+  calloutContainer: {
+    flexDirection: 'column',
+    alignSelf: 'flex-start',
   }
 })

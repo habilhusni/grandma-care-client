@@ -2,6 +2,8 @@ import React from 'react'
 import { AsyncStorage, Alert, ToastAndroid } from 'react-native'
 import { Button, Text, Icon } from 'native-base'
 import { connect } from 'react-redux'
+
+import { logout } from '../actions'
 import PropTypes from 'prop-types'
 
 
@@ -22,7 +24,7 @@ class LogoutButton extends React.Component {
           ToastAndroid.CENTER
         )
         setTimeout(()=> {
-          console.log(state)
+          this.props.logout()
           if(state.params !== undefined) {
             goBack(state.params.stateKey)
           } else {
@@ -46,7 +48,12 @@ class LogoutButton extends React.Component {
 }
 
 LogoutButton.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired
 }
 
-export default LogoutButton
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+})
+
+export default connect(null, mapDispatchToProps)(LogoutButton)

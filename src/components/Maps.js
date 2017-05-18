@@ -10,6 +10,8 @@ import { updateLocation, fetchOneUser } from '../actions'
 import { styles } from '../styles'
 import intervalId from '../helpers/backgroundjob'
 
+import CustCallout from './CustCallout'
+
 class Maps extends React.Component {
   constructor(props){
     super(props)
@@ -80,16 +82,20 @@ class Maps extends React.Component {
           region={region}
           onRegionChange={this._onRegionChange}
           loadingEnabled={true}>
-          <MapView.Marker
+          <MapView.Marker.Animated
             coordinate={{latitude, longitude}}
-            title={user.username}/>
+            title={user.username}>
+            <CustCallout username={user.username} userLoc={{latitude,longitude}} friendLoc={null} />
+          </MapView.Marker.Animated>
 
-            {user.friends.map(friend => (
+            { user.friends.map(friend => (
             <MapView.Marker.Animated key={friend._id}
               pinColor={'blue'}
               coordinate={{latitude: friend.latitude, longitude: friend.longitude}}
-              title={friend.username}/>
-          ))}
+              title={friend.username}>
+              <CustCallout username={friend.username} userLoc={{latitude,longitude}} friendLoc={{latitude: friend.latitude, longitude: friend.longitude}} />
+            </MapView.Marker.Animated>
+          )) }
         </MapView>
       )
     } else {

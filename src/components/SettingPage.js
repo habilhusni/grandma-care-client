@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Modal } from 'react-native';
+import { View, Image, StyleSheet, Modal, BackHandler } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail, Header, Button, Left, Right, Body, Text, Icon } from 'native-base';
 
 import { connect } from 'react-redux';
@@ -20,8 +20,16 @@ class SettingPage extends Component {
     this.setState({ modalEditProfileVisible: val })
   }
 
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.props.navigation.goBack)
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.props.navigation.goBack)
+  }
+
   render() {
-    const { navigate,goBack } = this.props.navigation
+    const { navigate, goBack } = this.props.navigation
     const { user } = this.props
     const { token, stateKey } = this.props.navigation.state.params
     const { modalEditProfileVisible } = this.state
@@ -86,7 +94,7 @@ class SettingPage extends Component {
           animationType={'slide'}
           transparent={false}
           visible={modalEditProfileVisible}
-          onRequestClose={()=> null}>
+          onRequestClose={()=> this._setModalEditProfileVisible(false)}>
           <EditProfile
             user={user}
             token={token}

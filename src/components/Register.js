@@ -59,7 +59,7 @@ class Register extends React.Component {
               <Text style={{fontSize:25}}>Register Here</Text>
             </View>
             <Form style={{width:'85%'}}>
-              <Item fixedLabel>
+              <Item fixedLabel style={{marginTop:15}}>
                 <Label>Username</Label>
                 <Input
                   autoCapitalize="none"
@@ -68,7 +68,7 @@ class Register extends React.Component {
                   onChange={e => this.handleUsernameInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item fixedLabel>
+              <Item fixedLabel style={{marginTop:15}}>
                 <Label>Password</Label>
                 <Input
                   autoCapitalize="none"
@@ -78,7 +78,7 @@ class Register extends React.Component {
                   onChange={e => this.handlePasswordInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item fixedLabel>
+              <Item fixedLabel style={{marginTop:15}}>
                 <Label>Phone</Label>
                 <Input
                   autoCapitalize="none"
@@ -88,7 +88,7 @@ class Register extends React.Component {
                   onChange={e => this.handlePhoneInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item fixedLabel>
+              <Item fixedLabel style={{marginTop:15}}>
                 <Label>Email</Label>
                 <Input
                   autoCapitalize="none"

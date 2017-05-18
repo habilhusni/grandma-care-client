@@ -4,7 +4,7 @@ import { Container, Content, Form, Item, Button, Input, Label} from 'native-base
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { login } from '../actions'
+import { login, registerDone } from '../actions'
 import { styles } from '../styles'
 import Register from './Register'
 
@@ -65,7 +65,7 @@ class Login extends React.Component {
               <Text style={{fontSize:25}}>Login Here</Text>
             </View>
             <Form style={{width:'85%'}}>
-              <Item floatingLabel>
+              <Item floatingLabel style={{marginTop:10}}>
                 <Label>Username</Label>
                 <Input
                   autoCapitalize="none"
@@ -74,7 +74,7 @@ class Login extends React.Component {
                   onChange={e => this.handleUsernameInput(e.nativeEvent.text)}
                 />
               </Item>
-              <Item floatingLabel>
+              <Item floatingLabel style={{marginTop:10}}>
                 <Label>Password</Label>
                 <Input
                   autoCapitalize="none"
@@ -86,8 +86,11 @@ class Login extends React.Component {
               </Item>
               <Item last style={{marginTop:20, borderColor:'transparent'}}>
                 <Button block
-                  onPress={(e) => {
-                    e.preventDefault()
+                  onPress={() => {
+                    this.setState({
+                      username: '',
+                      password: ''
+                    })
                     this._handleLogin({username,password})
                   }}>
                   <Text>Login</Text>
@@ -104,7 +107,10 @@ class Login extends React.Component {
           animationType={"slide"}
           transparent={false}
           visible={modalVisible}
-          onRequestClose={() => this._setModalVisible(false)}>
+          onRequestClose={() => {
+            this.props.registerDone()
+            this._setModalVisible(false)}
+          }>
           <Register _setModalVisible={this._setModalVisible} />
         </Modal>
       </Container>
@@ -115,6 +121,7 @@ class Login extends React.Component {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
+  registerDone: PropTypes.func.isRequired,
   registerState: PropTypes.object.isRequired
 }
 
@@ -123,7 +130,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))
+  login: user => dispatch(login(user)),
+  registerDone: () => dispatch(registerDone())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
