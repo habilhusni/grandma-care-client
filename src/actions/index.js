@@ -169,10 +169,10 @@ export const register = user => (
         'Content-Type': 'application/json'
       }
     }).then(res => {
-      if(res.status === 400){
-        dispatch(registerFail({error: 'error'}))
-      } else {
+      if(res.status === 200){
         dispatch(registerSuccess())
+      } else {
+        dispatch(registerFail({error: 'error'}))
       }
     }).catch(err => dispatch(registerFail(err)))
   )

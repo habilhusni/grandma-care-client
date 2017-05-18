@@ -1,7 +1,7 @@
 import React from 'react'
 import  Icon  from 'react-native-vector-icons/Ionicons'
 import { View, AsyncStorage, Alert, BackHandler, Modal, ActivityIndicator, DeviceEventEmitter, ToastAndroid } from 'react-native'
-import { Container, Content, Header, Footer, FooterTab, Right, Button, Body, Left, Text } from 'native-base'
+import { Container, Content, Header, Footer, FooterTab, Right, Button, Body, Left, Text, Thumbnail } from 'native-base'
 import { SensorManager } from 'NativeModules';
 
 import { connect } from 'react-redux'
@@ -126,7 +126,9 @@ class Main extends React.Component {
         ToastAndroid.CENTER
       )
       setTimeout(()=> {
-        this.setState({counter:0})
+        if(this.state.hasOwnProperty('counter')) {
+          this.setState({counter:0})
+        }
       }, 1000)
     } else {
       await AsyncStorage.multiRemove(['token','id'])
@@ -144,9 +146,11 @@ class Main extends React.Component {
     return (
       <Container>
         <Header>
-          <Left></Left>
-          <Body>
-            <Text style={{color:'#FFF',justifyContent:'center'}}>Grandma Care</Text>
+          <Left style={{marginLeft:'2.5%'}}>
+            <Thumbnail small source={{uri: 'http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46afd69b4b.png'}}/>
+          </Left>
+          <Body style={{marginLeft:'-7.5%'}}>
+            <Text style={{color:'#FFF'}}>Grandma Care</Text>
           </Body>
           <Right>
             <Button transparent onPress={() => navigate(
