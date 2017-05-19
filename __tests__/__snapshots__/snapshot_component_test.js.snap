@@ -768,43 +768,9 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <Styled(Button)
-    light={true}
-    onPress={[Function]}
-    transparent={true}
-    vertical={true}
-    virtual={undefined}
->
-    <Styled(Icon)
-        color="#FFF"
-        name="power"
-        virtual={undefined}
-    />
-    <Styled(Text)
-        virtual={undefined}
-    >
-        Logout
-    </Styled(Text)>
-</Styled(Button)>,
+  "node": <Connect(LogoutButton) />,
   "nodes": Array [
-    <Styled(Button)
-      light={true}
-      onPress={[Function]}
-      transparent={true}
-      vertical={true}
-      virtual={undefined}
->
-      <Styled(Icon)
-            color="#FFF"
-            name="power"
-            virtual={undefined}
-      />
-      <Styled(Text)
-            virtual={undefined}
-      >
-            Logout
-      </Styled(Text)>
-</Styled(Button)>,
+    <Connect(LogoutButton) />,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -812,17 +778,44 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <LogoutButton />,
+      "_currentElement": <Provider
+        store={
+                Object {
+                        "dispatch": [Function],
+                        "getState": [Function],
+                        "replaceReducer": [Function],
+                        "subscribe": [Function],
+                        Symbol(observable): [Function],
+                      }
+        }
+>
+        <Connect(LogoutButton) />
+</Provider>,
       "_debugID": 15,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": LogoutButton {
-        "_logout": [Function],
+      "_instance": Provider {
         "_reactInternalInstance": [Circular],
         "context": Object {},
-        "props": Object {},
+        "props": Object {
+          "children": <Connect(LogoutButton) />,
+          "store": Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          },
+        },
         "refs": Object {},
         "state": null,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
         "updater": Object {
           "enqueueCallback": [Function],
           "enqueueCallbackInternal": [Function],
@@ -841,43 +834,9 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <Styled(Button)
-          light={true}
-          onPress={[Function]}
-          transparent={true}
-          vertical={true}
-          virtual={undefined}
->
-          <Styled(Icon)
-                    color="#FFF"
-                    name="power"
-                    virtual={undefined}
-          />
-          <Styled(Text)
-                    virtual={undefined}
-          >
-                    Logout
-          </Styled(Text)>
-</Styled(Button)>,
+        "_currentElement": <Connect(LogoutButton) />,
         "_debugID": 16,
-        "_renderedOutput": <Styled(Button)
-          light={true}
-          onPress={[Function]}
-          transparent={true}
-          vertical={true}
-          virtual={undefined}
->
-          <Styled(Icon)
-                    color="#FFF"
-                    name="power"
-                    virtual={undefined}
-          />
-          <Styled(Text)
-                    virtual={undefined}
-          >
-                    Logout
-          </Styled(Text)>
-</Styled(Button)>,
+        "_renderedOutput": <Connect(LogoutButton) />,
       },
       "_renderedNodeType": 1,
       "_rootNodeID": 0,
@@ -889,7 +848,19 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <LogoutButton />,
+  "unrendered": <Provider
+    store={
+        Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+    }
+>
+    <Connect(LogoutButton) />
+</Provider>,
 }
 `;
 

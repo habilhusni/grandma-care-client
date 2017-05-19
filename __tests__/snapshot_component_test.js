@@ -93,7 +93,11 @@ it('renders Login snapshot', () => {
 });
 
 it('renders LogoutButton snapshot', () => {
-  const compLogoutButton = shallow(<LogoutButton/>);
+  const compLogoutButton = shallow(
+    <Provider store={store}>
+      <LogoutButton/>
+    </Provider>
+  );
   expect(compLogoutButton).toMatchSnapshot();
 });
 
