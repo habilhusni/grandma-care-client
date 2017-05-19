@@ -17,13 +17,13 @@ class PanicButton extends React.Component {
         style={{backgroundColor:'#FF2821'}}
         position="bottomLeft"
         onPress={()=> {
+          ToastAndroid.showWithGravity('You just pressed Panic Button !', ToastAndroid.SHORT, ToastAndroid.CENTER)
           updateSensor({
             token, userID,
             x: 0, y: 0, z:0
           })
-          ToastAndroid.showWithGravity('You just pressed Panic Button !', ToastAndroid.SHORT, ToastAndroid.CENTER)
         }}>
-        <Icon name="alert" android="md-alert" style={{fontSize:55}} />
+        <Icon name="alert" android="md-alert" style={{fontSize:60}} />
       </Fab>
     )
   }

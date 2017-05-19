@@ -13,12 +13,19 @@ class SplashScreen extends React.Component {
     const { navigation } = this.props
 
     if(props.token === null || props.token.hasOwnProperty('error')){
-      console.log('null')
       setTimeout(()=> {
         navigation.goBack()
         Alert.alert(
           'Please Login',
           'Please Login before you can use this App'
+        )
+      }, 750)
+    } else if(props.token.hasOwnProperty('logout')) {
+      setTimeout(()=> {
+        navigation.goBack()
+        Alert.alert(
+          'Logout',
+          'You just logged out'
         )
       }, 750)
     } else {
